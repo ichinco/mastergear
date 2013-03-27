@@ -64,8 +64,7 @@ grails.project.dependency.resolution = {
         compile ':jquery:1.4.4'
         compile ':jquery-ui:1.8.7'
         compile ':famfamfam:1.0'
-        compile ':spring-security-ui:0.2'
+//        compile ':spring-security-ui:0.2'
         compile ":backbonejs:0.9.10.3"
-        runtime ":resources:1.2"
     }
 }
