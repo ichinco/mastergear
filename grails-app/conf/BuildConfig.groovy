@@ -66,6 +66,6 @@ grails.project.dependency.resolution = {
         compile ':famfamfam:1.0'
         compile ':spring-security-ui:0.2'
         compile ":backbonejs:0.9.10.3"
-        runtime ":resources:1.2.RC2"
+        runtime ":resources:1.2"
     }
 }
