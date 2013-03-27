@@ -2,7 +2,9 @@ package com.mastergear
 
 class GearListController {
 
-    def index() {}
+    def index() {
+        render(view: "start.gsp")
+    }
 
     def showList() {
         Integer listId = params.id
