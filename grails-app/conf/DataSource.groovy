@@ -14,7 +14,8 @@ environments {
     development {
         dataSource {
             dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
+            url = "jdbc:postgresql://ec2-107-20-147-106.compute-1.amazonaws.com:5432/dekdff62cl17q7?user=fasgditgasposh&password=e86svWxfxIvvwof9mDd2drThFR&ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory"
+            driverClassName = "org.postgresql.Driver"
         }
     }
     test {
@@ -26,7 +27,8 @@ environments {
     production {
         dataSource {
             dbCreate = "update"
-            url = "jdbc:h2:prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
+            url = "jdbc:postgresql://ec2-107-20-147-106.compute-1.amazonaws.com:5432/dekdff62cl17q7?user=fasgditgasposh&password=e86svWxfxIvvwof9mDd2drThFR&ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory"
+            driverClassName = "org.postgresql.Driver"
             pooled = true
             properties {
                maxActive = -1

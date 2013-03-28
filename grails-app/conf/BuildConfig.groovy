@@ -40,7 +40,7 @@ grails.project.dependency.resolution = {
 
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
-
+        runtime 'postgresql:postgresql:9.0-801.jdbc4'
         // runtime 'mysql:mysql-connector-java:5.1.22'
     }
 
@@ -66,5 +66,6 @@ grails.project.dependency.resolution = {
         compile ':famfamfam:1.0'
 //        compile ':spring-security-ui:0.2'
         compile ":backbonejs:0.9.10.3"
+
     }
 }
