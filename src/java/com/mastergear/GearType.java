@@ -12,5 +12,7 @@ public enum GearType {
     FOOD,
     CLOTHES,
     ELECTRONICS,
-    EMERGENCY
+    EMERGENCY,
+    WATER,
+    OTHER
 }

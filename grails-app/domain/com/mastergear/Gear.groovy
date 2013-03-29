@@ -5,20 +5,14 @@ class Gear {
     Date dateCreated
     Date lastUpdated
 
-    String imageUrl;
-    String url;
-    String name;
-    String notes;
-    double weight; // in oz
-    double quantity;
+    Brand brand;
+    GearItemType item;
+    String title;
 
-    GearType gearType;
+    double weight; // in oz
 
     static constraints = {
+        weight nullable:true
     }
 
-    static mapping = {
-        url size: 500;
-        notes size:500
-    }
 }

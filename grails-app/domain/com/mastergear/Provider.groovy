@@ -1,14 +1,14 @@
 package com.mastergear
 
-class Trail {
+class Provider {
 
     Date dateCreated
     Date lastUpdated
 
-    String name;
-    String location;
-    double latitude;
-    double longitude;
+    GearGender gender;
+    ProviderType type;
+    String imageId;
+    String id;
 
     static constraints = {
     }
