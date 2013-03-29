@@ -3,7 +3,7 @@ package com.mastergear
 class GearListController {
 
     def index() {
-        render(view: "start.gsp")
+        render(view: "start")
     }
 
     def showList() {
@@ -24,7 +24,7 @@ class GearListController {
             acc, val -> acc + val.gear.weight
         })
 
-        render(view: "list.gsp",
+        render(view: "list",
                 model: ["list" : list,
                         "pack" : pack,
                         "sleep" : sleep,
