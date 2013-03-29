@@ -18,38 +18,43 @@
     <div>${list.listDescription}</div>
 
     <h2>Pack</h2>
-    <g:each in="${list.getGearByType(GearType.PACK)}" var="gear">
-        <g:render template="gear" model="[gear:gear]"/>
+    <g:each in="${pack}" var="g">
+        <g:render template="gear" model="[gear:g.gear]"/>
     </g:each>
 
     <h2>Sleeping</h2>
-    <g:each in="${list.getGearByType(GearType.SLEEP)}" var="gear">
-        <g:render template="gear" model="[gear:gear]"/>
+    <g:each in="${sleep}" var="g">
+        <g:render template="gear" model="[gear:g.gear, quantity:g.quantity]"/>
     </g:each>
 
     <h2>Cooking</h2>
-    <g:each in="${list.getGearByType(GearType.COOKING)}" var="gear">
-        <g:render template="gear" model="[gear:gear]"/>
+    <g:each in="${cooking}" var="g">
+        <g:render template="gear" model="[gear:g.gear, quantity:g.quantity]"/>
     </g:each>
 
     <h2>Food</h2>
-    <g:each in="${list.getGearByType(GearType.FOOD)}" var="gear">
-        <g:render template="gear" model="[gear:gear]"/>
+    <g:each in="${food}" var="g">
+        <g:render template="gear" model="[gear:g.gear, quantity:g.quantity]"/>
+    </g:each>
+
+    <h2>Water</h2>
+    <g:each in="${water}" var="g">
+        <g:render template="gear" model="[gear:g.gear, quantity:g.quantity]"/>
     </g:each>
 
     <h2>Clothes</h2>
-    <g:each in="${list.getGearByType(GearType.CLOTHES)}" var="gear">
-        <g:render template="gear" model="[gear:gear]"/>
+    <g:each in="${clothes}" var="g">
+        <g:render template="gear" model="[gear:g.gear, quantity:g.quantity]"/>
     </g:each>
 
     <h2>Electronics</h2>
-    <g:each in="${list.getGearByType(GearType.ELECTRONICS)}" var="gear">
-        <g:render template="gear" model="[gear:gear]"/>
+    <g:each in="${electronics}" var="g">
+        <g:render template="gear" model="[gear:g.gear, quantity:g.quantity]"/>
     </g:each>
 
     <h2>Emergency</h2>
-    <g:each in="${list.getGearByType(GearType.EMERGENCY)}" var="gear">
-        <g:render template="gear" model="[gear:gear]"/>
+    <g:each in="${emergency}" var="g">
+        <g:render template="gear" model="[gear:g.gear, quantity:g.quantity]"/>
     </g:each>
 
 </body>

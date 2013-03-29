@@ -18,4 +18,5 @@ class GearListGear {
     static mapping = {
         notes size:500
     }
+
 }

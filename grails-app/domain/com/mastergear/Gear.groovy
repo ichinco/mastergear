@@ -11,8 +11,14 @@ class Gear {
 
     double weight; // in oz
 
+    List<Provider> providers
+
     static constraints = {
         weight nullable:true
+    }
+
+    static mapping = {
+        notes length: 500
     }
 
 }

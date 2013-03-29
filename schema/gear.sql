@@ -33,15 +33,15 @@ insert into gear (id, version, title, weight, brand_id, item_id, date_created, l
 (4,1,'Precip Jacket',13.1,5,4,'2013-03-27','2013-03-27'),
 (5,1,'ColdGear® Compression Mock Tops',7,4,5,'2013-03-27','2013-03-27'),
 (6,1,'HeatGear® Compression',5,4,5,'2013-03-27','2013-03-27'),
-(7,1,'Silver Ridge Booney II',NULL,6,6,'2013-03-27','2013-03-27'),
-(8,1,'Passing Through Beanie',NULL,1,7,'2013-03-27','2013-03-27'),
-(9,1,'Oslo Grip',NULL,8,8,'2013-03-27','2013-03-27'),
-(10,1,'Mini Pro 2 AA LED',4.1,9,12,'2013-03-27','2013-03-27'),
-(11,1,'M-3D Leader',1.6,10,13,'2013-03-27','2013-03-27'),
-(12,1,'Sportsmen Max Formula Insect Repellent 40% DEET lotion',NULL,11,9,'2013-03-27','2013-03-27'),
-(13,1,'Terrasport SPF30 Oxybenzone-Free Natural',NULL,12,10,'2013-03-27','2013-03-27');
+(7,1,'Silver Ridge Booney II',0,6,6,'2013-03-27','2013-03-27'),
+(8,1,'Passing Through Beanie',0,1,7,'2013-03-27','2013-03-27'),
+(9,1,'Oslo Grip',0,7,8,'2013-03-27','2013-03-27'),
+(10,1,'Mini Pro 2 AA LED',4.1,8,12,'2013-03-27','2013-03-27'),
+(11,1,'M-3D Leader',1.6,9,13,'2013-03-27','2013-03-27'),
+(12,1,'Sportsmen Max Formula Insect Repellent 40% DEET lotion',0,10,9,'2013-03-27','2013-03-27'),
+(13,1,'Terrasport SPF30 Oxybenzone-Free Natural',0,11,10,'2013-03-27','2013-03-27');
 
-insert into provider (id, version, type, id, image_id, gear_id, gear_gender, date_created, last_updated) VALUES 
+insert into provider (id, version, type, provider_id, image_id, gear_id, gender, date_created, last_updated) VALUES 
 -- daypack
 (1,1,'REI','833670','cf3f9864-f3e4-470c-b4d8-dbbc66cbfa10',1,'MALE','2013-03-27','2013-03-27'),
 (2,1,'AMAZON','B0089RQY06','51v7QicjDVL._SX342_',1,'MALE','2013-03-27','2013-03-27'),
@@ -81,7 +81,7 @@ insert into trail (id, version, name, location, latitude, longitude, date_create
 insert into gear_list (id, version, season, trail_id, hike_type, list_description, date_created, last_updated) VALUES
 (1,1,'SUMMER',1,'DAY','This is a basic dayhiking gear list, which should be suitable for anyone hiking in NH in the milder months','2013-03-27','2013-03-27');
 
-insert into gear_list_gear (id, gear_id, list_id, quantity, notes, gear_type, date_created, last_updated) VALUES
+insert into gear_list_gear (id, version, gear_id, list_id, quantity, notes, gear_type, date_created, last_updated) VALUES
 (1,1,1,1,1,'','PACK','2013-03-27','2013-03-27'),
 (2,1,2,1,2,'','WATER','2013-03-27','2013-03-27'),
 (3,1,4,1,1,'','CLOTHES','2013-03-27','2013-03-27'),

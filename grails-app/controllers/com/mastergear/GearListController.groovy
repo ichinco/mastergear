@@ -7,15 +7,33 @@ class GearListController {
     }
 
     def showList() {
-        Integer listId = params.id
+        Integer listId = Integer.parseInt(params.id);
 
         GearList list = GearList.get(listId);
-        int totalWeight = list.inject(0, {
-            acc, val -> acc + val
+        def pack = GearListGear.findAllByListAndGearType(list, GearType.PACK);
+        def sleep = GearListGear.findAllByListAndGearType(list, GearType.SLEEP);
+        def cooking = GearListGear.findAllByListAndGearType(list, GearType.COOKING);
+        def food = GearListGear.findAllByListAndGearType(list, GearType.FOOD);
+        def water = GearListGear.findAllByListAndGearType(list, GearType.WATER);
+        def clothes = GearListGear.findAllByListAndGearType(list, GearType.CLOTHES);
+        def electronics = GearListGear.findAllByListAndGearType(list, GearType.ELECTRONICS);
+        def emergency = GearListGear.findAllByListAndGearType(list, GearType.EMERGENCY);
+
+        def gear = GearListGear.findAllByList(list);
+        int totalWeight = gear.inject(0, {
+            acc, val -> acc + val.gear.weight
         })
 
         render(view: "list.gsp",
                 model: ["list" : list,
+                        "pack" : pack,
+                        "sleep" : sleep,
+                        "cooking" : cooking,
+                        "food" : food,
+                        "water" : water,
+                        "clothes" : clothes,
+                        "electronics" : electronics,
+                        "emergency" : emergency,
                         "totalWeight" : totalWeight])
     }
 }

@@ -8,7 +8,9 @@ class Provider {
     GearGender gender;
     ProviderType type;
     String imageId;
-    String id;
+    String providerId;
+
+    Gear gear;
 
     static constraints = {
     }
