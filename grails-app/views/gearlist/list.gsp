@@ -1,61 +1,66 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: denise
-  Date: 3/26/13
-  Time: 9:34 PM
---%>
 
-<%@ page import="com.mastergear.GearType" contentType="text/html;charset=UTF-8" %>
+<%@ page import="com.mastergear.GearList" %>
+<!DOCTYPE html>
 <html>
-<head>
-    <meta name="layout" content="mastergear">
-</head>
-<body>
-    <h1>${list.hikeType} on ${list.trail.name} in ${list.season}</h1>
-    ${list.trail.location}
-
-    gear weight: ${totalWeight}oz
-    <div>${list.listDescription}</div>
-
-    <h2>Pack</h2>
-    <g:each in="${pack}" var="g">
-        <g:render template="gear" model="[gear:g.gear]"/>
-    </g:each>
-
-    <h2>Sleeping</h2>
-    <g:each in="${sleep}" var="g">
-        <g:render template="gear" model="[gear:g.gear, quantity:g.quantity]"/>
-    </g:each>
-
-    <h2>Cooking</h2>
-    <g:each in="${cooking}" var="g">
-        <g:render template="gear" model="[gear:g.gear, quantity:g.quantity]"/>
-    </g:each>
-
-    <h2>Food</h2>
-    <g:each in="${food}" var="g">
-        <g:render template="gear" model="[gear:g.gear, quantity:g.quantity]"/>
-    </g:each>
-
-    <h2>Water</h2>
-    <g:each in="${water}" var="g">
-        <g:render template="gear" model="[gear:g.gear, quantity:g.quantity]"/>
-    </g:each>
-
-    <h2>Clothes</h2>
-    <g:each in="${clothes}" var="g">
-        <g:render template="gear" model="[gear:g.gear, quantity:g.quantity]"/>
-    </g:each>
-
-    <h2>Electronics</h2>
-    <g:each in="${electronics}" var="g">
-        <g:render template="gear" model="[gear:g.gear, quantity:g.quantity]"/>
-    </g:each>
-
-    <h2>Emergency</h2>
-    <g:each in="${emergency}" var="g">
-        <g:render template="gear" model="[gear:g.gear, quantity:g.quantity]"/>
-    </g:each>
-
-</body>
+	<head>
+		<meta name="layout" content="main">
+		<g:set var="entityName" value="${message(code: 'gearList.label', default: 'GearList')}" />
+		<title><g:message code="default.list.label" args="[entityName]" /></title>
+	</head>
+	<body>
+		<a href="#list-gearList" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
+		<div class="nav" role="navigation">
+			<ul>
+				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+			</ul>
+		</div>
+		<div id="list-gearList" class="content scaffold-list" role="main">
+			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
+			<g:if test="${flash.message}">
+			<div class="message" role="status">${flash.message}</div>
+			</g:if>
+			<table>
+				<thead>
+					<tr>
+					
+						<g:sortableColumn property="dateCreated" title="${message(code: 'gearList.dateCreated.label', default: 'Date Created')}" />
+					
+						<g:sortableColumn property="hikeType" title="${message(code: 'gearList.hikeType.label', default: 'Hike Type')}" />
+					
+						<g:sortableColumn property="lastUpdated" title="${message(code: 'gearList.lastUpdated.label', default: 'Last Updated')}" />
+					
+						<g:sortableColumn property="listDescription" title="${message(code: 'gearList.listDescription.label', default: 'List Description')}" />
+					
+						<g:sortableColumn property="season" title="${message(code: 'gearList.season.label', default: 'Season')}" />
+					
+						<th><g:message code="gearList.trail.label" default="Trail" /></th>
+					
+					</tr>
+				</thead>
+				<tbody>
+				<g:each in="${gearListInstanceList}" status="i" var="gearListInstance">
+					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+					
+						<td><g:link action="show" id="${gearListInstance.id}">${fieldValue(bean: gearListInstance, field: "dateCreated")}</g:link></td>
+					
+						<td>${fieldValue(bean: gearListInstance, field: "hikeType")}</td>
+					
+						<td><g:formatDate date="${gearListInstance.lastUpdated}" /></td>
+					
+						<td>${fieldValue(bean: gearListInstance, field: "listDescription")}</td>
+					
+						<td>${fieldValue(bean: gearListInstance, field: "season")}</td>
+					
+						<td>${fieldValue(bean: gearListInstance, field: "trail")}</td>
+					
+					</tr>
+				</g:each>
+				</tbody>
+			</table>
+			<div class="pagination">
+				<g:paginate total="${gearListInstanceTotal}" />
+			</div>
+		</div>
+	</body>
 </html>
