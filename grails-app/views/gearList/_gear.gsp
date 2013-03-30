@@ -13,7 +13,7 @@
     </div>
     <g:each in="${gear.providers}" var="provider">
         <div class="provider">
-            ${provider.type.getHtml().replaceAll(Pattern.quote("{IMAGE_ID}"),provider.imageId).replaceAll(Pattern.quote("{ID}"),provider.providerId)}
+            <g:message code="providertype.html.${provider.type.toString().toLowerCase()}" args="${ [provider.providerId, provider.imageId] }" />
             <div class="provider-overlay">
                 <div class="overlay-text">
                     BUY AT ${provider.type}
