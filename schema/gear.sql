@@ -43,17 +43,17 @@ insert into gear (id, version, title, weight, brand_id, item_id, date_created, l
 
 insert into provider (id, version, type, provider_id, image_id, gear_id, gender, date_created, last_updated) VALUES 
 -- daypack
-(1,1,'REI','833670','cf3f9864-f3e4-470c-b4d8-dbbc66cbfa10',1,'MALE','2013-03-27','2013-03-27'),
+(1,1,'REI','833670','bb/cf3f9864-f3e4-470c-b4d8-dbbc66cbfa10',1,'MALE','2013-03-27','2013-03-27'),
 (2,1,'AMAZON','B0089RQY06','51v7QicjDVL._SX342_',1,'MALE','2013-03-27','2013-03-27'),
 -- nalgene
 (3,1,'AMAZON','B002PLU912','41Wc9N0Y--L._SX342_',2,'UNISEX','2013-03-27','2013-03-27'),
 (4,1,'EMS','3662701','',2,'UNISEX','2013-03-27','2013-03-27'),
 -- platypus
-(5,1,'REI','820769','df42500b-1fda-4190-8436-032c3d5124d0',3,'UNISEX','2013-03-27','2013-03-27'),
+(5,1,'REI','820769','jj/df42500b-1fda-4190-8436-032c3d5124d0',3,'UNISEX','2013-03-27','2013-03-27'),
 (6,1,'AMAZON','B000J2KEGY','71nFy2U%2BQ5S._SL1500_',3,'UNISEX','2013-03-27','2013-03-27'),
 -- marmot rain jacket
 (7,1,'AMAZON','B004OVE430','81uU358TFzL._SL1500_',4,'MALE','2013-03-27','2013-03-27'),
-(8,1,'REI','804391','065b7b7a-d01f-48e5-aafe-9c0c3f2198a0',4,'MALE','2013-03-27','2013-03-27'),
+(8,1,'REI','804391','bb/065b7b7a-d01f-48e5-aafe-9c0c3f2198a0',4,'MALE','2013-03-27','2013-03-27'),
 -- underarmor coldgear
 (9,1,'AMAZON','B0002GDWJI','51WXUrlcf2L._SL1096_',5,'MALE','2013-03-27','2013-03-27'),
 -- underarmor heatgear
@@ -61,11 +61,11 @@ insert into provider (id, version, type, provider_id, image_id, gear_id, gender,
 -- hat
 (11,1,'AMAZON','B004ISKEX8','31L4eI1LZzL',7,'MALE','2013-03-27','2013-03-27'),
 -- fleece hat
-(12,1,'REI','845498','39116b48-9422-47b0-9873-a0415a4156e2',8,'UNISEX','2013-03-27','2013-03-27'),
+(12,1,'REI','845498','cc/39116b48-9422-47b0-9873-a0415a4156e2',8,'UNISEX','2013-03-27','2013-03-27'),
 -- fleece gloves
-(13,1,'REI','803854','b9a74e79-f457-49da-99ae-e96434b5c7d2',9,'UNISEX','2013-03-27','2013-03-27'),
+(13,1,'REI','803854','xx/b9a74e79-f457-49da-99ae-e96434b5c7d2',9,'UNISEX','2013-03-27','2013-03-27'),
 -- flashlight
-(14,1,'REI','843844','5b35f00f-62d7-4490-9dfb-25e58e3f7862',10,'UNISEX','2013-03-27','2013-03-27'),
+(14,1,'REI','843844','ii/5b35f00f-62d7-4490-9dfb-25e58e3f7862',10,'UNISEX','2013-03-27','2013-03-27'),
 (15,1,'AMAZON','B005UUSAAM','519GKGAFxoL._SL1000_',10,'UNISEX','2013-03-27','2013-03-27'),
 -- compass
 (16,1,'REI','408150','',11,'UNISEX','2013-03-27','2013-03-27'),

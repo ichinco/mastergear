@@ -1,0 +1,67 @@
+.rei-product {
+    max-height: 160px;
+}
+
+body {
+    background-color: #116937;
+}
+
+.bubble {
+    background-color: #FFFFFF;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 700px;
+}
+
+.bubble h2 {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.bubble h1 {
+    margin-top: 0px;
+}
+
+.bubble h3 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.gear-data {
+    width: 100%;
+}
+
+.provider {
+    position: relative;
+    display: inline-block;
+}
+
+.provider .provider-overlay {
+    display: none;
+    background-color:rgba(255,255,255,0.5);
+    position:absolute;
+    z-index:100;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    text-align: center;
+    pointer-events : none;
+}
+
+.provider .provider-overlay .overlay-text {
+    position:absolute;
+    top:50%;
+    height:10em;
+    margin-top:-5em;
+    width: 100%;
+}
+
+.provider:hover .provider-overlay {
+    display: block;
+}
+

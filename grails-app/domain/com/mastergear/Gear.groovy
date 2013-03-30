@@ -11,7 +11,7 @@ class Gear {
 
     double weight; // in oz
 
-    List<Provider> providers
+    static hasMany = [providers : Provider]
 
     static constraints = {
         weight nullable:true

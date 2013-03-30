@@ -3,7 +3,7 @@ package com.mastergear
 class GearListController {
 
     def index() {
-        render(view: "start")
+        render(view: 'start')
     }
 
     def showList() {
