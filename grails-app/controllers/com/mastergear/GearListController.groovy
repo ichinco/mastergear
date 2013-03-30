@@ -24,7 +24,7 @@ class GearListController {
             acc, val -> acc + val.gear.weight
         })
 
-        render(view: "list",
+        render(view: 'list',
                 model: ["list" : list,
                         "pack" : pack,
                         "sleep" : sleep,
