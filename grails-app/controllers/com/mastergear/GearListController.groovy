@@ -20,7 +20,7 @@ class GearListController {
         def emergency = GearListGear.findAllByListAndGearType(list, GearType.EMERGENCY);
 
         def gear = GearListGear.findAllByList(list);
-        int totalWeight = gear.inject(0, {
+        double totalWeight = gear.inject(0, {
             acc, val -> acc + val.gear.weight
         })
 
@@ -34,6 +34,6 @@ class GearListController {
                         "clothes" : clothes,
                         "electronics" : electronics,
                         "emergency" : emergency,
-                        "totalWeight" : totalWeight])
+                        "totalWeight" : new Weight(totalWeight)])
     }
 }

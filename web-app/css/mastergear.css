@@ -1,9 +1,17 @@
-.rei-product {
-    max-height: 160px;
-}
-
 body {
     background-color: #116937;
+    font-family: 'Lato', sans-serif;
+}
+
+.trail-location,
+.list-weight,
+.list-description {
+    margin: 10px 0;
+}
+
+.rei-product,
+.ems-product {
+    max-height: 160px;
 }
 
 .bubble {
@@ -33,6 +41,7 @@ body {
 
 .gear-data {
     width: 100%;
+    margin: 5px 0px;
 }
 
 .provider {
@@ -56,8 +65,8 @@ body {
 .provider .provider-overlay .overlay-text {
     position:absolute;
     top:50%;
-    height:10em;
-    margin-top:-5em;
+    height:10px;
+    margin-top:-5px;
     width: 100%;
 }
 
