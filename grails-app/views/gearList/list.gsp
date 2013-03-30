@@ -24,6 +24,9 @@
 
         <div class="list-weight">gear weight: ${noDecimals.format(totalWeight.getPounds())}lbs ${twoDecimals.format(totalWeight.getOunces())}oz</div>
         <div class="list-description">${list.listDescription}</div>
+        <div class="map">
+            <img src="http://maps.googleapis.com/maps/api/staticmap?zoom=3&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C${list.trail.latitude},${list.trail.longitude}&sensor=false" />
+        </div>
     </div>
 
     <div class="bubble">
