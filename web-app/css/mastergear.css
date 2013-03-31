@@ -74,3 +74,7 @@ body {
     display: block;
 }
 
+/*create list view*/
+#add-gear {
+    display: none;
+}

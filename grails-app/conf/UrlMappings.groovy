@@ -1,11 +1,21 @@
 class UrlMappings {
 
 	static mappings = {
-		"/$controller/$action?/$id?"{
-			constraints {
-				// apply constraints here
-			}
-		}
+        "/gear/$id?"(parseRequest:true){
+              controller = "gear"
+              action = [GET: "show", PUT: "save", DELETE: "delete", POST: "save"]
+        }
+
+        "/gear/list"(parseRequest:true){
+              controller = "gear"
+              action = "list"
+        }
+
+        "/$controller/$action?/$id?"{
+            constraints {
+                // apply constraints here
+            }
+        }
 
 		"/"( controller:"gearList",  action: "index")
 		"500"(view:'/error')

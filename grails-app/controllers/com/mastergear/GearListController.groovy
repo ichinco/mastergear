@@ -6,7 +6,11 @@ class GearListController {
         render(view: 'start')
     }
 
-    def showList() {
+    def create() {
+        render view: "create"
+    }
+
+    def show() {
         Integer listId = Integer.parseInt(params.id);
 
         GearList list = GearList.get(listId);

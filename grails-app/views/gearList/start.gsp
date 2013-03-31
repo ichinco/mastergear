@@ -15,7 +15,7 @@
     <div class="bubble">
         <h1><g:message code="hiketype.day" /></h1>
         <g:each in="${com.mastergear.GearList.findAllByHikeType(HikeType.DAY)}" var="list">
-            <g:link controller="GearList" action="showList" params="[id : list.id]"><g:render template="title" model="[list: list]" /></g:link>
+            <g:link controller="gearList" action="show" params="[id : list.id]"><g:render template="title" model="[list: list]" /></g:link>
         </g:each>
     </div>
 
