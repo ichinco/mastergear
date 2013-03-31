@@ -1,1 +1,1 @@
-<g:message code="season.${list.season.toString().toLowerCase()}" /> <g:message code="hiketype.${list.hikeType.toString().toLowerCase()}" /> on ${list.trail.name}
+<g:message code="season.${list.season.toString().toLowerCase()}" /> <g:message code="hiketype.${list.hikeType.toString().toLowerCase()}" /> at ${list.trail.name}

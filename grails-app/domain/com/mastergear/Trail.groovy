@@ -9,6 +9,7 @@ class Trail {
     String location;
     double latitude;
     double longitude;
+    double maxElevation; // in feet
 
     static constraints = {
     }

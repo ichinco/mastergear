@@ -1,0 +1,11 @@
+drop table gear_list_gear;
+drop table provider;
+drop table gear_list;
+drop table user_trail;
+drop table trail;
+drop table role;
+drop table user_profile;
+drop table user;
+drop table gear;
+drop table brand;
+drop table user_role;

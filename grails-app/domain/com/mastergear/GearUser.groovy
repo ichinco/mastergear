@@ -1,6 +1,6 @@
 package com.mastergear
 
-class User {
+class GearUser {
 
 	transient springSecurityService
 

@@ -10,6 +10,8 @@ class GearList {
     HikeType hikeType
     String listDescription
 
+    GearUser user
+
     static constraints = {
     }
 

@@ -75,11 +75,8 @@ insert into provider (id, version, type, provider_id, image_id, gear_id, gender,
 -- sun screen
 (19,1,'AMAZON','B007AJNY6G','31NprAyHFrL.jpg',13,'UNISEX','2013-03-27','2013-03-27');
 
-insert into trail (id, version, name, location, latitude, longitude, date_created, last_updated) VALUES
-(1,1,'Franconia Ridge Loop Trail','Franconia, NH',44.159,-71.645,'2013-03-27','2013-03-27');
-
-insert into gear_list (id, version, season, trail_id, hike_type, list_description, date_created, last_updated) VALUES
-(1,1,'SUMMER',1,'DAY','This is a basic dayhiking gear list, which should be suitable for anyone hiking in NH in the milder months','2013-03-27','2013-03-27');
+insert into gear_list (id, version, season, trail_id, hike_type, list_description, date_created, last_updated, user_id) VALUES
+(1,1,'SUMMER',1,'DAY','This is a basic dayhiking gear list, which should be suitable for anyone hiking in NH in the milder months','2013-03-27','2013-03-27',1);
 
 insert into gear_list_gear (id, version, gear_id, list_id, quantity, notes, gear_type, date_created, last_updated) VALUES
 (1,1,1,1,1,'','PACK','2013-03-27','2013-03-27'),

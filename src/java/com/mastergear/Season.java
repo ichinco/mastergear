@@ -1,7 +1,7 @@
 package com.mastergear;
 
 /**
- * User: denise
+ * GearUser: denise
  * Date: 3/26/13
  * Time: 9:38 PM
  */
