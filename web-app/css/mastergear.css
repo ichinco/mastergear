@@ -79,13 +79,13 @@ body {
     display: none;
 }
 
-.add-gear-button {
+button {
     border: none 0px;
     padding:  4px 10px;
     color: #FFFFFF;
 
-    -moz-border-radius: 15px;
-    border-radius: 15px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 
     cursor: hand;
     cursor: pointer;
@@ -101,6 +101,6 @@ body {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6D00FC', endColorstr='#5600C7',GradientType=0 ); /* IE6-9 */
 }
 
-.add-gear-button:hover{
-    background-color: #5600C7;
+button:hover{
+    background: #5600C7;
 }
