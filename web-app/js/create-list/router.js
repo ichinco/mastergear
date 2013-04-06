@@ -1,4 +1,5 @@
 var Mastergear = Mastergear || {};
+Mastergear.Obj = Mastergear.Obj || {};
 Mastergear.Router = Backbone.Router.extend({
     init: function() {
         this.main();
@@ -7,6 +8,7 @@ Mastergear.Router = Backbone.Router.extend({
     main: function() {
 
         var packModel = new Mastergear.Models.GearType();
+        var possibleGearModel = new Mastergear.Collection.GearList();
 
         var newGearDialog = new Mastergear.Views.AddGearDialog({
             el : '#add-gear',
@@ -17,6 +19,18 @@ Mastergear.Router = Backbone.Router.extend({
             el : '.pack .add-gear-button',
             model : packModel
         });
+
+        var gearSuggestionView = new Mastergear.Views.GearSelection({
+            el : '#add-gear .gearSuggestion',
+            model : possibleGearModel
+        });
+
+        var gearSuggestionInputView = new Mastergear.Views.GearSelectionInput({
+            el : '#add-gear .gearSearch',
+            model : possibleGearModel
+        });
+
+        possibleGearModel.fetch({remove : true, add : true, change : true});
     }
 });
 

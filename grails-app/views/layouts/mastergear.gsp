@@ -19,6 +19,11 @@
 </head>
 <body>
     <g:layoutBody/>
+    <script type="text/template" id="gear_template">
+        <div>
+            <div class="gear-object" data-gear-id={{id}}>{{title}}</div>
+        </div>
+    </script>
     <g:javascript library="application"/>
     <r:layoutResources />
     <script type="text/javascript">

@@ -12,7 +12,10 @@ class GearController {
 
     def list(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        [gearInstanceList: Gear.list(params), gearInstanceTotal: Gear.count()]
+
+        render (contentType:'text/json'){
+            gearInstanceList: Gear.list(params)
+        }
     }
 
     def create() {

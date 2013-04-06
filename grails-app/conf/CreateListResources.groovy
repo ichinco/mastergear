@@ -5,6 +5,13 @@
  * Time: 5:32 PM
  */
 modules = {
+    createlistCollection {
+        dependsOn 'lib'
+        dependsOn 'createlistModel'
+
+        resource url: 'js/create-list/collections/gear-collection.js'
+    }
+
     createlistModel {
         dependsOn 'lib'
 
@@ -17,10 +24,12 @@ modules = {
         dependsOn 'lib'
 
         resource url: 'js/create-list/views/new-gear-view.js'
+        resource url: 'js/create-list/views/gear-selection-view.js'
     }
     createlist {
         dependsOn 'createlistView'
         dependsOn 'createlistModel'
+        dependsOn 'createlistCollection'
         dependsOn 'stylesheets'
         dependsOn 'lib'
 

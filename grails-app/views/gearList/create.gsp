@@ -14,7 +14,8 @@
 </head>
 <body>
     <div id="add-gear">
-        ADD GEAR HERE
+        <g:textField name="gearSearch" class="gearSearch" />
+        <div class="gearSuggestion"></div>
     </div>
     <div class="bubble pack">
         <h2><g:message code="geartype.pack" /></h2>
