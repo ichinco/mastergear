@@ -10,13 +10,13 @@ modules = {
         dependsOn 'createlistModel'
 
         resource url: 'js/create-list/collections/gear-collection.js'
+        resource url: 'js/create-list/collections/gear-type-collection.js'
     }
 
     createlistModel {
         dependsOn 'lib'
 
         resource url: 'js/create-list/models/gear-model.js'
-        resource url: 'js/create-list/models/gear-type-model.js'
     }
 
     createlistView {

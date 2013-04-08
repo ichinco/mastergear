@@ -7,11 +7,12 @@ Mastergear.Router = Backbone.Router.extend({
 
     main: function() {
 
-        var packModel = new Mastergear.Models.GearType();
-        var possibleGearModel = new Mastergear.Collection.GearList();
+        var possiblePackModel = new Mastergear.Collection.GearList();
+        var packModel = new Mastergear.Collection.GearType();
+        packModel.setSelectionModel(possiblePackModel);
 
         var newGearDialog = new Mastergear.Views.AddGearDialog({
-            el : '#add-gear',
+            el : '.pack .add-gear',
             model : packModel
         });
 
@@ -20,17 +21,22 @@ Mastergear.Router = Backbone.Router.extend({
             model : packModel
         });
 
+        var selectedGearView = new Mastergear.Views.GearSelection({
+            el : '.pack .added-gear',
+            model : packModel
+        });
+
         var gearSuggestionView = new Mastergear.Views.GearSelection({
-            el : '#add-gear .gearSuggestion',
-            model : possibleGearModel
+            el : '.pack .add-gear .gearSuggestion',
+            model : possiblePackModel
         });
 
         var gearSuggestionInputView = new Mastergear.Views.GearSelectionInput({
-            el : '#add-gear .gearSearch',
-            model : possibleGearModel
+            el : '.pack .add-gear .gearSearch',
+            model : possiblePackModel
         });
 
-        possibleGearModel.fetch({remove : true, add : true, change : true});
+        possiblePackModel.fetch({remove : true, add : true, change : true});
     }
 });
 
