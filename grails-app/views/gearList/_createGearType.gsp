@@ -10,7 +10,7 @@
             <div>style: <g:textField name="style" class="style" /></div>
             <div>type: <g:textField name="itemType" class="item-type" /></div>
             <div>url: <g:textField name="url" class="url" /></div>
-            <button class="create">add</button>
+            <button class="create-gear">add</button>
         </div>
     </div>
     <h2><g:message code="geartype.${gearType}" /></h2>
