@@ -5,38 +5,49 @@ Mastergear.Router = Backbone.Router.extend({
         this.main();
     },
 
-    main: function() {
-
+    buildAddView : function(cssClass) {
         var possiblePackModel = new Mastergear.Collection.GearList();
         var packModel = new Mastergear.Collection.GearType();
         packModel.setSelectionModel(possiblePackModel);
 
         var newGearDialog = new Mastergear.Views.AddGearDialog({
-            el : '.pack .add-gear',
+            el : '.' + cssClass + ' .add-gear',
             model : packModel
         });
 
         var packView = new Mastergear.Views.AddGearButton({
-            el : '.pack .add-gear-button',
+            el : '.' + cssClass + ' .add-gear-button',
             model : packModel
         });
 
         var selectedGearView = new Mastergear.Views.GearSelection({
-            el : '.pack .added-gear',
+            el : '.' + cssClass + ' .added-gear',
             model : packModel
         });
 
         var gearSuggestionView = new Mastergear.Views.GearSelection({
-            el : '.pack .add-gear .gearSuggestion',
+            el : '.' + cssClass + ' .add-gear .gearSuggestion',
             model : possiblePackModel
         });
 
         var gearSuggestionInputView = new Mastergear.Views.GearSelectionInput({
-            el : '.pack .add-gear .gearSearch',
+            el : '.' + cssClass + ' .add-gear .gearSearch',
             model : possiblePackModel
         });
 
-        possiblePackModel.fetch({remove : true, add : true, change : true});
+        possiblePackModel.fetch({remove : true, add : true, change : true})
+    },
+
+    main: function() {
+        this.buildAddView('pack');
+        this.buildAddView('sleep');
+        this.buildAddView('cooking');
+        this.buildAddView('food');
+        this.buildAddView('water');
+        this.buildAddView('clothes');
+        this.buildAddView('electronics');
+        this.buildAddView('emergency');
+        this.buildAddView('other');
     }
 });
 

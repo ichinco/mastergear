@@ -3,13 +3,10 @@ Mastergear.Views = Mastergear.Views || {};
 
 Mastergear.Views.AddGearDialog = Backbone.View.extend({
 
-    events: {
-        'click .create-competition': 'close'
-    },
-
     initialize : function() {
         _.bindAll(this);
         this.model.bind('new-gear-dialog-open', this.show);
+        this.model.bind('new-gear-dialog-close', this.close);
     },
 
     show: function() {
@@ -17,11 +14,6 @@ Mastergear.Views.AddGearDialog = Backbone.View.extend({
     },
 
     close : function (){
-        console.log(this.model);
-        this.model.create({
-            name : this.$el.children('.name').first().val(),
-            description : this.$el.children('.description').first().val()
-        });
         this.$el.hide();
     }
 });

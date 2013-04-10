@@ -16,5 +16,6 @@ Mastergear.Collection.GearType = Backbone.Collection.extend({
 
     gearSelected : function(){
         this.add(this.suggestionModel.getSelected());
+        this.trigger('new-gear-dialog-close');
     }
 });
