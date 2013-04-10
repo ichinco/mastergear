@@ -15,6 +15,7 @@ Mastergear.Views.GearSelection = Backbone.View.extend({
     initialize : function() {
         _.bindAll(this);
         this.model.bind('all', this.render);
+        this.model.bind('create-gear-dialog-close',this.close);
     },
 
     _getTemplate: _.once(function() {
@@ -30,6 +31,10 @@ Mastergear.Views.GearSelection = Backbone.View.extend({
         });
         this.$el.html(finalHtml);
         return this;
+    },
+
+    close : function (){
+        this.$el.hide();
     }
 
 });

@@ -20,18 +20,33 @@ Mastergear.Router = Backbone.Router.extend({
             model : packModel
         });
 
+        var noMatchesView = new Mastergear.Views.NoMatchesView({
+            el : '.' + cssClass + ' .no-match',
+            model : packModel
+        });
+
+        var createGearView = new Mastergear.Views.CreateGear({
+            el : '.' + cssClass + ' .gear-create',
+            model : packModel
+        });
+
         var selectedGearView = new Mastergear.Views.GearSelection({
             el : '.' + cssClass + ' .added-gear',
             model : packModel
         });
 
+        var gearHintView = new Mastergear.Views.GearHintView({
+            el : '.' + cssClass + ' .get-suggestions',
+            model : packModel
+        });
+
         var gearSuggestionView = new Mastergear.Views.GearSelection({
-            el : '.' + cssClass + ' .add-gear .gearSuggestion',
+            el : '.' + cssClass + ' .add-gear .gear-suggestion',
             model : possiblePackModel
         });
 
         var gearSuggestionInputView = new Mastergear.Views.GearSelectionInput({
-            el : '.' + cssClass + ' .add-gear .gearSearch',
+            el : '.' + cssClass + ' .add-gear .gear-search',
             model : possiblePackModel
         });
 
