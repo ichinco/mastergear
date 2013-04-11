@@ -10,6 +10,10 @@ class GearListController {
         render view: "create"
     }
 
+    def initialize() {
+        render view: "initialize"
+    }
+
     def show() {
         Integer listId = Integer.parseInt(params.id);
 

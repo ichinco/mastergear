@@ -24,6 +24,11 @@
             <div class="gear-object" data-gear-id={{id}}>{{title}}</div>
         </div>
     </script>
+    <script type="text/template" id="trail_template">
+        <div>
+            <div class="trail-object" data-trail-id={{id}}>{{name}}</div>
+        </div>
+    </script>
     <g:javascript library="application"/>
     <r:layoutResources />
     <script type="text/javascript">

@@ -116,3 +116,8 @@ button {
 button:hover{
     background: #5600C7;
 }
+
+/* initialize list */
+.trail-selection {
+    display:none;
+}
