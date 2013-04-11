@@ -25,7 +25,7 @@ Mastergear.Router = Backbone.Router.extend({
             model : possibleTrailModel
         });
 
-        var selectedTrail = new MasterGear.Views.Trail({
+        var selectedTrail = new Mastergear.Views.Trail({
             el : '.selected-trail',
             model : trailModel
         });

@@ -6,6 +6,7 @@ Mastergear.Views.Trail = Backbone.View.extend({
     initialize : function() {
         _.bindAll(this);
         this.model.bind('all', this.render);
+        this.model.bind('')
     },
 
     _getTemplate: _.once(function() {

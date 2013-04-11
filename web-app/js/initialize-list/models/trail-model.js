@@ -12,6 +12,12 @@ Mastergear.Models.Trail = Backbone.Model.extend({
 
     setPossibleTrails : function(possibleTrails) {
         this.possibleTrails = possibleTrails;
+        this.possibleTrails.bind('trail-selected',this.changeModel);
+    },
+
+    changeModel : function(){
+        console.log(this.possibleTrails.getSelected().attributes);
+        this.set(this.possibleTrails.getSelected().attributes);
     }
 
 });

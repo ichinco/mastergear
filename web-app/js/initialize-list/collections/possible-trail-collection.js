@@ -12,6 +12,7 @@ Mastergear.Collection.PossibleTrails = Backbone.Collection.extend({
 
     setSelected : function(trail){
         this.selectedTrail = trail;
+        this.trigger('trail-selected');
     },
 
     getSelected : function() {
