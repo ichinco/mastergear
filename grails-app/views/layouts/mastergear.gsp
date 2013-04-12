@@ -29,6 +29,10 @@
             <div class="trail-object" data-trail-id={{id}}>{{name}}</div>
         </div>
     </script>
+<script type="text/template" id="trail_form_template">
+    <input type="hidden" name="trail" value="{{id}}"/>
+    <div class="trail-object" data-trail-id={{id}}>{{name}}</div>
+</script>
     <g:javascript library="application"/>
     <r:layoutResources />
     <script type="text/javascript">

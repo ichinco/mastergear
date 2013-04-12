@@ -14,6 +14,34 @@ class GearListController {
         render view: "initialize"
     }
 
+    def initializeSave() {
+        String seasonString = params.season;
+        String hikeType = params.hikeType;
+        String trailId = params.trail;
+        String userId = params.userId;
+
+        GearList gearList = new GearList();
+        gearList.listDescription = params.description;
+
+        if (userId){
+            GearUser user = GearUser.get(Integer.parseInt(userId)); // get the actual user once there are users
+            gearList.user = user;
+        }
+        if (seasonString) {
+            gearList.season = Season.valueOf(seasonString);
+        }
+
+        if (hikeType) {
+            gearList.hikeType = HikeType.valueOf(hikeType);
+        }
+
+        if (trailId){
+            int id = Integer.parseInt(trailId);
+            Trail trail = Trail.get(id);
+            gearList.trail = trail;
+        }
+    }
+
     def show() {
         Integer listId = Integer.parseInt(params.id);
 

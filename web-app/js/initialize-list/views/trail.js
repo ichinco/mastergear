@@ -10,7 +10,7 @@ Mastergear.Views.Trail = Backbone.View.extend({
     },
 
     _getTemplate: _.once(function() {
-        return _.template($("#trail_template").html());
+        return _.template($("#trail_form_template").html());
     }),
 
     render: function() {

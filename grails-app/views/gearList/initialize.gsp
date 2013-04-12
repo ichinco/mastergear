@@ -30,8 +30,9 @@
         </div>
     </div>
     <div class="bubble">
-        <g:form controller="gearList" action="create">
+        <g:form controller="gearList" action="initializeSave">
             <h1>Create a Gear List</h1>
+            <div>user: <g:textField name="user" /></div>
             <div>season: <g:select name="season" from="${seasonValues}" keys="${Season.values()}" /></div>
             <div>hike type: <g:select name="hikeType" from="${hikeTypeValues}" keys="${HikeType.values()}" /></div>
             <div>trail: <div class="selected-trail"></div> <button class="select-trail">select</button></div>
