@@ -18,10 +18,10 @@ class GearListController {
         String seasonString = params.season;
         String hikeType = params.hikeType;
         String trailId = params.trail;
-        String userId = params.userId;
+        String userId = params.user;
 
         GearList gearList = new GearList();
-        gearList.listDescription = params.description;
+        gearList.listDescription = params.listDescription;
 
         if (userId){
             GearUser user = GearUser.get(Integer.parseInt(userId)); // get the actual user once there are users
@@ -40,6 +40,12 @@ class GearListController {
             Trail trail = Trail.get(id);
             gearList.trail = trail;
         }
+
+        if (!gearList.save(flush : true)){
+            flash.message = "gearlist save error";
+        }
+
+        redirect(action: "create")
     }
 
     def show() {
