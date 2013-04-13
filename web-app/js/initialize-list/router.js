@@ -30,6 +30,16 @@ Mastergear.Router = Backbone.Router.extend({
             model : trailModel
         });
 
+        var noMatchTrail = new Mastergear.Views.NoMatchesView({
+            el : '.no-trail',
+            model : trailModel
+        });
+
+        var createTrail = new Mastergear.Views.CreateTrail({
+            el : '.create-trail',
+            model : trailModel
+        });
+
         possibleTrailModel.fetch({remove : true, add : true, change : true})
     }
 });

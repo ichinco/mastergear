@@ -6,7 +6,6 @@ Mastergear.Views.Trail = Backbone.View.extend({
     initialize : function() {
         _.bindAll(this);
         this.model.bind('all', this.render);
-        this.model.bind('')
     },
 
     _getTemplate: _.once(function() {
@@ -17,8 +16,12 @@ Mastergear.Views.Trail = Backbone.View.extend({
         var template = this._getTemplate();
         var finalHtml = "";
         var attributes = this.model.attributes;
-        finalHtml += (template(attributes));
-        this.$el.html(finalHtml);
+        console.log(attributes);
+        if (attributes.id != null){
+            console.log("rendering");
+            finalHtml += (template(attributes));
+            this.$el.html(finalHtml);
+        }
         return this;
     },
 

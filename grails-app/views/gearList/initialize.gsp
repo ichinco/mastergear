@@ -26,7 +26,15 @@
 <body>
     <div class="trail-selection">
         <g:textField name="search" class="trail-search" />
-        <div class="trails">
+        <div class="trails"></div>
+        <div class="no-trail">None of these</div>
+        <div class="create-trail">
+            <div>name: <g:textField name="trail-name" class="trail-name" /></div>
+            <div>city, state: <g:textField name="location" class="location" /></div>
+            <div>latitude: <g:textField name="latitude" class="latitude" /></div>
+            <div>longitude: <g:textField name="longitude" class="longitude" /></div>
+            <div>max elevation: <g:textField name="maxElevation" class="maxElevation" /></div>
+            <button class="create">create trail</button>
         </div>
     </div>
     <div class="bubble">

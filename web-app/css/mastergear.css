@@ -121,3 +121,11 @@ button:hover{
 .trail-selection {
     display:none;
 }
+
+.selected-trail {
+    display:inline-block;
+}
+
+.create-trail {
+    display: none;
+}
