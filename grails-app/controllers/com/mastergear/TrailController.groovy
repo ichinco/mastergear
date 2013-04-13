@@ -4,7 +4,7 @@ import org.springframework.dao.DataIntegrityViolationException
 
 class TrailController {
 
-    static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+    static allowedMethods = [save: "PUT", update: "POST", delete: "DELETE"]
 
     def index() {
         redirect(action: "list", params: params)
@@ -29,7 +29,9 @@ class TrailController {
         }
 
         flash.message = message(code: 'default.created.message', args: [message(code: 'trail.label', default: 'Trail'), trailInstance.id])
-        redirect(action: "show", id: trailInstance.id)
+        render (contentType:'text/json'){
+            trailInstance: trailInstance
+        }
     }
 
     def show(Long id) {

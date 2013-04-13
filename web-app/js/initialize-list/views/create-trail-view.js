@@ -19,6 +19,10 @@ Mastergear.Views.CreateTrail = Backbone.View.extend({
     createTrail : function (){
         var gear = new Mastergear.Models.Trail({
             name : this.$el.find(".trail-name").val(),
+            location : this.$el.find(".location").val(),
+            longitude : this.$el.find(".longitude").val(),
+            latitude : this.$el.find(".latitude").val(),
+            maxElevation : this.$el.find(".maxElevation").val(),
             id : -1
         });
         this.model.changeModelTo(gear);

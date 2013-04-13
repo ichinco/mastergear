@@ -16,9 +16,7 @@ Mastergear.Views.Trail = Backbone.View.extend({
         var template = this._getTemplate();
         var finalHtml = "";
         var attributes = this.model.attributes;
-        console.log(attributes);
         if (attributes.id != null){
-            console.log("rendering");
             finalHtml += (template(attributes));
             this.$el.html(finalHtml);
         }
