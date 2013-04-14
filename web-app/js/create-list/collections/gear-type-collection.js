@@ -4,10 +4,14 @@ Mastergear.Collection = Mastergear.Collection || {};
 Mastergear.Collection.GearType = Backbone.Collection.extend({
 
     suggestionModel : null,
+    model : Mastergear.Models.GearListGear,
+    gearType : null,
+    listId : null,
+    url : "/mastergear/gearListGear/list",
 
-    initialize : function(){
-        this.model = Mastergear.Models.Gear;
-        this.url = "/mastergear/gearListGear"
+    initialize : function(attr){
+        this.gearType = attr.gearType;
+        this.listId = attr.listId;
     },
 
     setSelectionModel : function(selectionModel) {
@@ -16,7 +20,27 @@ Mastergear.Collection.GearType = Backbone.Collection.extend({
     },
 
     gearSelected : function(){
-        this.add(this.suggestionModel.getSelected());
+        this.addGearList(this.suggestionModel.getSelected());
+    },
+
+    addGearList : function(gear){
+        var gearListGear = new Mastergear.Models.GearListGear();
+        var attr = gear.attributes;
+        console.log(gear.attributes);
+        attr.gearType = this.gearType;
+        attr.listId = this.listId;
+        gearListGear.set(attr);
+        gearListGear.save();
+        this.add(gearListGear);
         this.trigger('new-gear-dialog-close');
+    },
+
+    fetch: function(options) {
+        options || (options = {});
+        var data = (options.data || {});
+        options.data = {listId: this.listId, gearType: this.gearType};
+
+        return Backbone.Collection.prototype.fetch.call(this, options);
     }
+
 });

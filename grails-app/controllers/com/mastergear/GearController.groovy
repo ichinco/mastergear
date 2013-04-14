@@ -93,7 +93,7 @@ class GearController {
 
         Provider p = new Provider();
         p.gender = GearGender.valueOf(params.gender);
-        p.type = ProviderType.valueOf(params.type);
+        p.type = ProviderType.valueOf(params.providerType);
         p.imageId = params.imageId;
         p.providerId = params.providerId;
         p.gear = gear;

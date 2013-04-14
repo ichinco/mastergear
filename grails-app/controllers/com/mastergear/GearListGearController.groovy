@@ -4,15 +4,23 @@ import org.springframework.dao.DataIntegrityViolationException
 
 class GearListGearController {
 
-    static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+    static allowedMethods = [save: ["PUT","POST"], update: "POST", delete: "DELETE"]
 
     def index() {
         redirect(action: "list", params: params)
     }
 
     def list(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        [gearListGearInstanceList: GearListGear.list(params), gearListGearInstanceTotal: GearListGear.count()]
+        int listId = Integer.parseInt(params.listId);
+        GearList list = GearList.get(listId);
+        GearType type = GearType.valueOf(params.gearType.toUpperCase());
+        List<GearListGear> gearListGear = GearListGear.findAllByListAndGearType(list, type);
+        def gear = gearListGear.collect({
+            it.gear
+        })
+        render (contentType:'text/json'){
+            gear
+        }
     }
 
     def create() {
@@ -20,14 +28,39 @@ class GearListGearController {
     }
 
     def save() {
-        def gearListGearInstance = new GearListGear(params)
+        def gearListGearInstance = new GearListGear()
+        gearListGearInstance.quantity = 1;
+        gearListGearInstance.notes = "";
+        gearListGearInstance.gearType = GearType.valueOf(params.gear.gearType.toUpperCase());
+
+        String gearId = params.gear.id;
+        if (gearId) {
+            Gear gear = Gear.get(Integer.parseInt(gearId));
+            gearListGearInstance.gear = gear;
+        }
+
+        String listId = params.gear.listId;
+        if (listId){
+            GearList list = GearList.get(Integer.parseInt(listId));
+            gearListGearInstance.list = list;
+        }
+
+        GearListGear gearListGear = GearListGear.findByGearAndListAndGearType(gearListGearInstance.gear,gearListGearInstance.list,gearListGearInstance.gearType);
+
+        if (gearListGear){
+            render (contentType:'text/json'){
+                gearListGearInstance: gearListGear
+            }
+        }
+
         if (!gearListGearInstance.save(flush: true)) {
             render(view: "create", model: [gearListGearInstance: gearListGearInstance])
             return
         }
 
-        flash.message = message(code: 'default.created.message', args: [message(code: 'gearListGear.label', default: 'GearListGear'), gearListGearInstance.id])
-        redirect(action: "show", id: gearListGearInstance.id)
+        render (contentType:'text/json'){
+            gearListGearInstance: gearListGearInstance
+        }
     }
 
     def show(Long id) {

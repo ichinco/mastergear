@@ -65,6 +65,7 @@ class GearListController {
         def clothes = GearListGear.findAllByListAndGearType(list, GearType.CLOTHES);
         def electronics = GearListGear.findAllByListAndGearType(list, GearType.ELECTRONICS);
         def emergency = GearListGear.findAllByListAndGearType(list, GearType.EMERGENCY);
+        def other = GearListGear.findAllByListAndGearType(list, GearType.OTHER);
 
         Weight weight = gearListService.getListWeight(list);
 
@@ -78,6 +79,7 @@ class GearListController {
                         "clothes" : clothes,
                         "electronics" : electronics,
                         "emergency" : emergency,
+                        "other" : other,
                         "totalWeight" : weight])
     }
 }

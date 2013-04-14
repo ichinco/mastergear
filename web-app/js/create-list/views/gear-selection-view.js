@@ -25,8 +25,10 @@ Mastergear.Views.GearSelection = Backbone.View.extend({
         var template = this._getTemplate();
         var finalHtml = "";
         _.each(this.model.models, function (e){
-            var attributes = e.attributes;
-            finalHtml += (template(attributes));
+            if (e.attributes.id){
+                var attributes = e.attributes;
+                finalHtml += (template(attributes));
+            }
         });
         this.$el.html(finalHtml);
         return this;

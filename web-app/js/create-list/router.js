@@ -7,7 +7,11 @@ Mastergear.Router = Backbone.Router.extend({
 
     buildAddView : function(cssClass) {
         var possiblePackModel = new Mastergear.Collection.GearList();
-        var packModel = new Mastergear.Collection.GearType();
+        var packModel = new Mastergear.Collection.GearType({
+            listId : 7,
+            gearType : cssClass
+        });
+        packModel.fetch({remove : true, add : true, change : true});
         packModel.setSelectionModel(possiblePackModel);
 
         var newGearDialog = new Mastergear.Views.AddGearDialog({

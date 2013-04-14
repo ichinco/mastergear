@@ -27,8 +27,7 @@ Mastergear.Views.CreateGear = Backbone.View.extend({
             providerId : this.$el.find(".providerId").val(),
             id : -1
         });
-        gear.save();
-        this.model.add(gear);
-        this.model.trigger('new-gear-dialog-close');
+        gear.save({}, {async : false});
+        this.model.addGearList(gear);
     }
 });
