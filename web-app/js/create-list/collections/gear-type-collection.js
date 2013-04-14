@@ -7,6 +7,7 @@ Mastergear.Collection.GearType = Backbone.Collection.extend({
 
     initialize : function(){
         this.model = Mastergear.Models.Gear;
+        this.url = "/mastergear/gearListGear"
     },
 
     setSelectionModel : function(selectionModel) {

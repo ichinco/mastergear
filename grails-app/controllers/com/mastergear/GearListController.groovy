@@ -2,12 +2,17 @@ package com.mastergear
 
 class GearListController {
 
+    def gearListService;
+
     def index() {
         render(view: 'start')
     }
 
     def create() {
-        render view: "create"
+        int id = Integer.parseInt(params.id);
+        GearList list = GearList.get(id);
+
+        render view: "create", model: [list : list, totalWeight: gearListService.getListWeight(list)]
     }
 
     def initialize() {
@@ -61,10 +66,7 @@ class GearListController {
         def electronics = GearListGear.findAllByListAndGearType(list, GearType.ELECTRONICS);
         def emergency = GearListGear.findAllByListAndGearType(list, GearType.EMERGENCY);
 
-        def gear = GearListGear.findAllByList(list);
-        double totalWeight = gear.inject(0, {
-            acc, val -> acc + val.gear.weight
-        })
+        Weight weight = gearListService.getListWeight(list);
 
         render(view: 'list',
                 model: ["list" : list,
@@ -76,6 +78,6 @@ class GearListController {
                         "clothes" : clothes,
                         "electronics" : electronics,
                         "emergency" : emergency,
-                        "totalWeight" : new Weight(totalWeight)])
+                        "totalWeight" : weight])
     }
 }

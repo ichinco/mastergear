@@ -33,7 +33,7 @@
             <div>city, state: <g:textField name="location" class="location" /></div>
             <div>latitude: <g:textField name="latitude" class="latitude" /></div>
             <div>longitude: <g:textField name="longitude" class="longitude" /></div>
-            <div>max elevation: <g:textField name="maxElevation" class="maxElevation" /></div>
+            <div>max elevation: <g:textField name="maxElevation" class="maxElevation" />ft</div>
             <button class="create">create trail</button>
         </div>
     </div>

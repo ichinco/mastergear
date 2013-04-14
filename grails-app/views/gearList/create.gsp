@@ -6,6 +6,8 @@
 --%>
 
 <%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page import="com.mastergear.ProviderType; com.mastergear.GearGender; com.mastergear.HikeType; com.mastergear.Season" contentType="text/html;charset=UTF-8" %>
+
 <html>
 <head>
     <title>Create a new gear list</title>
@@ -13,6 +15,8 @@
     <r:require module="createlist" />
 </head>
 <body>
+    <g:render template="gearSummary" model="[list:list, totalWeight:totalWeight]" />
+
     <g:render template="createGearType" model="[gearType:'pack']" />
     <g:render template="createGearType" model="[gearType:'sleep']" />
     <g:render template="createGearType" model="[gearType:'cooking']" />
