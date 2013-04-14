@@ -5,7 +5,7 @@ Mastergear.Models.GearListGear = Backbone.Model.extend({
 
     initialize : function(){
         _.bindAll(this);
-        this.url = "/mastergear/gearListGear";
+        this.urlRoot = "/mastergear/gearListGear";
     }
 
 });

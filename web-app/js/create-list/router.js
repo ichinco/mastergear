@@ -34,7 +34,7 @@ Mastergear.Router = Backbone.Router.extend({
             model : packModel
         });
 
-        var selectedGearView = new Mastergear.Views.GearSelection({
+        var selectedGearView = new Mastergear.Views.GearType({
             el : '.' + cssClass + ' .added-gear',
             model : packModel
         });

@@ -56,7 +56,6 @@ Mastergear.Views.GearSelectionInput = Backbone.View.extend({
     },
 
     close : function (){
-        console.log(this.model);
         this.model.create({
             name : this.$el.children('.name').first().val(),
             description : this.$el.children('.description').first().val()

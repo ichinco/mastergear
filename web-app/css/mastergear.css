@@ -117,6 +117,19 @@ button:hover{
     background: #5600C7;
 }
 
+.gear-delete {
+    display : none;
+}
+
+.added-gear .gear-delete {
+    display: inline-block;
+    margin: 0px 5px;
+}
+
+.gear-object {
+    display: inline-block;
+}
+
 /* initialize list */
 .trail-selection {
     display:none;

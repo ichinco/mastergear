@@ -1,5 +1,6 @@
 package com.mastergear
 
+import grails.converters.deep.JSON
 import org.springframework.dao.DataIntegrityViolationException
 
 class GearListGearController {
@@ -15,12 +16,9 @@ class GearListGearController {
         GearList list = GearList.get(listId);
         GearType type = GearType.valueOf(params.gearType.toUpperCase());
         List<GearListGear> gearListGear = GearListGear.findAllByListAndGearType(list, type);
-        def gear = gearListGear.collect({
-            it.gear
-        })
-        render (contentType:'text/json'){
-            gear
-        }
+
+        JSON.use('deep')
+        render gearListGear as JSON
     }
 
     def create() {
@@ -115,21 +113,22 @@ class GearListGearController {
     }
 
     def delete(Long id) {
-        def gearListGearInstance = GearListGear.get(id)
+        def gearListGearInstance = GearListGear.get(id);
         if (!gearListGearInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'gearListGear.label', default: 'GearListGear'), id])
-            redirect(action: "list")
             return
         }
 
         try {
             gearListGearInstance.delete(flush: true)
             flash.message = message(code: 'default.deleted.message', args: [message(code: 'gearListGear.label', default: 'GearListGear'), id])
-            redirect(action: "list")
         }
         catch (DataIntegrityViolationException e) {
             flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'gearListGear.label', default: 'GearListGear'), id])
-            redirect(action: "show", id: id)
+        }
+
+        render (contentType:"text/json") {
+            success : true
         }
     }
 }

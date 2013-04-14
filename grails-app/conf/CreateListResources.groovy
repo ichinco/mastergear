@@ -29,6 +29,7 @@ modules = {
         resource url: 'js/create-list/views/new-gear-create-view.js'
         resource url: 'js/create-list/views/no-matches-view.js'
         resource url: 'js/create-list/views/gear-hint-view.js'
+        resource url: 'js/create-list/views/gear-type-view.js'
     }
     createlist {
         dependsOn 'createlistView'

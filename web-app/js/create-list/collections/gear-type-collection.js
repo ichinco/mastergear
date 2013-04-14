@@ -26,13 +26,18 @@ Mastergear.Collection.GearType = Backbone.Collection.extend({
     addGearList : function(gear){
         var gearListGear = new Mastergear.Models.GearListGear();
         var attr = gear.attributes;
-        console.log(gear.attributes);
         attr.gearType = this.gearType;
         attr.listId = this.listId;
         gearListGear.set(attr);
-        gearListGear.save();
+        gearListGear.save({}, {async : false});
         this.add(gearListGear);
         this.trigger('new-gear-dialog-close');
+    },
+
+    removeGear : function(gear){
+        gear.destroy({wait: true,
+                      data : {listId : this.listId, gearType : this.gearType},
+                      processData : true});
     },
 
     fetch: function(options) {
