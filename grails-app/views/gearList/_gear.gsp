@@ -1,5 +1,4 @@
 <%--
-  Created by IntelliJ IDEA.
   User: denise
   Date: 3/26/13
   Time: 9:55 PM
@@ -19,6 +18,9 @@
                     BUY AT ${provider.type}
                 </div>
             </div>
+        </div>
+        <div class="gear-notes">
+            ${notes}
         </div>
     </g:each>
     %{--<div>${gear.notes}</div>--}%

@@ -28,12 +28,9 @@ class GearListGearController {
     def save() {
         def gearListGearInstance = new GearListGear()
         gearListGearInstance.quantity = 1;
-        gearListGearInstance.notes = params.notes;
+        gearListGearInstance.notes = params.notes ? params.notes : "";
 
-        String typeString = params.gear.gearType;
-        if (!typeString) {
-            typeString = params.gearType.name;
-        }
+        def typeString = params.gearType.name;
         gearListGearInstance.gearType = GearType.valueOf(typeString.toUpperCase());
 
         String gearId = params.gear.id;
@@ -42,10 +39,7 @@ class GearListGearController {
             gearListGearInstance.gear = gear;
         }
 
-        String listId = params.gear.listId;
-        if (!listId) {
-            listId = params.list.id;
-        }
+        String listId = params.list.id;
         if (listId){
             GearList list = GearList.get(Integer.parseInt(listId));
             gearListGearInstance.list = list;
