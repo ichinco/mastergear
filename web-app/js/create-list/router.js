@@ -5,7 +5,7 @@ Mastergear.Router = Backbone.Router.extend({
         this.main();
     },
 
-    buildAddView : function(cssClass) {
+    buildAddView : function(cssClass, reviewView) {
         var possiblePackModel = new Mastergear.Collection.GearList();
         var packModel = new Mastergear.Collection.GearType({
             listId : 7,
@@ -36,7 +36,8 @@ Mastergear.Router = Backbone.Router.extend({
 
         var selectedGearView = new Mastergear.Views.GearType({
             el : '.' + cssClass + ' .added-gear',
-            model : packModel
+            model : packModel,
+            reviewView : reviewView
         });
 
         var gearHintView = new Mastergear.Views.GearHintView({
@@ -58,15 +59,19 @@ Mastergear.Router = Backbone.Router.extend({
     },
 
     main: function() {
-        this.buildAddView('pack');
-        this.buildAddView('sleep');
-        this.buildAddView('cooking');
-        this.buildAddView('food');
-        this.buildAddView('water');
-        this.buildAddView('clothes');
-        this.buildAddView('electronics');
-        this.buildAddView('emergency');
-        this.buildAddView('other');
+        var createReviewView = new Mastergear.Views.CreateReview({
+            el : '#review-gear'
+        });
+
+        this.buildAddView('pack',createReviewView);
+        this.buildAddView('sleep',createReviewView);
+        this.buildAddView('cooking',createReviewView);
+        this.buildAddView('food',createReviewView);
+        this.buildAddView('water',createReviewView);
+        this.buildAddView('clothes',createReviewView);
+        this.buildAddView('electronics',createReviewView);
+        this.buildAddView('emergency',createReviewView);
+        this.buildAddView('other',createReviewView);
     }
 });
 

@@ -130,6 +130,18 @@ button:hover{
     display: inline-block;
 }
 
+#review-gear {
+    display : none;
+    position:fixed;
+    width:80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+    background: #FFFFFF;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
 /* initialize list */
 .trail-selection {
     display:none;

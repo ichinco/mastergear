@@ -15,6 +15,10 @@
     <r:require module="createlist" />
 </head>
 <body>
+    <div id="review-gear">
+        <g:textArea name="gear-review" class="gear-review" rows="4" cols="75" />
+        <button class="create-review">create review</button>
+    </div>
     <g:render template="gearSummary" model="[list:list, totalWeight:totalWeight]" />
 
     <g:render template="createGearType" model="[gearType:'pack']" />

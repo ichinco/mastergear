@@ -2,13 +2,24 @@ var Mastergear = Mastergear || {};
 Mastergear.Views = Mastergear.Views || {};
 
 Mastergear.Views.GearType = Backbone.View.extend({
+    reviewView : null,
+
     events: {
-        'click .gear-delete': 'deleteGear'
+        'click .gear-delete': 'deleteGear',
+        'click .review-gear' : 'reviewGear'
     },
 
-    initialize : function() {
+    initialize : function(attr) {
         _.bindAll(this);
         this.model.bind('all', this.render);
+        this.reviewView = attr.reviewView;
+    },
+
+    reviewGear : function(evt) {
+        var gearId = $(evt.target).data('gear-id'),
+            gear = this.model.get(gearId);
+        this.reviewView.setModel(gear);
+        gear.trigger('review');
     },
 
     deleteGear : function(evt){

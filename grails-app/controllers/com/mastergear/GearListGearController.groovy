@@ -5,7 +5,7 @@ import org.springframework.dao.DataIntegrityViolationException
 
 class GearListGearController {
 
-    static allowedMethods = [save: ["PUT","POST"], update: "POST", delete: "DELETE"]
+    static allowedMethods = [save: ["PUT","POST"], update: ["PUT","POST"], delete: "DELETE"]
 
     def index() {
         redirect(action: "list", params: params)
@@ -28,8 +28,13 @@ class GearListGearController {
     def save() {
         def gearListGearInstance = new GearListGear()
         gearListGearInstance.quantity = 1;
-        gearListGearInstance.notes = "";
-        gearListGearInstance.gearType = GearType.valueOf(params.gear.gearType.toUpperCase());
+        gearListGearInstance.notes = params.notes;
+
+        String typeString = params.gear.gearType;
+        if (!typeString) {
+            typeString = params.gearType.name;
+        }
+        gearListGearInstance.gearType = GearType.valueOf(typeString.toUpperCase());
 
         String gearId = params.gear.id;
         if (gearId) {
@@ -38,17 +43,12 @@ class GearListGearController {
         }
 
         String listId = params.gear.listId;
+        if (!listId) {
+            listId = params.list.id;
+        }
         if (listId){
             GearList list = GearList.get(Integer.parseInt(listId));
             gearListGearInstance.list = list;
-        }
-
-        GearListGear gearListGear = GearListGear.findByGearAndListAndGearType(gearListGearInstance.gear,gearListGearInstance.list,gearListGearInstance.gearType);
-
-        if (gearListGear){
-            render (contentType:'text/json'){
-                gearListGearInstance: gearListGear
-            }
         }
 
         if (!gearListGearInstance.save(flush: true)) {
@@ -83,33 +83,20 @@ class GearListGearController {
         [gearListGearInstance: gearListGearInstance]
     }
 
-    def update(Long id, Long version) {
+    def update(Long id) {
         def gearListGearInstance = GearListGear.get(id)
-        if (!gearListGearInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'gearListGear.label', default: 'GearListGear'), id])
-            redirect(action: "list")
-            return
-        }
-
-        if (version != null) {
-            if (gearListGearInstance.version > version) {
-                gearListGearInstance.errors.rejectValue("version", "default.optimistic.locking.failure",
-                        [message(code: 'gearListGear.label', default: 'GearListGear')] as Object[],
-                        "Another user has updated this GearListGear while you were editing")
-                render(view: "edit", model: [gearListGearInstance: gearListGearInstance])
-                return
-            }
-        }
 
         gearListGearInstance.properties = params
 
         if (!gearListGearInstance.save(flush: true)) {
-            render(view: "edit", model: [gearListGearInstance: gearListGearInstance])
-            return
+            render (contentType:'text/json'){
+                gearListGearInstance: gearListGearInstance
+            }
         }
 
-        flash.message = message(code: 'default.updated.message', args: [message(code: 'gearListGear.label', default: 'GearListGear'), gearListGearInstance.id])
-        redirect(action: "show", id: gearListGearInstance.id)
+        render (contentType:'text/json'){
+            gearListGearInstance: gearListGearInstance
+        }
     }
 
     def delete(Long id) {
