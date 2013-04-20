@@ -23,5 +23,7 @@
             ${notes}
         </div>
     </g:each>
-    %{--<div>${gear.notes}</div>--}%
+    <div class="gear-notes">
+        ${notes}
+    </div>
 </html>
