@@ -75,12 +75,18 @@ insert into provider (id, version, type, provider_id, image_id, gear_id, gender,
 -- sun screen
 (19,1,'AMAZON','B007AJNY6G','31NprAyHFrL.jpg',13,'UNISEX','2013-03-27','2013-03-27');
 
+insert into trail (id, version, name, location, latitude, longitude, max_elevation, date_created, last_updated) VALUES 
+(1,1,'Franconia Notch State Park','Lincoln, NH',44.0456,-71.6706,5089,'2013-04-20','2013-04-20');
+
+insert into gear_user (id, version, username, password, enabled, account_expired, account_locked, password_expired, date_created, last_updated) VALUES
+(1,1,'mountaindude','',true,false,false,false,'2013-04-20','2013-04-20');
+
 insert into gear_list (id, version, season, trail_id, hike_type, list_description, date_created, last_updated, user_id) VALUES
 (1,1,'SUMMER',1,'DAY','This is a basic dayhiking gear list, which should be suitable for anyone hiking in NH in the milder months','2013-03-27','2013-03-27',1);
 
 insert into gear_list_gear (id, version, gear_id, list_id, quantity, notes, gear_type, date_created, last_updated) VALUES
 (1,1,1,1,1,'','PACK','2013-03-27','2013-03-27'),
-(2,1,2,1,2,'','WATER','2013-03-27','2013-03-27'),
+(2,1,2,1,2,'I guess I''m old fashioned, but I like carrying my water in sturdy nalgene bottles.','WATER','2013-03-27','2013-03-27'),
 (3,1,4,1,1,'','CLOTHES','2013-03-27','2013-03-27'),
 (4,1,6,1,1,'','CLOTHES','2013-03-27','2013-03-27'),
 (5,1,7,1,1,'','CLOTHES','2013-03-27','2013-03-27'),

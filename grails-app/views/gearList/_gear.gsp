@@ -1,5 +1,4 @@
 <%--
-  Created by IntelliJ IDEA.
   User: denise
   Date: 3/26/13
   Time: 9:55 PM
@@ -20,6 +19,10 @@
                 </div>
             </div>
         </div>
+
     </g:each>
+    <div class="gear-notes">
+        ${notes}
+    </div>
     %{--<div>${gear.notes}</div>--}%
 </html>
