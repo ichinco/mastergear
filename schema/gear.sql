@@ -68,7 +68,6 @@ insert into provider (id, version, type, provider_id, image_id, gear_id, gender,
 (14,1,'REI','843844','ii/5b35f00f-62d7-4490-9dfb-25e58e3f7862',10,'UNISEX','2013-03-27','2013-03-27'),
 (15,1,'AMAZON','B005UUSAAM','519GKGAFxoL._SL1000_',10,'UNISEX','2013-03-27','2013-03-27'),
 -- compass
-(16,1,'REI','408150','',11,'UNISEX','2013-03-27','2013-03-27'),
 (17,1,'AMAZON','B000FEWA6S','31005HKCD1L',11,'UNISEX','2013-03-27','2013-03-27'),
 -- insect repllent
 (18,1,'AMAZON','B000PGJ4LA','71FzuKnKe2L._SL1500_',12,'UNISEX','2013-03-27','2013-03-27'),
