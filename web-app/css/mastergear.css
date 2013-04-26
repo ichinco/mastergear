@@ -42,6 +42,7 @@ body {
 .gear-data {
     width: 100%;
     margin: 5px 0px;
+    font-size: 13px;
 }
 
 .gear-notes {
