@@ -81,3 +81,21 @@ body {
     display: block;
 }
 
+.map {
+    display: inline-block;
+}
+
+.list-info {
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: top;
+}
+
+.provider-links {
+    display: block;
+}
+
+.provider-links a {
+    margin : 0px auto;
+}
+
