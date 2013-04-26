@@ -19,6 +19,7 @@
                 <g:message code="providertype.html.${provider.type.toString().toLowerCase()}" args="${ [provider.providerId, provider.imageId] }" />
             </div>
             <div class="provider-links">
+                Buy from:
                 <g:each in="${gear.providers}" var="p">
                     <g:message code="providertype.html.icon.${p.type.toString().toLowerCase()}" args="${ [p.providerId, provider.imageId] }" />
                 </g:each>
