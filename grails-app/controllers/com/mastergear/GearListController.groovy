@@ -50,7 +50,7 @@ class GearListController {
             flash.message = "gearlist save error";
         }
 
-        redirect(action: "create")
+        redirect(action: "create", params: [id : gearList.id])
     }
 
     def show() {

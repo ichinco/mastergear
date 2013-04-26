@@ -8,7 +8,7 @@ Mastergear.Router = Backbone.Router.extend({
     buildAddView : function(cssClass, reviewView) {
         var possiblePackModel = new Mastergear.Collection.GearList();
         var packModel = new Mastergear.Collection.GearType({
-            listId : 7,
+            listId : Mastergear.listId,
             gearType : cssClass
         });
         packModel.fetch({remove : true, add : true, change : true});

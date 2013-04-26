@@ -30,5 +30,10 @@
     <g:render template="createGearType" model="[gearType:'electronics']" />
     <g:render template="createGearType" model="[gearType:'emergency']" />
     <g:render template="createGearType" model="[gearType:'other']" />
+
+    <script type="text/javascript">
+    var Mastergear = Mastergear || {};
+    Mastergear.listId = ${list.id};
+    </script>
 </body>
 </html>
