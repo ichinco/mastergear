@@ -100,3 +100,7 @@ body {
     margin : 0px auto;
 }
 
+.lists a {
+    display : block;
+}
+
