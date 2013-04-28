@@ -1,5 +1,5 @@
 body {
-    background-color: #116937;
+    background-color: #a0d070;
     font-family: 'Lato', sans-serif;
 }
 
@@ -129,15 +129,15 @@ body {
     text-decoration: none;
     padding: 5px 20px;
     width: 100%;
-    color:#116937;
+    color:#a0d070;
 }
 
 .navigation a:visited {
-    color: #116937;
+    color: #a0d070;
 }
 
 .navigation li:hover {
-    background-color: #116937;
+    background-color: #a0d070;
 }
 
 .navigation li:hover a {
