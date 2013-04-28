@@ -95,3 +95,7 @@ insert into gear_list_gear (id, version, gear_id, list_id, quantity, notes, gear
 (9,1,11,1,1,'','EMERGENCY','2013-03-27','2013-03-27'),
 (10,1,12,1,1,'','OTHER','2013-03-27','2013-03-27'),
 (11,1,13,1,1,'','OTHER','2013-03-27','2013-03-27');
+
+insert into user_profile (id, version, user_id, about, gear_philosophy, twitter_id, favorite_trail_id, date_created,last_updated) VALUES
+(1,1,1,'There''s no feeling better than the struggle against nature, the strain and the sweat. I live for the tops of mountains. And the enormous steak I order when I get to the bottom.',
+'I''m a practical backpacker. I lighten the load as much as I can, but I wouldn''t say I''m an ultralight expert','',1,'2013-04-28','2013-04-28');
