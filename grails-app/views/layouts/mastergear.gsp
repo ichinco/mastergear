@@ -18,11 +18,11 @@
     <r:layoutResources />
 </head>
 <body>
+    <g:render template="/layouts/navigation" />
     <g:layoutBody/>
     <g:javascript library="application"/>
     <r:layoutResources />
     <script type="text/javascript">
-
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-39726351-1']);
       _gaq.push(['_trackPageview']);

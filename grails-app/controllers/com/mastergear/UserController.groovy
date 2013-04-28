@@ -25,4 +25,10 @@ class UserController {
                         lists : lists,
                         gear : gear];
     }
+
+    def list(){
+        render view: "list", model:[
+            users : GearUser.list()
+        ]
+    }
 }

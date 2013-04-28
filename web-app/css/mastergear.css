@@ -104,3 +104,43 @@ body {
     display : block;
 }
 
+/*navigation*/
+.navigation {
+    display: block;
+    position: fixed;
+    top: 20%;
+    left: 0px;
+}
+
+.navigation ul {
+    display: block;
+    padding: 0px;
+    width: 100%;
+}
+
+.navigation li {
+    display: block;
+    list-style-type: none;
+    background-color: #FFFFFF;
+}
+
+.navigation a {
+    display: block;
+    text-decoration: none;
+    padding: 5px 20px;
+    width: 100%;
+    color:#116937;
+}
+
+.navigation a:visited {
+    color: #116937;
+}
+
+.navigation li:hover {
+    background-color: #116937;
+}
+
+.navigation li:hover a {
+    color: #FFFFFF;
+}
+

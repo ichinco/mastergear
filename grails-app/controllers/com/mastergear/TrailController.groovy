@@ -22,4 +22,10 @@ class TrailController {
                 gear : gear
         ]
     }
+
+    def list(){
+        render view: "list", model:[
+            trails : Trail.list()
+        ]
+    }
 }

@@ -31,7 +31,7 @@
         </div>
     </div>
     <div class="bubble">
-        <h2>Favorite Gear</h2>
+        <h2>Popular Gear</h2>
         <g:each in="${gear}" var="g">
             <g:render template="/gearList/gear" model="[gear:g, quantity:1, notes: '']"/>
         </g:each>
