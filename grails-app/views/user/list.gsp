@@ -10,6 +10,7 @@
 <html>
 <head>
     <meta name="layout" content="mastergear">
+    <title>users - feathergear</title>
 </head>
 <body>
     <div class="bubble title" >

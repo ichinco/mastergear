@@ -15,6 +15,7 @@
 <html>
 <head>
     <meta name="layout" content="mastergear">
+    <title><g:render template="title" model="[list: list]" /> - feathergear</title>
 </head>
 <body>
     <div class="bubble">
