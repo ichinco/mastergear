@@ -12,12 +12,21 @@
     <meta name="layout" content="mastergear">
 </head>
 <body>
+    <div class="bubble" >
+        <h1>feathergear</h1>
+        <div>
+            feathergear is an opportunity to see what gear the experts are
+            taking on their trips and get advice on what to take on your own
+            adventures.
+        </div>
+    </div>
     <div class="bubble">
         <h1><g:message code="hiketype.day" /></h1>
         <div class="lists">
             <g:each in="${com.mastergear.GearList.findAllByHikeType(HikeType.DAY)}" var="list">
-                <g:link controller="GearList" action="showList" params="[id : list.id]"><g:render template="title" model="[list: list]" /></g:link>
+                <g:render template="gearList" model="[list : list]" />
             </g:each>
+            <g:link class="prosp" controller="prospectiveUser" action="create" params="[category:'Create']"><button>Create List.</button></g:link>
         </div>
     </div>
 
@@ -25,8 +34,9 @@
         <h1><g:message code="hiketype.backpacking" /></h1>
         <div class="lists">
             <g:each in="${com.mastergear.GearList.findAllByHikeType(HikeType.BACKPACKING)}" var="list">
-                <g:link controller="GearList" action="showList" params="[id : list.id]"><g:render template="title" model="[list: list]" /></g:link>
+                <g:render template="gearList" model="[list : list]" />
             </g:each>
+            <g:link class="prosp" controller="prospectiveUser" action="create" params="[category:'Create']"><button>Create List.</button></g:link>
         </div>
     </div>
 
@@ -34,8 +44,9 @@
         <h1><g:message code="hiketype.carcamping" /></h1>
         <div class="lists">
             <g:each in="${com.mastergear.GearList.findAllByHikeType(HikeType.CARCAMPING)}" var="list">
-                <g:link controller="GearList" action="showList" params="[id : list.id]"><g:render template="title" model="[list: list]" /></g:link>
+                <g:render template="gearList" model="[list : list]" />
             </g:each>
+            <g:link class="prosp" controller="prospectiveUser" action="create" params="[category:'Create']"><button>Create List.</button></g:link>
         </div>
     </div>
 </body>

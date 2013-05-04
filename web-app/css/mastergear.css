@@ -100,10 +100,6 @@ body {
     margin : 0px auto;
 }
 
-.lists a {
-    display : block;
-}
-
 /*navigation*/
 .navigation {
     display: block;
@@ -175,5 +171,34 @@ form input[type="submit"]:hover{
 form {
     margin-top: 20px;
     margin-bottom: 0px;
+}
+
+.lists img {
+    display : block;
+    max-width: 200px;
+    height:200px;
+}
+
+.lists .name {
+    display : block;
+}
+
+.lists a {
+    display:inline-block;
+    width : 200px;
+    margin: 0px 15px;
+}
+
+.changeit a {
+    display: block;
+}
+
+.changeit {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.lists .prosp{
+    vertical-align: top;
 }
 
