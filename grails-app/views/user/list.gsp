@@ -12,6 +12,10 @@
     <meta name="layout" content="mastergear">
 </head>
 <body>
+    <div class="bubble title" >
+        <h1>feathergear</h1>
+        <div class="tagline">Find out what your gear adds up to.</div>
+    </div>
     <div class="bubble">
         <h1>Users</h1>
         <div class="lists">

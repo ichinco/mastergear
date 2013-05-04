@@ -29,7 +29,7 @@
         <h2>Gear Lists</h2>
         <div class="lists">
             <g:each in="${lists}" var="list">
-                <g:link controller="GearList" action="showList" params="[id : list.id]"><g:render template="/gearList/title" model="[list: list]" /></g:link>
+                <g:render template="/gearList/gearList" model="[list : list]" />
             </g:each>
         </div>
     </div>

@@ -47,8 +47,6 @@
             }}(document,"script","twitter-wjs");
 
     </script>
-    <script type="text/javascript" src="http://www.avantlink.com/affiliate_app_confirm.php?mode=js&authResponse=22db74f49822c3ed65b564341cdad08d8d1afbd9"></script>
-
     <script type="text/javascript">
     // Outbound Link Tracking with Google Analytics
     // Requires jQuery 1.7 or higher (use .live if using a lower version)
