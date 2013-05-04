@@ -31,15 +31,6 @@
     </div>
 
     <div class="bubble">
-        <h1><g:message code="hiketype.thru" /></h1>
-        <div class="lists">
-            <g:each in="${com.mastergear.GearList.findAllByHikeType(HikeType.THRU)}" var="list">
-                <g:link controller="GearList" action="showList" params="[id : list.id]"><g:render template="title" model="[list: list]" /></g:link>
-            </g:each>
-        </div>
-    </div>
-
-    <div class="bubble">
         <h1><g:message code="hiketype.carcamping" /></h1>
         <div class="lists">
             <g:each in="${com.mastergear.GearList.findAllByHikeType(HikeType.CARCAMPING)}" var="list">
