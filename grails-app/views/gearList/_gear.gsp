@@ -27,12 +27,13 @@
         </div>
     </g:if>
 
-    <div class="changeit">
-        <g:link controller="prospectiveUser" action="create" params="[category:'SwitchIt']"><button>Switch it.</button></g:link>
-        <g:link controller="prospectiveUser" action="create" params="[category:'LeaveIt']"><button>Leave it home.</button></g:link>
-    </div>
-
     <div class="gear-notes">
         ${notes}
+        <div class="changeit">
+            I would:
+            <g:link controller="prospectiveUser" action="create" params="[category:'SwitchIt']"><button>Switch it.</button></g:link>
+            or
+            <g:link controller="prospectiveUser" action="create" params="[category:'LeaveIt']"><button>Leave it.</button></g:link>
+        </div>
     </div>
 </html>

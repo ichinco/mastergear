@@ -94,6 +94,7 @@ body {
 
 .provider-links {
     display: block;
+    width: 200px;
 }
 
 .provider-links a {
@@ -199,12 +200,13 @@ form {
 }
 
 .changeit a {
-    display: block;
+    display: inline-block;
 }
 
 .changeit {
     display: inline-block;
-    vertical-align: top;
+    margin-top: 10px;
+    line-height: 100%;
 }
 
 .lists .prosp{
