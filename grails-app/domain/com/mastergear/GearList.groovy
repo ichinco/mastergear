@@ -9,13 +9,16 @@ class GearList {
     Trail trail
     HikeType hikeType
     String listDescription
+    String imageUrl;
 
     GearUser user
 
     static constraints = {
+        imageUrl nullable: true
     }
 
     static mapping = {
         listDescription size: 500
+        imageUrl size: 500
     }
 }

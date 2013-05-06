@@ -1,4 +1,5 @@
 <%--
+  Created by IntelliJ IDEA.
   User: denise
   Date: 3/26/13
   Time: 9:34 PM
@@ -9,72 +10,21 @@
 <html>
 <head>
     <meta name="layout" content="mastergear">
+    <title><g:render template="title" model="[list: list]" /> - feathergear</title>
 </head>
 <body>
     <g:render template="gearSummary" model="[list:list, totalWeight:totalWeight]" />
 
-    <div class="bubble">
-        <h2><g:message code="geartype.pack" /></h2>
-        <g:each in="${pack}" var="g">
-            <g:render template="gear" model="[gear:g.gear, quantity: g.quantity, notes: g.notes]"/>
-        </g:each>
-    </div>
 
-    <div class="bubble">
-        <h2><g:message code="geartype.sleep" /></h2>
-        <g:each in="${sleep}" var="g">
-            <g:render template="gear" model="[gear:g.gear, quantity:g.quantity, notes: g.notes]"/>
-        </g:each>
-    </div>
-
-    <div class="bubble">
-        <h2><g:message code="geartype.cooking" /></h2>
-        <g:each in="${cooking}" var="g">
-            <g:render template="gear" model="[gear:g.gear, quantity:g.quantity, notes: g.notes]"/>
-        </g:each>
-    </div>
-
-    <div class="bubble">
-        <h2><g:message code="geartype.food" /></h2>
-        <g:each in="${food}" var="g">
-            <g:render template="gear" model="[gear:g.gear, quantity:g.quantity, notes: g.notes]"/>
-        </g:each>
-    </div>
-
-    <div class="bubble">
-        <h2><g:message code="geartype.water" /></h2>
-        <g:each in="${water}" var="g">
-            <g:render template="gear" model="[gear:g.gear, quantity:g.quantity, notes: g.notes]"/>
-        </g:each>
-    </div>
-
-    <div class="bubble">
-        <h2><g:message code="geartype.clothes" /></h2>
-        <g:each in="${clothes}" var="g">
-            <g:render template="gear" model="[gear:g.gear, quantity:g.quantity, notes: g.notes]"/>
-        </g:each>
-    </div>
-
-    <div class="bubble">
-        <h2><g:message code="geartype.electronics" /></h2>
-        <g:each in="${electronics}" var="g">
-            <g:render template="gear" model="[gear:g.gear, quantity:g.quantity, notes: g.notes]"/>
-        </g:each>
-    </div>
-
-    <div class="bubble">
-        <h2><g:message code="geartype.emergency" /></h2>
-        <g:each in="${emergency}" var="g">
-            <g:render template="gear" model="[gear:g.gear, quantity:g.quantity, notes: g.notes]"/>
-        </g:each>
-    </div>
-
-    <div class="bubble">
-        <h2><g:message code="geartype.other" /></h2>
-        <g:each in="${other}" var="g">
-            <g:render template="gear" model="[gear:g.gear, quantity:g.quantity, notes: g.notes]"/>
-        </g:each>
-    </div>
+    <g:render template="gearType" model="[gear : pack, code: 'geartype.pack']"/>
+    <g:render template="gearType" model="[gear : sleep, code: 'geartype.sleep']"/>
+    <g:render template="gearType" model="[gear : cooking, code: 'geartype.cooking']"/>
+    <g:render template="gearType" model="[gear : food, code: 'geartype.food']"/>
+    <g:render template="gearType" model="[gear : water, code: 'geartype.water']"/>
+    <g:render template="gearType" model="[gear : clothes, code: 'geartype.clothes']"/>
+    <g:render template="gearType" model="[gear : electronics, code: 'geartype.electronics']"/>
+    <g:render template="gearType" model="[gear : emergency, code: 'geartype.emergency']"/>
+    <g:render template="gearType" model="[gear : other, code: 'geartype.other']"/>
 
 </body>
 </html>

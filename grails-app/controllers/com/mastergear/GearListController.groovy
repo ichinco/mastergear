@@ -80,6 +80,6 @@ class GearListController {
                         "electronics" : electronics,
                         "emergency" : emergency,
                         "other" : other,
-                        "totalWeight" : weight])
+                        "totalWeight" : new Weight(totalWeight)])
     }
 }

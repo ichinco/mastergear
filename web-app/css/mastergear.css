@@ -1,5 +1,5 @@
 body {
-    background-color: #116937;
+    background-color: rgb(115, 136, 95);
     font-family: 'Lato', sans-serif;
 }
 
@@ -42,6 +42,7 @@ body {
 .gear-data {
     width: 100%;
     margin: 5px 0px;
+    font-size: 13px;
 }
 
 .gear-notes {
@@ -81,24 +82,70 @@ body {
     display: block;
 }
 
-/*create list view*/
-.add-gear {
-    display: none;
-    position:fixed;
-    width:80%;
-    height: 80%;
-    top: 10%;
-    left: 10%;
-    background: #FFFFFF;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
+.map {
+    display: inline-block;
 }
 
-.gear-create {
-    display: none;
+.list-info {
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: top;
 }
 
-button {
+.provider-links {
+    display: block;
+    width: 200px;
+}
+
+.provider-links a {
+    margin : 0px auto;
+}
+
+/*navigation*/
+.navigation {
+    display: block;
+    position: fixed;
+    left: 0px;
+    top : 0px;
+    height: 100%;
+    background-color: #FFFFFF;
+}
+
+.navigation ul {
+    display: block;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    top: 20%;
+}
+
+.navigation li {
+    display: block;
+    list-style-type: none;
+}
+
+.navigation a {
+    display: block;
+    text-decoration: none;
+    padding: 5px 20px;
+    width: 100%;
+    color:rgb(115, 136, 95);
+}
+
+.navigation a:visited {
+    color: rgb(115, 136, 95);
+}
+
+.navigation li:hover {
+    background-color: rgb(115, 136, 95);
+}
+
+.navigation li:hover a {
+    color: #FFFFFF;
+}
+
+button,
+form input[type="submit"]{
     border: none 0px;
     padding:  4px 10px;
     color: #FFFFFF;
@@ -120,44 +167,73 @@ button {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6D00FC', endColorstr='#5600C7',GradientType=0 ); /* IE6-9 */
 }
 
-button:hover{
+button:hover,
+form input[type="submit"]:hover{
     background: #5600C7;
 }
 
-.gear-delete {
-    display : none;
+form {
+    margin-top: 20px;
+    margin-bottom: 0px;
 }
 
-.added-gear .gear-delete {
-    display: inline-block;
-    margin: 0px 5px;
+.lists img {
+    display : block;
+    max-width: 150px;
+    height:100px;
 }
 
-.gear-object {
-    display: inline-block;
+.lists .name {
+    display : block;
 }
 
-#review-gear {
-    display : none;
-    position:fixed;
-    width:80%;
-    height: 80%;
-    top: 10%;
-    left: 10%;
-    background: #FFFFFF;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-}
-
-/* initialize list */
-.trail-selection {
-    display:none;
-}
-
-.selected-trail {
+.lists a {
     display:inline-block;
+    width : 150px;
+    margin: 10px 15px;
+    text-decoration: none;
+    color: rgb(115, 136, 95);
 }
 
-.create-trail {
-    display: none;
+.lists a:visited {
+    color: rgb(115, 136, 95);
 }
+
+.changeit a {
+    display: inline-block;
+}
+
+.changeit {
+    display: inline-block;
+    margin-top: 10px;
+    line-height: 100%;
+}
+
+.lists .prosp{
+    vertical-align: top;
+}
+
+.lists .prosp {
+    display: inline-block;
+    border: 1px #000000 dashed;
+    height: 100px;
+    width: 150px;
+}
+
+.lists .prosp div {
+    margin: 0px 7px;
+    display: inline-block;
+    line-height: 100px;
+}
+
+.title h1 {
+    font-size: 3em;
+    display: inline-block;
+    margin: 0px;
+}
+
+.tagline {
+    display: inline-block;
+    margin: 0 20px;
+}
+
