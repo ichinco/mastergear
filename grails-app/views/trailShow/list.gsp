@@ -21,7 +21,7 @@
         <h1>Trails</h1>
         <div class="lists">
             <g:each in="${trails}" var="trail">
-                <g:link controller="Trail" action="show" params="[id : trail.id]">${trail.name}</g:link>
+                <g:link controller="TrailShow" action="show" params="[id : trail.id]">${trail.name}</g:link>
             </g:each>
         </div>
     </div>
