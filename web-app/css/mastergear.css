@@ -144,6 +144,14 @@ body {
     color: #FFFFFF;
 }
 
+form input,
+form div,
+form select,
+button {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+}
+
 button,
 form input[type="submit"]{
     border: none 0px;
@@ -165,6 +173,10 @@ form input[type="submit"]{
     background: -ms-linear-gradient(top, #6D00FC,#5600C7); /* IE10+ */
     background: linear-gradient(to bottom, #6D00FC,#5600C7); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6D00FC', endColorstr='#5600C7',GradientType=0 ); /* IE6-9 */
+}
+
+form div {
+    vertical-align: middle;
 }
 
 button:hover,
@@ -235,5 +247,60 @@ form {
 .tagline {
     display: inline-block;
     margin: 0 20px;
+}
+
+/*create list view*/
+.add-gear {
+    display: none;
+    position:fixed;
+    width:80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+    background: #FFFFFF;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.gear-create {
+    display: none;
+}
+
+.gear-delete {
+    display : none;
+}
+
+.added-gear .gear-delete {
+    display: inline-block;
+    margin: 0px 5px;
+}
+
+.gear-object {
+    display: inline-block;
+}
+
+#review-gear {
+    display : none;
+    position:fixed;
+    width:80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+    background: #FFFFFF;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+/* initialize list */
+.trail-selection {
+    display:none;
+}
+
+.selected-trail {
+    display:inline-block;
+}
+
+.create-trail {
+    display: none;
 }
 

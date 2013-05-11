@@ -22,7 +22,7 @@
             <g:each in="${com.mastergear.GearList.findAllByHikeType(HikeType.DAY)}" var="list">
                 <g:render template="gearList" model="[list : list]" />
             </g:each>
-            <g:link class="prosp" controller="prospectiveUser" action="create" params="[category:'Create']">
+            <g:link class="prosp" controller="gearList" action="initialize">
                 <div>
                     create your own list
                 </div>
@@ -36,7 +36,7 @@
             <g:each in="${com.mastergear.GearList.findAllByHikeType(HikeType.BACKPACKING)}" var="list">
                 <g:render template="gearList" model="[list : list]" />
             </g:each>
-            <g:link class="prosp" controller="prospectiveUser" action="create" params="[category:'Create']">
+            <g:link class="prosp" controller="gearList" action="initialize">
                 <div class="text">
                     create your own list
                 </div>
@@ -50,7 +50,7 @@
             <g:each in="${com.mastergear.GearList.findAllByHikeType(HikeType.CARCAMPING)}" var="list">
                 <g:render template="gearList" model="[list : list]" />
             </g:each>
-            <g:link class="prosp" controller="prospectiveUser" action="create" params="[category:'Create']">
+            <g:link class="prosp" controller="gearList" action="initialize">
                 <div>
                     create your own list
                 </div>
