@@ -83,21 +83,6 @@
     //            console.log('external link click');
                 // Outbound link! Fires the Google tracker code.
                 _gat._getTrackerByName()._trackEvent("Outbound Links", e.currentTarget.host, url, 0);
-                // Checks to see if the ctrl or command key is held down
-                // which could indicate the link is being opened in a new tab
-                if (e.metaKey || e.ctrlKey) {
-                    // console.log('ctrl or meta key pressed');
-                    var newtab = true;
-                }
-                // If it is not a new tab, we need to delay the loading
-                // of the new link for a just a second in order to give the
-                // Google track event time to fully fire
-                if (!newtab) {
-                    // console.log('default prevented');
-                    e.preventDefault();
-                    // console.log('loading link after brief timeout');
-                    setTimeout('document.location = "' + url + '"', 100);
-                }
             }
             /*
             else {
