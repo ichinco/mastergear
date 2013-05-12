@@ -293,16 +293,13 @@ form {
     margin: 15px 0px;
 }
 
-#review-gear {
-    display : none;
-    position:fixed;
-    width:80%;
-    height: 80%;
-    top: 10%;
-    left: 10%;
-    background: #FFFFFF;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
+#review-gear textarea {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.create-review {
+    float:right;
 }
 
 /* initialize list */
@@ -329,7 +326,7 @@ form {
 }
 
 .pop-background {
-    position: absolute;
+    position: fixed;
     display: none;
     width: 100%;
     height:100%;
