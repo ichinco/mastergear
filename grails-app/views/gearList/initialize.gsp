@@ -24,23 +24,28 @@
     <r:require module="initlist" />
 </head>
 <body>
-    <div class="trail-selection">
-        <g:textField name="search" class="trail-search" />
-        <div class="trails"></div>
-        <div class="no-trail">None of these</div>
-        <div class="create-trail object-form">
-            <label for="trail-name">name</label>
-            <g:textField name="trail-name" class="trail-name" />
-            <label for="location">city, state</label>
-            <g:textField name="location" class="location" />
-            <label for="latitude">latitude</label>
-            <g:textField name="latitude" class="latitude" />N
-            <label for="longitude">longitude</label>
-            <g:textField name="longitude" class="longitude" />W
-            <label for="maxElevation">max elevation</label>
-            <g:textField name="maxElevation" class="maxElevation" />ft
-            <label for="create"></label>
-            <button class="create">create trail</button>
+    <div class="trail-selection pop-background">
+        <div class="pop">
+            %{--<g:textField name="search" class="trail-search" />--}%
+            <h1>Select Trail</h1>
+            <div class="trails"></div>
+            <button class="no-trail">None of these</button>
+            <div class="create-trail">
+                <div class="object-form">
+                    <label for="trail-name">name</label>
+                    <g:textField name="trail-name" class="trail-name" /><br />
+                    <label for="location">city, state</label>
+                    <g:textField name="location" class="location" /><br />
+                    <label for="latitude">latitude</label>
+                    <g:textField name="latitude" class="latitude" /> N<br />
+                    <label for="longitude">longitude</label>
+                    <g:textField name="longitude" class="longitude" /> E<br />
+                    <label for="maxElevation">max elevation</label>
+                    <g:textField name="maxElevation" class="maxElevation" /> ft<br />
+                    <label for="create"></label>
+                    <button class="create">create trail</button>
+                </div>
+            </div>
         </div>
     </div>
     <div class="bubble">
