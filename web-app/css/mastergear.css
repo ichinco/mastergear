@@ -302,6 +302,11 @@ form {
     float:right;
 }
 
+.gear-suggestion {
+    overflow-y: scroll;
+    height: 85%;
+}
+
 /* initialize list */
 .trail-selection {
     /*display:none;*/

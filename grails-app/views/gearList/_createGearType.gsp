@@ -10,23 +10,30 @@
 %>
 
 <div class="bubble ${gearType}">
-    <div class="add-gear">
-        <div class="get-suggestions">
-            <g:textField name="gear-search" class="gearSearch" />
-            <div class="gear-suggestion"></div>
-            <div class="no-match">none of these match</div>
-        </div>
-        <div class="gear-create">
-            <g:hiddenField name="listId" value="${list.id}" />
-            <div>brand: <g:textField name="brand" class="brand" /></div>
-            <div>style: <g:textField name="style" class="style" /></div>
-            <div>type: <g:textField name="itemType" class="item-type" /></div>
-            <div>weight: <g:textField name="weight" class="weight" />oz</div>
-            <div>gender: <g:select name="gender" class="gender" from="${genderValues}" keys="${com.mastergear.GearGender.values()}"/></div>
-            <div>provider type: <g:select name="providerType" class="providerType" from="${providerTypeValues}" keys="${com.mastergear.ProviderType.values()}"/></div>
-            <div>image id: <g:textField name="imageId" class="imageId" /></div>
-            <div>providerId: <g:textField name="providerId" class="providerId" /></div>
-            <button class="create-gear">add</button>
+    <div class="add-gear pop-background">
+        <div class="pop">
+            <h1>Add <g:message code="geartype.${gearType}" /> Gear</h1>
+            <div class="get-suggestions">
+                <div class="gear-suggestion"></div>
+                <button class="no-match">none of these</button>
+            </div>
+            <div class="gear-create object-form">
+                <g:hiddenField name="listId" value="${list.id}" />
+                <label for="brand">brand</label>
+                <g:textField name="brand" class="brand" /><br />
+                <label for="style">style</label>
+                <g:textField name="style" class="style" /><br />
+                <label for="itemType">type (ie, pack, pants, sunhat)</label>
+                <g:textField name="itemType" class="item-type" /><br />
+                <label for="weight">weight</label>
+                <g:textField name="weight" class="weight" />oz<br />
+                <label for="gender">gender</label>
+                <g:select name="gender" class="gender" from="${genderValues}" keys="${com.mastergear.GearGender.values()}"/><br />
+                <label for="provider">link to buy</label>
+                <g:textField name="provider" class="provider" /><br />
+                <label for="create-gear"></label>
+                <button class="create-gear">add</button>
+            </div>
         </div>
     </div>
     <h2><g:message code="geartype.${gearType}" /></h2>
