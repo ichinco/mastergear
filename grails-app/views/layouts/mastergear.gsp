@@ -23,7 +23,7 @@
     <g:layoutBody/>
     <script type="text/template" id="gear_type_template">
         <div>
-            <div class="gear-delete" data-gear-id={{id}}>x</div>
+            <div class="gear-delete" data-gear-id={{id}} style="background-image:url('${resource(dir: "images", file: "brightmix_delete.png")}')"></div>
             <div class="gear-object" data-gear-id={{id}}>{{gear.title}}</div>
             <button class="review-gear" data-gear-id={{id}}>review</button>
         </div>

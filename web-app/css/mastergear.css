@@ -273,11 +273,20 @@ form {
 
 .added-gear .gear-delete {
     display: inline-block;
-    margin: 0px 5px;
+    margin: 0px 2px;
+    background-repeat: no-repeat;
+    background-size: 27px 27px;
+    width: 27px;
+    height: 27px;
+    cursor: hand;
+    cursor: pointer;
+    vertical-align: bottom;
 }
 
 .gear-object {
     display: inline-block;
+    line-height: 27px;
+    margin: 0px 2px;
 }
 
 #review-gear {
