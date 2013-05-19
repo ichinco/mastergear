@@ -8,6 +8,7 @@ class Gear {
     Brand brand;
     GearItemType item;
     String title;
+    String manufacturerId;
 
     double weight; // in oz
 
@@ -15,10 +16,7 @@ class Gear {
 
     static constraints = {
         weight nullable:true
-    }
-
-    static mapping = {
-        notes length: 500
+        manufacturerId nullable:true
     }
 
 }

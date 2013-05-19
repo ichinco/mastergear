@@ -12,6 +12,17 @@ class Provider {
 
     Gear gear;
 
+    String category;
+    String imageUrl;
+    String providerSku;
+    String linkUrl;
+    String impressionUrl;
+
     static constraints = {
+        category nullable:true
+        imageUrl nullable:true
+        providerSku nullable:true
+        linkUrl nullable:true
+        impressionUrl nullable:true
     }
 }
