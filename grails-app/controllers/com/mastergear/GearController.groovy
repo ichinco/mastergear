@@ -11,10 +11,17 @@ class GearController {
     }
 
     def list(Integer max) {
-        params.max = Math.min(max ?: 50, 100)
+        String gearItemTypeId = params.itemType;
+        def gear;
+        if (gearItemTypeId){
+            GearItemType type = GearItemType.get(gearItemTypeId);
+            gear = Gear.findAllByItem(type);
+        } else {
+            gear = Gear.list(params);
+        }
 
         render (contentType:'text/json'){
-            gearInstanceList: Gear.list(params)
+            gearInstanceList: gear
         }
     }
 

@@ -14,6 +14,10 @@ Mastergear.Collection.GearType = Backbone.Collection.extend({
         this.listId = attr.listId;
     },
 
+    setItemType : function(type) {
+        this.suggestionModel.setItemType(type);
+    },
+
     setSelectionModel : function(selectionModel) {
         this.suggestionModel = selectionModel;
         this.suggestionModel.bind('select-gear', this.gearSelected, this);
