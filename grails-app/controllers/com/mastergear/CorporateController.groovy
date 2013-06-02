@@ -20,7 +20,7 @@ class CorporateController {
                     priority(1.0)
                 }
                 url {
-                    loc(g.createLink(absolute: true, controller: 'trail', action: 'list'
+                    loc(g.createLink(absolute: true, controller: 'trail', action: 'list'))
                     changefreq('hourly')
                     priority(1.0)
                 }
