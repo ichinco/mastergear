@@ -94,3 +94,8 @@ log4j = {
 grails.plugins.springsecurity.userLookup.userDomainClassName = 'com.mastergear.GearUser'
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'com.mastergear.UserRole'
 grails.plugins.springsecurity.authority.className = 'com.mastergear.Role'
+
+elasticSearch.client.mode = 'transport'
+elasticSearch.client.hosts = [
+       [host:'http://qiqgsxgp:nxxu4adr05zwy4q@elm-4941848.us-east-1.bonsai.io', port:9300],
+]

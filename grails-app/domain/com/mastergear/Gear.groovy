@@ -2,6 +2,11 @@ package com.mastergear
 
 class Gear {
 
+    static searchable = {
+        except = ['dateCreated', 'lastUpdated']
+        item component:true
+    }
+
     Date dateCreated
     Date lastUpdated
 

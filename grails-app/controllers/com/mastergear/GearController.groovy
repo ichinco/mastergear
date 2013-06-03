@@ -4,6 +4,8 @@ import org.springframework.dao.DataIntegrityViolationException
 
 class GearController {
 
+    def jestElasticSearchService;
+
     static allowedMethods = [save: ["PUT","POST"], update: "PUT", delete: "DELETE"]
 
     def index() {
@@ -22,6 +24,15 @@ class GearController {
 
         render (contentType:'text/json'){
             gearInstanceList: gear
+        }
+    }
+
+    def search(String term) {
+        String query = """{"query":{"term":{"title" : "${term}"}}}"""
+        def result = jestElasticSearchService.getGear(query);
+
+        render (contentType:'text/json'){
+            gearInstanceList: result
         }
     }
 

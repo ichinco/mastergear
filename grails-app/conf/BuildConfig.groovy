@@ -21,8 +21,12 @@ grails.project.dependency.resolution = {
     checksums true // Whether to verify checksums on resolve
     legacyResolve false // whether to do a secondary resolve on plugin installation, not advised and here for backwards compatibility
 
+//    grails.plugin.location.elasticsearch="C:/Users/denise/Code/elasticsearch-grails-plugin"
+
     repositories {
         inherits true // Whether to inherit repository definitions from plugins
+
+        mavenRepo "https://oss.sonatype.org/content/groups/public/"
 
         grailsPlugins()
         grailsHome()
@@ -42,6 +46,7 @@ grails.project.dependency.resolution = {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
         runtime 'postgresql:postgresql:9.0-801.jdbc4'
         // runtime 'mysql:mysql-connector-java:5.1.22'
+        compile "io.searchbox:jest:0.0.3"
     }
 
     plugins {

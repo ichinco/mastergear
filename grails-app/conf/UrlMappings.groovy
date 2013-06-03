@@ -21,6 +21,11 @@ class UrlMappings {
               action = "list"
         }
 
+        "/gear/search"(parseRequest:true){
+              controller = "gear"
+              action = "search"
+        }
+
         "/trail/list"(parseRequest:true){
               controller = "trail"
               action = "list"

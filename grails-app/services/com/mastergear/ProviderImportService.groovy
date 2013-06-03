@@ -2,6 +2,8 @@ package com.mastergear
 
 class ProviderImportService {
 
+    def jestElasticSearchService
+
     def importAvantlinkDatafeed() {
         readDataFeed("C:/Users/denise/Downloads/RamseyOutdoor_134583_datafeed.csv", ProviderType.REI);
     }
@@ -26,6 +28,7 @@ class ProviderImportService {
                         type = new GearItemType();
                         type.name = category;
                         type.save(flush: true);
+
                     }
 
                     def brand = line[headerMap.get("Brand Name")];
@@ -34,6 +37,7 @@ class ProviderImportService {
                         b = new Brand();
                         b.name = brand;
                         b.save(flush : true);
+
                     }
 
                     String manufacturerId = line[headerMap.get("Manufacturer Id")];
@@ -49,6 +53,8 @@ class ProviderImportService {
                         gear.manufacturerId = manufacturerId;
 
                         gear.save();
+
+                        jestElasticSearchService.insertGearRecord(gear);
                     }
 
                     Provider thisProvider = null;

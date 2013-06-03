@@ -14,7 +14,8 @@
         <div class="pop">
             <h1>Add <g:message code="geartype.${gearType}" /> Gear</h1>
             <div class="get-suggestions">
-                category: <g:select name="category" class="category" from="${com.mastergear.GearItemType.all.collect({it.name})}" keys="${com.mastergear.GearItemType.all.collect({it.id})}" value="16009" />
+                category: <g:textField name="category" class="category-desc" />
+                <button class="category">update</button>
                 <div class="gear-suggestion"></div>
                 <button class="no-match">none of these</button>
             </div>

@@ -4,7 +4,7 @@ Mastergear.Collection = Mastergear.Collection || {};
 Mastergear.Collection.GearList = Backbone.Collection.extend({
 
     selectedGear : null,
-    itemType : 16009, // default to camping
+    itemType : null, // default to camping
 
     setItemType : function(itemType) {
         this.itemType = itemType;
@@ -22,14 +22,14 @@ Mastergear.Collection.GearList = Backbone.Collection.extend({
 
     initialize : function() {
         this.model = Mastergear.Models.Gear;
-        this.url = "/mastergear/gear/list"
+        this.url = "/mastergear/gear/search"
     },
 
     fetch: function(options){
         options = options || {};
         if (this.itemType != null) {
             options.data = options.data || {};
-            options.data.itemType = this.itemType;
+            options.data.term = this.itemType;
         }
         return Backbone.Collection.prototype.fetch.call(this, options);
     }
