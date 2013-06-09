@@ -47,6 +47,7 @@ grails.project.dependency.resolution = {
         runtime 'postgresql:postgresql:9.0-801.jdbc4'
         // runtime 'mysql:mysql-connector-java:5.1.22'
         compile "io.searchbox:jest:0.0.3"
+        compile 'org.codehaus.gpars:gpars:1.0.0'
     }
 
     plugins {

@@ -102,6 +102,8 @@
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.httpcomponents/httpcore-nio/jars/httpcore-nio-4.2.3.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.httpcomponents/httpcore/jars/httpcore-4.2.3.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/io.searchbox/jest/jars/jest-0.0.3.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.codehaus.jsr166-mirror/jsr166y/jars/jsr166y-1.7.0.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.codehaus.gpars/gpars/jars/gpars-1.0.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>

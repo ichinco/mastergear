@@ -28,7 +28,16 @@ class GearController {
     }
 
     def search(String term) {
-        String query = """{"query":{"term":{"title" : "${term}"}}}"""
+        String query = """{
+                    "from" : 0, "size" : 100,
+                    "query" : {
+                          "multi_match" : {
+                            "query" : "${term}",
+                            "fields" : [ "brand", "type", "title",
+                            "longDescription","shortDescription",
+                            "category","subCategory","productGroup","keywords"]
+                          }
+                    }}"""
         def result = jestElasticSearchService.getGear(query);
 
         render (contentType:'text/json'){

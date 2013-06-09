@@ -5,6 +5,7 @@ import io.searchbox.client.JestClientFactory
 import io.searchbox.client.JestResult
 import io.searchbox.client.config.ClientConfig
 import io.searchbox.client.config.ClientConstants
+import io.searchbox.core.Delete
 import io.searchbox.core.Index
 import io.searchbox.core.Search
 
@@ -16,6 +17,7 @@ class JestElasticSearchService {
 
     private JestClient client;
     private static final String INDEX = "com.mastergear";
+    private static final String TYPE = "gear";
 
     @PostConstruct
     def createJest() {
@@ -32,20 +34,46 @@ class JestElasticSearchService {
     }
 
     def insertGearRecord(Gear gear) {
+        String longDescription = ""
+        String shortDescription = ""
+        String subCategory = ""
+        String category = ""
+        String productGroup = ""
+        String keywords = ""
+        gear.providers.each {provider ->
+            longDescription += " " + provider.longDescription
+            shortDescription += " " + provider.shortDescription
+            category += " " + provider.category
+            subCategory += " " + provider.subCategory
+            productGroup += " " + provider.productGroup
+            keywords += " " + provider.keywords
+        }
         String gearRecord = """{"brand":"${gear.brand.name}",
                     "type":"${gear.item.name}",
                     "title":"${gear.title}",
                     "weight":"${gear.weight}",
-                    "manufacturerId": "${gear.manufacturerId}"}"""
-        Index index = new Index.Builder(gearRecord).index(INDEX).type("gear").id(Long.toString(gear.getId())).build();
+                    "manufacturerId": "${gear.manufacturerId}",
+                    "longDescription": "${longDescription}",
+                    "shortDescription": "${shortDescription}",
+                    "category": "${category}",
+                    "subCategory": "${subCategory}",
+                    "productGroup": "${productGroup}",
+                    "keywords": "${keywords}"
+                    }"""
+        Index index = new Index.Builder(gearRecord).index(INDEX).type(TYPE).id(Long.toString(gear.getId())).build();
         client.execute(index);
+    }
+
+    def deleteGearRecord(Gear gear) {
+        Delete delete = new Delete.Builder(gear.getId().toString()).index(INDEX).type(TYPE).build();
+        client.execute(delete);
     }
 
     List<Gear> getGear(String query){
         Search search = new Search(query);
         // multiple index or types can be added.
         search.addIndex(INDEX)
-        search.addType("gear");
+        search.addType(TYPE);
 
         JestResult result = client.execute(search)
 
