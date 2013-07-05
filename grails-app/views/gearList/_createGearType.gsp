@@ -13,10 +13,13 @@
     <div class="add-gear pop-background">
         <div class="pop">
             <h1>Add <g:message code="geartype.${gearType}" /> Gear</h1>
+
             <div class="get-suggestions">
-                <g:textField name="category" class="category-desc" />
-                <button class="category">search</button>
-                <img class="loading" src="${resource(dir:'images', file:'spinner.gif')}" />
+                <g:form class="search-form" >
+                    <g:textField name="category" class="category-desc" />
+                    <g:submitButton name="search" class="category" />
+                    <img class="loading" src="${resource(dir:'images', file:'spinner.gif')}" />
+                </g:form>
                 <div class="gear-suggestion"></div>
                 %{--<button class="no-match">none of these</button>--}%
             </div>

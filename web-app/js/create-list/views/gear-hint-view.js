@@ -3,12 +3,13 @@ Mastergear.Views = Mastergear.Views || {};
 
 Mastergear.Views.GearHintView = Backbone.View.extend({
     events : {
-        'click .category' : 'updateGear'
+        'submit .search-form' : 'updateGear'
     },
 
     updateGear : function(evt) {
         var categoryId = this.$el.find(".category-desc").val();
         this.model.setItemType(categoryId);
+        return false;
     },
 
     gearUpdating : function(evt) {
