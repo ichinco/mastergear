@@ -1,11 +1,8 @@
 package com.mastergear
 
-import java.util.concurrent.Future
-
 class ProviderImportController {
 
     def providerImportService;
-    def jestElasticSearchService;
 
     def index() {
         render view: "index"
@@ -16,14 +13,14 @@ class ProviderImportController {
     }
 
     def syncWithElasticSearch() {
-        Gear.list().each {
-            jestElasticSearchService.insertGearRecord(it);
-        }
+        providerImportService.syncWithElasticSearchAsync();
+    }
+
+    def syncWithElasticSearchAync() {
+        providerImportService.syncWithElasticSearchAsync();
     }
 
     def deleteFromElasticSearch(){
-        Gear.list().each {
-            jestElasticSearchService.deleteGearRecord(it);
-        }
+        providerImportService.deleteFromElasticSearch();
     }
 }

@@ -6,6 +6,7 @@ import static groovyx.gpars.GParsPool.withPool;
 class ProviderImportService {
 
     def jestElasticSearchService
+    def jobSchedulingService;
 
     private Exception lastException;
 
@@ -14,14 +15,49 @@ class ProviderImportService {
             Future result = {
                 readDataFeed("C:/Users/denise/Downloads/RamseyOutdoor_134583_datafeed.csv", ProviderType.RAMSEY_OUTDOOR)
                 readDataFeed("C:/Users/denise/Downloads/Rei_132663_datafeed.csv", ProviderType.REI)
-            }.callAsync()
-
-            try {
-                result.get();
-            } catch (Exception e) {
-                lastException = e;
-            }
+            }.callAsync();
         }
+    }
+
+    def syncWithElasticSearch() {
+        withPool {
+            Future result = {
+                Gear.list().each {
+                    jestElasticSearchService.insertGearRecord(it);
+                }
+            }.callAsync();
+        }
+    }
+
+    def syncWithElasticSearchAsync() {
+        final JobSchedulingService jobService = jobSchedulingService;
+
+        jobSchedulingService.scheduleJob("ElasticSearchSync", {
+            int jobId ->
+                double total = Gear.count();
+                double soFar = 0D;
+
+                Gear.withTransaction{
+                    Gear.list().each {
+                        jestElasticSearchService.insertGearRecord(it);
+                        soFar++;
+
+                        if (soFar % 1000 == 0){
+                            jobService.updateJobProgress(jobId, (int) ((soFar * 100) / total));
+                        }
+                    }
+                }
+        })
+    }
+
+    def deleteFromElasticSearch() {
+        withPool {
+             Future result = {
+                 Gear.list().each {
+                     jestElasticSearchService.deleteGearRecord(it);
+                 }
+             }.callAsync();
+         }
     }
 
     def readDataFeed(String filename, ProviderType providerType) {
