@@ -10,7 +10,7 @@
 <div class="bubble">
     <h1><g:render template="title" model="[list: list]" /> </h1>
     <div class="map">
-        <g:link controller="trail" action="show" params="[id : list.trail.id]">
+        <g:link controller="trailShow" action="show" params="[id : list.trail.id]">
             <img src="http://maps.googleapis.com/maps/api/staticmap?zoom=2&size=100x100&maptype=roadmap&markers=color:blue%7Clabel:%7C${list.trail.latitude},${list.trail.longitude}&sensor=false" />
         </g:link>
     </div>
