@@ -3,6 +3,10 @@ Mastergear.Views = Mastergear.Views || {};
 
 Mastergear.Views.SelectTrailDialog = Backbone.View.extend({
 
+    events : {
+        'click .close-pop' : 'close'
+    },
+
     initialize : function() {
         _.bindAll(this);
         this.model.bind('select-trail-open', this.show);
