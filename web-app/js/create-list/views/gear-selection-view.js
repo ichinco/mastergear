@@ -6,7 +6,6 @@ Mastergear.Views.GearSelection = Backbone.View.extend({
         'click .gear-object': 'selectGear'
     },
 
-
     selectGear : function(evt){
         var gearId = $(evt.target).data('gear-id'),
             gear = this.model.get(gearId);

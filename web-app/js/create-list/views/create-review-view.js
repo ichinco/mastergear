@@ -3,7 +3,8 @@ Mastergear.Views = Mastergear.Views || {};
 
 Mastergear.Views.CreateReview = Backbone.View.extend({
     events : {
-        'click .create-review': 'saveReview'
+        'click .create-review': 'saveReview',
+        'click .close-pop' : 'close'
     },
 
     initialize : function() {

@@ -12,18 +12,20 @@
 <div class="bubble ${gearType}">
     <div class="add-gear pop-background">
         <div class="pop">
-            <h1>Add <g:message code="geartype.${gearType}" /> Gear</h1>
-
-            <div class="get-suggestions">
-                <g:form class="search-form" >
-                    <g:textField name="category" class="category-desc" />
-                    <g:submitButton name="search" class="category" />
-                    <img class="loading" src="${resource(dir:'images', file:'spinner.gif')}" />
-                </g:form>
-                <div class="gear-suggestion"></div>
-                %{--<button class="no-match">none of these</button>--}%
-            </div>
-            <div class="gear-create object-form">
+            <div class="content">
+                <div class="close-pop" style="background-image: url(${resource(dir:"images", file:"brightmix_delete.png")})"></div>
+                <h1>Add <g:message code="geartype.${gearType}" /> Gear</h1>
+                <div class="get-suggestions">
+                    <g:form class="search-form" >
+                        <g:textField name="category" class="category-desc" />
+                        <g:submitButton name="search" class="category" />
+                        <img class="loading" src="${resource(dir:'images', file:'spinner.gif')}" />
+                    </g:form>
+                    <div class="gear-suggestion"></div>
+                    %{--<button class="no-match">none of these</button>--}%
+                </div>
+                <div class="gear-create object-form">
+                </div>
                 <g:hiddenField name="listId" value="${list.id}" />
                 <label for="brand">brand</label>
                 <g:textField name="brand" class="brand" /><br />

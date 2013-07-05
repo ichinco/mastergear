@@ -3,6 +3,10 @@ Mastergear.Views = Mastergear.Views || {};
 
 Mastergear.Views.AddGearDialog = Backbone.View.extend({
 
+    events: {
+        'click .close-pop'  : 'close'
+    },
+
     initialize : function() {
         _.bindAll(this);
         this.model.bind('new-gear-dialog-open', this.show);

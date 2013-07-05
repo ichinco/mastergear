@@ -17,13 +17,16 @@
 <body>
     <div id="review-gear" class="pop-background">
         <div class="pop">
-            <h1></h1>
-            <div>
-                Tell us why you can't leave it home. Do you make any modifications to it?
-                Are there aspects of this particular brand that you wish were different?
+            <div class="content">
+                <div class="close-pop" style="background-image: url(${resource(dir:"images", file:"brightmix_delete.png")})"></div>
+                <h1></h1>
+                <div>
+                    Tell us why you can't leave it home. Do you make any modifications to it?
+                    Are there aspects of this particular brand that you wish were different?
+                </div>
+                <g:textArea name="gear-review" class="gear-review" rows="4" cols="75" />
+                <button class="create-review">create review</button>
             </div>
-            <g:textArea name="gear-review" class="gear-review" rows="4" cols="75" />
-            <button class="create-review">create review</button>
         </div>
     </div>
     <g:render template="gearSummary" model="[list:list, totalWeight:totalWeight]" />
