@@ -14,10 +14,10 @@
         <div class="pop">
             <h1>Add <g:message code="geartype.${gearType}" /> Gear</h1>
             <div class="get-suggestions">
-                category: <g:textField name="category" class="category-desc" />
-                <button class="category">update</button>
+                <g:textField name="category" class="category-desc" />
+                <button class="category">search</button>
                 <div class="gear-suggestion"></div>
-                <button class="no-match">none of these</button>
+                %{--<button class="no-match">none of these</button>--}%
             </div>
             <div class="gear-create object-form">
                 <g:hiddenField name="listId" value="${list.id}" />
