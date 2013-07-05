@@ -26,6 +26,7 @@ Mastergear.Collection.GearList = Backbone.Collection.extend({
     },
 
     fetch: function(options){
+        this.trigger('fetching');
         options = options || {};
         if (this.itemType != null) {
             options.data = options.data || {};

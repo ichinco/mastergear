@@ -286,10 +286,6 @@ form {
     margin: 20px 0;
 }
 
-.create-review {
-    float:right;
-}
-
 .gear-suggestion {
     overflow-y: auto;
     height: 65%;
@@ -331,7 +327,6 @@ form {
 .pop {
     width: 40%;
     background-color: #FFFFFF;
-    margin: 10% auto;
     padding: 30px;
     margin: 20px auto;
     max-width: 700px;
@@ -362,5 +357,9 @@ form {
 
 .object-form br {
     clear:left
+}
+
+.loading {
+    display: none;
 }
 

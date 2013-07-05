@@ -16,6 +16,7 @@
             <div class="get-suggestions">
                 <g:textField name="category" class="category-desc" />
                 <button class="category">search</button>
+                <img class="loading" src="${resource(dir:'images', file:'spinner.gif')}" />
                 <div class="gear-suggestion"></div>
                 %{--<button class="no-match">none of these</button>--}%
             </div>
