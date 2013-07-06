@@ -25,22 +25,22 @@
                     %{--<button class="no-match">none of these</button>--}%
                 </div>
                 <div class="gear-create object-form">
+                    <g:hiddenField name="listId" value="${list.id}" />
+                    <label for="brand">brand</label>
+                    <g:textField name="brand" class="brand" /><br />
+                    <label for="style">style</label>
+                    <g:textField name="style" class="style" /><br />
+                    <label for="itemType">type (ie, pack, pants, sunhat)</label>
+                    <g:textField name="itemType" class="item-type" /><br />
+                    <label for="weight">weight</label>
+                    <g:textField name="weight" class="weight" />oz<br />
+                    <label for="gender">gender</label>
+                    <g:select name="gender" class="gender" from="${genderValues}" keys="${com.mastergear.GearGender.values()}"/><br />
+                    <label for="provider">link to buy</label>
+                    <g:textField name="provider" class="provider" /><br />
+                    <label for="create-gear"></label>
+                    <button class="create-gear">add</button>
                 </div>
-                <g:hiddenField name="listId" value="${list.id}" />
-                <label for="brand">brand</label>
-                <g:textField name="brand" class="brand" /><br />
-                <label for="style">style</label>
-                <g:textField name="style" class="style" /><br />
-                <label for="itemType">type (ie, pack, pants, sunhat)</label>
-                <g:textField name="itemType" class="item-type" /><br />
-                <label for="weight">weight</label>
-                <g:textField name="weight" class="weight" />oz<br />
-                <label for="gender">gender</label>
-                <g:select name="gender" class="gender" from="${genderValues}" keys="${com.mastergear.GearGender.values()}"/><br />
-                <label for="provider">link to buy</label>
-                <g:textField name="provider" class="provider" /><br />
-                <label for="create-gear"></label>
-                <button class="create-gear">add</button>
             </div>
         </div>
     </div>

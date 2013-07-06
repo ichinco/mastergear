@@ -30,7 +30,7 @@
     </script>
     <script type="text/template" id="gear_template">
         <div>
-            <div class="gear-object" data-gear-id={{id}}>{{brand.name}} {{title}} {{item.name}}</div>
+            <div class="gear-object" data-gear-id={{id}}>{{brand.name}}: {{title}}</div>
         </div>
     </script>
     <script type="text/template" id="trail_template">

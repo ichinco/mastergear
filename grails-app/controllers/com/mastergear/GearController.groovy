@@ -29,13 +29,14 @@ class GearController {
 
     def search(String term) {
         String query = """{
+                    "explain" : true,
                     "from" : 0, "size" : 100,
                     "query" : {
                           "multi_match" : {
+                            "use_dis_max" : false,
                             "query" : "${term}",
-                            "fields" : [ "brand", "type", "title",
-                            "longDescription","shortDescription",
-                            "category","subCategory","productGroup","keywords"]
+                            "fields" : [ "brand^2", "title^2",
+                            "category","subCategory^3","productGroup^3","keywords^3"]
                           }
                     }}"""
         def result = jestElasticSearchService.getGear(query);
