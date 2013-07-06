@@ -26,6 +26,7 @@ modules = {
         dependsOn 'lib'
 
         resource 'js/start/views/map-view.js'
+        resource 'js/start/views/intro-dialog.js'
     }
     flat {
         resource url:'css/flat.css'

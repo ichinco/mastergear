@@ -13,6 +13,10 @@ Mastergear.Router = Backbone.Router.extend({
             model : possibleTrailModel
         });
 
+        var dialog = new Mastergear.Views.IntroDialog({
+            el : '.intro'
+        });
+
         possibleTrailModel.fetch({remove : true, add : true, change : true})
     }
 });

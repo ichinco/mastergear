@@ -2,3 +2,18 @@
     height:75%;
     width: 100%;
 }
+
+.intro {
+    width: 300px;
+    bottom: 20%;
+    left: 5%;
+    position: absolute;
+    font-size: 25px;
+    background: rgba(255, 255, 255, 0.5);
+    padding:10px;
+}
+
+.intro .close {
+    cursor: hand;
+    cursor: pointer;
+}
