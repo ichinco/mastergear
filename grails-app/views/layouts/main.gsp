@@ -26,3 +26,82 @@
 		<r:layoutResources />
 	</body>
 </html>
+<!--
+
+<!DOCTYPE html>
+<html>
+<head>
+   <title>
+      Feathergear - Find/Create/Share hiking gear list.
+   </title>
+<script type='text/javascript' 
+        src='http://code.jquery.com/jquery-1.10.1.min.js'>
+</script>
+<link rel='stylesheet' href='css/main.css'>
+</link>
+<style>
+   @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,300|Open+Sans+Condensed:300);
+</style>
+<script type='text/javascript'>
+(function( $ )
+{
+   if(!$)
+   {
+      console.log('game over');
+
+      var navigation = $('.navigation');
+   }
+})(jQuery);
+</script>
+</head>
+<body class='.radial-center'>
+   <section class='logo'>
+      <a href='./index.html'>
+         <div class='logo-container'>
+            <img alt='feathergear logo' 
+                 src='images/logo.png' />
+            <span class='logo'>
+               <span class='feather'>feather</span>
+               <span class='gear'>gear</span>
+            </span>
+         </div>
+      </a>
+   </section>
+   <menu class='navigation'>
+   <div class='nav-links'>
+      <a href='./index.html'>
+         <div class='nav-links-items'>
+         <img src='images/icons.png' 
+              class='home' />
+         </div>
+      </a>
+      <a href='./index.html'>
+         <div class='nav-links-items'>
+         <img src='images/icons.png' 
+              class='lists' />
+         </div>
+      </a>
+      <a href='./index.html'>
+         <div class='nav-links-items'>
+         <img src='images/icons.png' 
+              class='info'/>
+         </div>
+      </a>
+      <a href='./index.html'>
+         <div class='nav-links-items'>
+         <img src='images/icons.png' 
+              class='users'/>
+         </div>
+      </a>
+      <a href='./index.html'>
+         <div class='nav-links-items'>
+         <img src='images/icons.png' 
+              class='location'/>
+         </div>
+      </a>
+   </div>
+   </menu>
+</body>
+</html>
+
+-->
