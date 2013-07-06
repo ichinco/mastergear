@@ -43,9 +43,6 @@ modules = {
         resource url: '/css/mastergear.css', attrs:[rel: "stylesheet/less", type:'css']
     }
 
-    lib {
-        dependsOn 'jquery' //provided by plugin
-        dependsOn 'backbone' //provided by plugin
-    }
+
 
 }
