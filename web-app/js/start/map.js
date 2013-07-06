@@ -6,11 +6,12 @@
  * To change this template use File | Settings | File Templates.
  */
 
-var map = L.map('map').setView([40.212441, -98.180695], 4);
+
 //L.tileLayer('http://{s}.tile.cloudmade.com/e5bae9c9900b40e398c3491520c6af60/997/256/{z}/{x}/{y}.png', {
 //    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
 //    maxZoom: 18
 //}).addTo(map);
+L.Icon.Default.imagePath = 'js/leaflet/images/';
 L.tileLayer('http://{s}.tile.stamen.com/terrain/{z}/{x}/{y}.png', {
     attribution: [
             'Map tiles by <a href="http://stamen.com">Stamen Design</a>, ',
@@ -21,3 +22,5 @@ L.tileLayer('http://{s}.tile.stamen.com/terrain/{z}/{x}/{y}.png', {
     minZoom:4,
     maxZoom: 18
 }).addTo(map);
+
+var marker = L.marker([40.212441, -98.180695]).addTo(map);
