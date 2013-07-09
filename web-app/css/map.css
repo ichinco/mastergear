@@ -1,19 +1,44 @@
 #map {
     height:75%;
     width: 100%;
+
+    opacity: .75;
 }
 
 .intro {
-    width: 300px;
+    width: 380px;
     bottom: 20%;
-    left: 5%;
+    left: 0px;
     position: absolute;
-    font-size: 25px;
-    background: rgba(255, 255, 255, 0.5);
-    padding:10px;
+    font-size: 30px;
+    font-weight: 300;
+    color: #333;
+    background: rgba(255, 255, 255, 0.55);
+    padding: 30px 30px 30px 50px;
+}
+
+.intro a
+{
+    color : RGB(95, 150, 20);
+    text-decoration: none;
 }
 
 .intro .close {
     cursor: hand;
     cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 15px;
+}
+
+#map .leaflet-control-zoom > .leaflet-control-zoom-in,
+#map .leaflet-control-zoom > .leaflet-control-zoom-out
+{
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 0px;
+    font-weight: 300;
+}
+
+#map .leaflet-control-zoom > .leaflet-control-zoom-out
+{
 }
