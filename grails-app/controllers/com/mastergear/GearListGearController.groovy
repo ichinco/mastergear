@@ -17,7 +17,7 @@ class GearListGearController {
         GearType type = GearType.valueOf(params.gearType.toUpperCase());
         List<GearListGear> gearListGear = GearListGear.findAllByListAndGearType(list, type);
 
-        JSON.use('deep')
+        JSON.use('deep');
         render gearListGear as JSON
     }
 
