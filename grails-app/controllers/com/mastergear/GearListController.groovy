@@ -19,6 +19,10 @@ class GearListController {
         render view: "initialize"
     }
 
+    def trailList() {
+        render view: "trailList"
+    }
+
     def initializeSave() {
         String seasonString = params.season;
         String hikeType = params.hikeType;

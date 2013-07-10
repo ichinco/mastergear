@@ -1,4 +1,4 @@
-html, body
+html, body.flat
 {
    top:0;
    left:0;
@@ -42,6 +42,8 @@ html, body
    filter: progid:DXImageTransform.Microsoft.gradient(
       startColorstr='#ffffff', endColorstr='#efefef',GradientType=1
    ); /* IE6-9 fallback on horizontal gradient */
+
+   font-family: 'Open Sans', sans-serif;
 }
 
 .flat .nav-container {

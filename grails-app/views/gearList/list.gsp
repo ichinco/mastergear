@@ -14,8 +14,6 @@
 </head>
 <body>
     <g:render template="gearSummary" model="[list:list, totalWeight:totalWeight]" />
-
-
     <g:render template="gearType" model="[gear : pack, code: 'geartype.pack']"/>
     <g:render template="gearType" model="[gear : sleep, code: 'geartype.sleep']"/>
     <g:render template="gearType" model="[gear : cooking, code: 'geartype.cooking']"/>
