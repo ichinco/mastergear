@@ -17,7 +17,7 @@ class TrailsController {
         }
     }
 
-    def show() {
+    def show(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         render (contentType:'text/json'){
             trailInstanceList: Trail.list(params)

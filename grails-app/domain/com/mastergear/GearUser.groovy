@@ -1,5 +1,7 @@
 package com.mastergear
 
+import grails.converters.JSON
+
 class GearUser {
 
 	transient springSecurityService
@@ -39,4 +41,12 @@ class GearUser {
 	protected void encodePassword() {
 		password = springSecurityService.encodePassword(password)
 	}
+
+    public static void register() {
+        JSON.registerObjectMarshaller(GearUser) {
+            return [id: it.id, username:it.username,
+            dateCreated: it.dateCreated.getTime(),
+            lastUpdated: it.lastUpdated.getTime()]
+        }
+    }
 }

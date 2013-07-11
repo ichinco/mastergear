@@ -5,10 +5,8 @@ import com.mastergear.Trail
 
 class GearListsController {
 
-    def show() {
-        int trailId = params.trailId;
-
-        Trail trail = Trail.get(Integer.parseInt(trailId));
+    def show(int trailId) {
+        Trail trail = Trail.get(trailId);
         List<GearList> lists = GearList.findAllByTrail(trail);
 
         render (contentType:'text/json'){

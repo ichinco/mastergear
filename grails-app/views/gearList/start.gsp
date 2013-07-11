@@ -14,6 +14,7 @@
 </head>
 <body>
     <div id="map"></div>
+    <div class="gearlist"></div>
     <div class="intro">
         <div class="close">x</div>
         Browse gear lists that other hikers have created. Click
@@ -21,5 +22,11 @@
         Or <g:link controller="gearList" action="initialize">create your own list.</g:link>
         <g:link controller='gearList' action='trailList'>Test gear!</g:link>
     </div>
+
+<script type="text/template" id="gear_list_template">
+    <div>
+        {{season.name}} {{hikeType.name}} {{user.username}} {{dateCreated}}
+    </div>
+</script>
 </body>
 </html>

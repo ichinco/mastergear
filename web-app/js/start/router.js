@@ -6,7 +6,9 @@ Mastergear.Router = Backbone.Router.extend({
     },
 
     main: function() {
+        var gearlistCollection = new Mastergear.Collection.GearListForTrail();
         var possibleTrailModel = new Mastergear.Collection.PossibleTrails();
+        gearlistCollection.setPossibleTrailCollection(possibleTrailModel);
 
         var map = new Mastergear.Views.Map({
             el : '#map',
@@ -15,6 +17,11 @@ Mastergear.Router = Backbone.Router.extend({
 
         var dialog = new Mastergear.Views.IntroDialog({
             el : '.intro'
+        });
+
+        var gearlistView = new Mastergear.Views.GearList({
+            el : '.gearlist',
+            model: gearlistCollection
         });
 
         possibleTrailModel.fetch({remove : true, add : true, change : true})

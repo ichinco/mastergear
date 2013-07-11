@@ -14,12 +14,14 @@ modules = {
         dependsOn 'lib'
 
         resource 'js/start/collections/possible-trail-collection.js'
+        resource 'js/start/collections/gearlist-for-trail-collection.js'
     }
 
     startmodels {
         dependsOn 'lib'
 
         resource 'js/start/models/trail-model.js'
+        resource 'js/start/models/gearlist-model.js'
     }
 
     startviews {
@@ -27,6 +29,7 @@ modules = {
 
         resource 'js/start/views/map-view.js'
         resource 'js/start/views/intro-dialog.js'
+        resource 'js/start/views/gearlist-view.js'
     }
     flat {
         resource url:'css/flat.css'
