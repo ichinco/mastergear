@@ -14,7 +14,10 @@
 </head>
 <body>
     <div id="map"></div>
-    <div class="gearlist"></div>
+    <div id="gear-list-display">
+        <g:render template="/layouts/logo" />
+        <div class="gearlist"></div>
+    </div>
     <div class="intro">
         <div class="close">x</div>
         Browse gear lists that other hikers have created. Click
@@ -26,6 +29,13 @@
 <script type="text/template" id="gear_list_template">
     <div>
         {{season}} {{hikeType}} {{user.username}} {{dateCreated}}
+        <svg xmlns='http://www.w3.org/2000/svg'
+             version='1.1'>
+            <circle id='close-button' r='30px'
+                cx='30px'
+                cy='30px' />
+        </svg>
+
     </div>
 </script>
 </body>

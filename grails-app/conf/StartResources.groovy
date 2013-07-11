@@ -33,5 +33,6 @@ modules = {
     }
     flat {
         resource url:'css/flat.css'
+        resource url:'css/gearlist.css'
     }
 }
