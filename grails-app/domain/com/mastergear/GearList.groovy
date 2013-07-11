@@ -24,12 +24,13 @@ class GearList {
         imageUrl size: 500
     }
 
-    public static void register() {
+    public static void register(grailsApplication) {
         JSON.registerObjectMarshaller(GearList) {
+            def g = grailsApplication.mainContext.getBean('org.codehaus.groovy.grails.plugins.web.taglib.ApplicationTagLib');
             return [id: it.id,
-                    season: it.season,
+                    season: g.message(code: "season.${it.season.toString().toLowerCase()}"),
                     trail:it.trail,
-                    hikeType: it.hikeType,
+                    hikeType: g.message(code: "hiketype.${it.hikeType.toString().toLowerCase()}"),
                     user: it.user,
                     listDescription:it.listDescription,
                     imageUrl:it.imageUrl,

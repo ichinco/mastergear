@@ -25,7 +25,7 @@
 
 <script type="text/template" id="gear_list_template">
     <div>
-        {{season.name}} {{hikeType.name}} {{user.username}} {{dateCreated}}
+        {{season}} {{hikeType}} {{user.username}} {{dateCreated}}
     </div>
 </script>
 </body>
