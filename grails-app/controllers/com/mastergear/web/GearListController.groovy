@@ -1,4 +1,13 @@
-package com.mastergear
+package com.mastergear.web
+
+import com.mastergear.GearList
+import com.mastergear.GearListGear
+import com.mastergear.GearType
+import com.mastergear.GearUser
+import com.mastergear.HikeType
+import com.mastergear.Season
+import com.mastergear.Trail
+import com.mastergear.Weight
 
 class GearListController {
 

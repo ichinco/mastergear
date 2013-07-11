@@ -1,8 +1,6 @@
 package com.mastergear
 
-
-
-import org.junit.*
+import com.mastergear.rest.TrailController
 import grails.test.mixin.*
 
 @TestFor(TrailController)

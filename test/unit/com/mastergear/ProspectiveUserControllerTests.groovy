@@ -1,8 +1,6 @@
 package com.mastergear
 
-
-
-import org.junit.*
+import com.mastergear.web.ProspectiveUserController
 import grails.test.mixin.*
 
 @TestFor(ProspectiveUserController)

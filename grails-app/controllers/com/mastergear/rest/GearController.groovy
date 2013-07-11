@@ -1,5 +1,11 @@
-package com.mastergear
+package com.mastergear.rest
 
+import com.mastergear.Brand
+import com.mastergear.Gear
+import com.mastergear.GearGender
+import com.mastergear.GearItemType
+import com.mastergear.Provider
+import com.mastergear.ProviderType
 import org.springframework.dao.DataIntegrityViolationException
 
 class GearController {

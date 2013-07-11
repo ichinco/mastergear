@@ -1,4 +1,9 @@
-package com.mastergear
+package com.mastergear.web
+
+import com.mastergear.Gear
+import com.mastergear.GearList
+import com.mastergear.GearListGear
+import com.mastergear.Trail
 
 class TrailShowController {
 

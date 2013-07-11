@@ -1,4 +1,11 @@
-package com.mastergear
+package com.mastergear.web
+
+import com.mastergear.Gear
+import com.mastergear.GearList
+import com.mastergear.GearListGear
+import com.mastergear.GearUser
+import com.mastergear.UserProfile
+import com.mastergear.UserTrail
 
 class UserController {
 

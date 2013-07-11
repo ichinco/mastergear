@@ -1,15 +1,17 @@
-package com.mastergear
+package com.mastergear.rest
 
-import com.mastergear.web.UserController
+
+
 import grails.test.mixin.*
+import org.junit.*
 
 /**
  * See the API for {@link grails.test.mixin.web.ControllerUnitTestMixin} for usage instructions
  */
-@TestFor(UserController)
-class UserControllerTests {
+@TestFor(GearListsController)
+class GearListsControllerTests {
 
     void testSomething() {
-        fail "Implement me"
+       fail "Implement me"
     }
 }

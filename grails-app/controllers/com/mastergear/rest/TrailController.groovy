@@ -1,5 +1,6 @@
-package com.mastergear
+package com.mastergear.rest
 
+import com.mastergear.Trail
 import org.springframework.dao.DataIntegrityViolationException
 
 class TrailController {

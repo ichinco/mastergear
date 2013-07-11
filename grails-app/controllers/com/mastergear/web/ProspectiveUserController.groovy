@@ -1,6 +1,6 @@
-package com.mastergear
+package com.mastergear.web
 
-import org.springframework.dao.DataIntegrityViolationException
+import com.mastergear.ProspectiveUser
 
 class ProspectiveUserController {
 

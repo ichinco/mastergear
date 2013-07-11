@@ -6,9 +6,14 @@ class UrlMappings {
               action = [GET: "show", PUT: "save", DELETE: "delete", POST: "save"]
         }
 
-        "/trail/$id?"(parseRequest:true){
+        "/trail/$id"(parseRequest:true){
               controller = "trail"
               action = [GET: "show", PUT: "save", DELETE: "delete", POST: "save"]
+        }
+
+        "/trail/"(parseRequest:true){
+              controller = "trails"
+              action = [GET: "show", POST: "save"]
         }
 
         "/gearListGear/$id?"(parseRequest:true){

@@ -1,4 +1,4 @@
-package com.mastergear
+package com.mastergear.admin
 
 class ProviderImportController {
 

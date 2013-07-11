@@ -1,7 +1,6 @@
 package com.mastergear
 
-
-
+import com.mastergear.web.TrailShowController
 import grails.test.mixin.*
 
 /**

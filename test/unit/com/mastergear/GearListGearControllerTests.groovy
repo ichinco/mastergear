@@ -1,8 +1,6 @@
 package com.mastergear
 
-
-
-import org.junit.*
+import com.mastergear.rest.GearListGearController
 import grails.test.mixin.*
 
 @TestFor(GearListGearController)
