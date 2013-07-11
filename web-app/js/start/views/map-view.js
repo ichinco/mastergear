@@ -20,7 +20,6 @@ Mastergear.Views.Map = Backbone.View.extend({
         _.bindAll(this);
         this.map = L.map('map').setView([this.defaultLatitude, this.defaultLongitude], this.defaultZoom);
 
-        this.map.on('click', this.onMapClick);
         L.tileLayer('http://{s}.tile.stamen.com/terrain/{z}/{x}/{y}.png', {
             attribution: [
                     'Map tiles by <a href="http://stamen.com">Stamen Design</a>, ',
