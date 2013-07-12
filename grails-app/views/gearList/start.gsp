@@ -36,17 +36,21 @@
     <!-- backbone template for gearlist: see gearlist js files -->
     <script type="text/template" id="gear_list_template">
         <!-- make these boxes and cells -->
-        <div class='list-icon'></div>
-        <div class='gear-list-item'>
-            <!-- this really should be the title -->
-            <div class='list-title'>{{user.username}}</div>
-            <div class='list-description'>{{listDescription}}</div>
+        <a href="{{url}}">
+            <div class='list-icon'></div>
+            <div class='gear-list-item'>
 
-            <!-- reformat the date so that it is human readable -->
-            <div class='list-date'>{{dateCreated}}</div>
-            <div class='icon-{{season}}'></div>
-            <div class='icon-{{hikeType}}'></div>
-        </div>
+                    <!-- this really should be the title -->
+                    <div class='list-title'>{{user.username}}</div>
+                    <div class='list-description'>{{listDescription}}</div>
+
+                    <!-- reformat the date so that it is human readable -->
+                    <div class='list-date'>{{dateCreated}}</div>
+                    <div class='icon-{{season}}'></div>
+                    <div class='icon-{{hikeType}}'></div>
+
+            </div>
+        </a>
     </script>
 </body>
 </html>

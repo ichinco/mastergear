@@ -35,7 +35,9 @@ class GearList {
                     listDescription:it.listDescription,
                     imageUrl:it.imageUrl,
                     dateCreated: it.dateCreated.getTime(),
-                    lastUpdated: it.lastUpdated.getTime()]
+                    lastUpdated: it.lastUpdated.getTime(),
+                    url: g.createLink(controller:"gearList", action:"show", id: it.getId())
+            ]
         }
     }
 }
