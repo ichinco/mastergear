@@ -9,6 +9,8 @@
 /*.tmproj
 /ivy*
 /eclipse
+*.ipr
+*-grailsPlugins.iml
 
 # default HSQL database files for production mode
 /prodDb.*
