@@ -36,3 +36,47 @@ body > .logo-container
     position: absolute;
     fill: white;
 }
+
+#gear-list-display .gear-list-item:first-child
+{
+    margin-top: 150px;
+}
+
+#gear-list-display .gear-list-item
+{
+    margin: 5% 10% 5% 20px;
+    font-weight: 300;
+}
+
+#gear-list-display .gear-list-item .list-title
+{
+    font-size: 45px;
+    color: #555;
+    margin-bottom: -10px;
+}
+
+#gear-list-display .gear-list-item .list-description
+{
+    font-size: 20px;
+    color: #999;
+}
+
+#gear-list-display .gear-list-item .list-date
+{
+    color: RGB(95, 150, 20);
+    font-size: 14px;
+}
+
+#gear-list-display .list-icon
+{
+    float: left;
+    height: 120px;
+    width: 120px;
+    margin: 20px 5% 30px;
+    vertical-align: top;
+    border-radius: 60px;
+    background-color: #ccc;
+    -moz-box-shadow: inset 2px 3px 8px #000000;
+    -webkit-box-shadow: inset 2px 3px 8px #000000;
+    box-shadow: inset 2px 3px 8px #000000;
+}

@@ -1,20 +1,24 @@
 #map {
+    position: fixed;
     height:75%;
     width: 100%;
-
     opacity: .75;
+    min-height: 500px;
 }
 
 .intro {
     width: 380px;
-    bottom: 20%;
+    bottom: 35px;
     left: 0px;
     position: absolute;
     font-size: 30px;
     font-weight: 300;
     color: #333;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
     background: rgba(255, 255, 255, 0.55);
     padding: 30px 30px 30px 50px;
+    z-index: 10000;
 }
 
 .intro a

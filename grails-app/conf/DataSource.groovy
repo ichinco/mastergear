@@ -16,6 +16,8 @@ environments {
             dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
             url = "jdbc:postgresql://ec2-107-20-147-106.compute-1.amazonaws.com:5432/dekdff62cl17q7?user=fasgditgasposh&password=e86svWxfxIvvwof9mDd2drThFR&ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory"
             driverClassName = "org.postgresql.Driver"
+
+            dialect = 'org.hibernate.dialect.PostgreSQLDialect'
         }
     }
     test {
@@ -30,6 +32,7 @@ environments {
             url = "jdbc:postgresql://ec2-107-20-147-106.compute-1.amazonaws.com:5432/dekdff62cl17q7?user=fasgditgasposh&password=e86svWxfxIvvwof9mDd2drThFR&ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory"
             driverClassName = "org.postgresql.Driver"
             pooled = true
+            dialect = 'org.hibernate.dialect.PostgreSQLDialect'
             properties {
                maxActive = -1
                minEvictableIdleTimeMillis=1800000
