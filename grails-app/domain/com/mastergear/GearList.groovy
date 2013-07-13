@@ -12,6 +12,7 @@ class GearList {
     HikeType hikeType
     String listDescription
     String imageUrl;
+    String title;
 
     GearUser user
 
@@ -22,12 +23,14 @@ class GearList {
     static mapping = {
         listDescription size: 500
         imageUrl size: 500
+        title size: 100, nullable:true
     }
 
     public static void register(grailsApplication) {
         JSON.registerObjectMarshaller(GearList) {
             def g = grailsApplication.mainContext.getBean('org.codehaus.groovy.grails.plugins.web.taglib.ApplicationTagLib');
             return [id: it.id,
+                    title: it.title,
                     season: g.message(code: "season.${it.season.toString().toLowerCase()}"),
                     trail:it.trail,
                     hikeType: g.message(code: "hiketype.${it.hikeType.toString().toLowerCase()}"),
