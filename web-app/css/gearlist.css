@@ -3,6 +3,10 @@ body > .logo-container
     display: none;
 }
 
+.gearlist a {
+    text-decoration: none;
+}
+
 #gear-list-display
 {
     position: absolute;

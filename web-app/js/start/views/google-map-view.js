@@ -41,7 +41,6 @@ Mastergear.Views.GoogleMap = Backbone.View.extend({
     },
 
     setMarkers: function(evt){
-        console.log("setting markers");
         var map = this.map;
         var handler = this.onMarkerClick;
         var model = this.model;
