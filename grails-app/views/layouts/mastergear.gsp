@@ -66,7 +66,6 @@
                 js.src="https://platform.twitter.com/widgets.js";
                 fjs.parentNode.insertBefore(js,fjs);
             }}(document,"script","twitter-wjs");
-
     </script>
     <script type="text/javascript">
     // Outbound Link Tracking with Google Analytics
