@@ -54,7 +54,7 @@
     <div class="bubble">
         <g:form controller="gearList" action="initializeSave" class="object-form">
             <h1>Create a Gear List</h1>
-            <g:hiddenField name="user" value="1" />
+            <g:hiddenField name="user" value="-1" />
             <label for="season">season</label>
             <g:select name="season" from="${seasonValues}" keys="${Season.values()}" /><br />
             <label for="hikeType">hike type</label>

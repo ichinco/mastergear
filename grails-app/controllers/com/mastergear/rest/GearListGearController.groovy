@@ -31,6 +31,19 @@ class GearListGearController {
 
     def save() {
         def gearListGearInstance = new GearListGear()
+        String listId = params.list.id;
+        if (listId){
+            GearList list = GearList.get(Integer.parseInt(listId));
+            gearListGearInstance.list = list;
+        }
+
+        if (!gearListGearInstance.list || !gearListGearInstance.list.user.username.equals(session.getId())){
+            render (contentType:'text/json'){
+                gearListGearInstance: gearListGearInstance
+            }
+            return;
+        }
+
         gearListGearInstance.quantity = 1;
         gearListGearInstance.notes = params.notes ? params.notes : "";
 
@@ -43,11 +56,6 @@ class GearListGearController {
             gearListGearInstance.gear = gear;
         }
 
-        String listId = params.list.id;
-        if (listId){
-            GearList list = GearList.get(Integer.parseInt(listId));
-            gearListGearInstance.list = list;
-        }
 
         if (!gearListGearInstance.save(flush: true)) {
             render(view: "create", model: [gearListGearInstance: gearListGearInstance])
