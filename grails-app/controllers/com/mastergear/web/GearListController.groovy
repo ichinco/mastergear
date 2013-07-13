@@ -46,6 +46,7 @@ class GearListController {
 
         GearList gearList = new GearList();
         gearList.listDescription = params.listDescription;
+        gearList.title = params.title;
 
         GearUser user = null;
         if (userId && Integer.parseInt(userId) > 0){

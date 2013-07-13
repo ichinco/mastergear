@@ -84,3 +84,23 @@ body > .logo-container
     -webkit-box-shadow: inset 2px 3px 8px #000000;
     box-shadow: inset 2px 3px 8px #000000;
 }
+
+#gear-list-display .hike-symbol {
+    width: 100px;
+    height: 100px;
+    background-image: url('../images/hiketypesprite.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    margin: 10px;
+}
+
+#gear-list-display .hike-symbol.Backpacking {
+    background-position: 0 0;
+}
+#gear-list-display .hike-symbol.Day {
+    background-position: -200px 0;
+}
+#gear-list-display .hike-symbol.Car {
+    background-position: -100px 0;
+}
