@@ -23,6 +23,5 @@
     <g:render template="gearType" model="[gear : electronics, code: 'geartype.electronics']"/>
     <g:render template="gearType" model="[gear : emergency, code: 'geartype.emergency']"/>
     <g:render template="gearType" model="[gear : other, code: 'geartype.other']"/>
-
 </body>
 </html>
