@@ -10,7 +10,7 @@ Mastergear.Router = Backbone.Router.extend({
         var possibleTrailModel = new Mastergear.Collection.PossibleTrails();
         gearlistCollection.setPossibleTrailCollection(possibleTrailModel);
 
-        var map = new Mastergear.Views.Map({
+        var map = new Mastergear.Views.GoogleMap({
             el : '#map',
             model : possibleTrailModel
         });

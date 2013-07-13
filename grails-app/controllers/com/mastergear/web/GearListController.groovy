@@ -12,6 +12,7 @@ import com.mastergear.Weight
 class GearListController {
 
     def gearListService;
+    def userService;
 
     def index() {
         render(view: 'start')
@@ -20,8 +21,13 @@ class GearListController {
     def create() {
         int id = Integer.parseInt(params.id);
         GearList list = GearList.get(id);
+        GearUser user = list.user
 
-        render view: "create", model: [list : list, totalWeight: gearListService.getListWeight(list)]
+        if (user.username.equals(session.getId())) {
+            render view: "create", model: [list : list, totalWeight: gearListService.getListWeight(list)]
+        } else {
+            render view: "cookies"
+        }
     }
 
     def initialize() {
@@ -41,10 +47,17 @@ class GearListController {
         GearList gearList = new GearList();
         gearList.listDescription = params.listDescription;
 
-        if (userId){
-            GearUser user = GearUser.get(Integer.parseInt(userId)); // get the actual user once there are users
-            gearList.user = user;
+        GearUser user = null;
+        if (userId && Integer.parseInt(userId) > 0){
+            user = GearUser.get(Integer.parseInt(userId)); // get the actual user once there are users
+        } else {
+            user = GearUser.findByUsernameAndAnonymous(session.getId(), true);
+            if (! user){
+                user = userService.createAnonymousUser(session.getId());
+            }
         }
+        gearList.user = user;
+
         if (seasonString) {
             gearList.season = Season.valueOf(seasonString);
         }

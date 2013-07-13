@@ -8,6 +8,7 @@ class GearUser {
 
 	String username
 	String password
+    boolean anonymous = false;
 	boolean enabled
 	boolean accountExpired
 	boolean accountLocked
@@ -44,9 +45,10 @@ class GearUser {
 
     public static void register() {
         JSON.registerObjectMarshaller(GearUser) {
-            return [id: it.id, username:it.username,
-            dateCreated: it.dateCreated.getTime(),
-            lastUpdated: it.lastUpdated.getTime()]
+            return [id: it.id,
+                    username:it.anonymous ? "anonymous" : it.username,
+                    dateCreated: it.dateCreated.getTime(),
+                    lastUpdated: it.lastUpdated.getTime()]
         }
     }
 }
