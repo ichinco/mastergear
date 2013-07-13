@@ -25,6 +25,7 @@ modules = {
 
     startviews {
         dependsOn 'lib'
+        dependsOn 'moment'
 
         resource 'js/start/views/google-map-view.js'
         resource 'js/start/views/intro-dialog.js'

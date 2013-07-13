@@ -47,7 +47,7 @@
                     <div class='list-description'>{{listDescription}}</div>
 
                     <!-- reformat the date so that it is human readable -->
-                    <div class='list-date'>{{dateCreated}}</div>
+                    <div class='list-date'>{{moment(dateCreated).format('MMMM D, YYYY')}}</div>
                     <div class='icon-{{season}}'></div>
                     <div class='icon-{{hikeType}}'></div>
 
