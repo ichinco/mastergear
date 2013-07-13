@@ -39,7 +39,9 @@
     <script type="text/template" id="gear_list_template">
         <!-- make these boxes and cells -->
         <a href="{{url}}">
-            <div class='list-icon'></div>
+            <div class='list-icon'>
+                <div class='{{hikeType}} hike-symbol'></div>
+            </div>
             <div class='gear-list-item'>
 
                     <!-- this really should be the title -->
