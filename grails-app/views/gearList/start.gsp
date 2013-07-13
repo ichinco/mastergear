@@ -11,16 +11,18 @@
 <html>
 <head>
     <meta name="layout" content="flat">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCURdG3H4OW33dNUQGrxI531CAJcYovDeE&sensor=false"></script>
     <r:require module="start" />
 </head>
 <body>
     <div id="map">
-        <div class="intro">
-            <div class="close">x</div>
-            Browse gear lists that other hikers have created. Click
-            on a pin and see what they have in their arsenal. <br />
-            Or <g:link controller="gearList" action="initialize">create your own list.</g:link>
-        </div>
+
+    </div>
+    <div class="intro">
+        <div class="close">x</div>
+        Browse gear lists that other hikers have created. Click
+        on a pin and see what they have in their arsenal. <br />
+        Or <g:link controller="gearList" action="initialize">create your own list.</g:link>
     </div>
     <div id="gear-list-display">
         <g:render template="/layouts/logo" />

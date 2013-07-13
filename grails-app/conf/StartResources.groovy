@@ -1,7 +1,6 @@
 modules = {
     start {
         dependsOn 'flat'
-        dependsOn 'leaflet'
         dependsOn 'lib'
         dependsOn 'startcollections'
         dependsOn 'startmodels'
@@ -27,7 +26,7 @@ modules = {
     startviews {
         dependsOn 'lib'
 
-        resource 'js/start/views/map-view.js'
+        resource 'js/start/views/google-map-view.js'
         resource 'js/start/views/intro-dialog.js'
         resource 'js/start/views/gearlist-view.js'
     }
