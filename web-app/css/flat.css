@@ -46,6 +46,20 @@ html, body.flat
    font-family: 'Open Sans', sans-serif;
 }
 
+.flat a, body.flat a:active, body.flat a:visited
+{
+    color: RGB(95, 150, 20);
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.flat a:hover
+{
+    color: RGB(95, 150, 20);
+    text-decoration: none;
+    font-weight: 400;
+}
+
 .flat .nav-container {
     position: fixed;
     top: 0px;

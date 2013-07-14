@@ -12,7 +12,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title><g:layoutTitle default="feathergear: find out what your gear adds up to"/></title>
-    <link href="${resource(dir:'css', file:'mastergear.css')}" rel='stylesheet' type='text/css' />
+    <link href="${resource(dir:'css', file:'flat.css')}" rel='stylesheet' type='text/css' />
     <link href='http://fonts.googleapis.com/css?family=Lato:100,400' rel='stylesheet' type='text/css' />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css' />
     <script src="${resource(dir:'js', file:'jquery.js')}" type="text/javascript"></script>
