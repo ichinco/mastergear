@@ -15,14 +15,16 @@
     <r:require module="start" />
 </head>
 <body>
-    <div id="map">
+    <div id="map-container">
+        <div id="map">
 
-    </div>
-    <div class="intro">
-        <div class="close">x</div>
-        Browse gear lists that other hikers have created. Click
-        on a pin and see what they have in their arsenal. <br />
-        Or <g:link controller="gearList" action="initialize">create your own list.</g:link>
+        </div>
+        <div class="intro">
+            <div class="close">x</div>
+            Browse gear lists that other hikers have created. Click
+            on a pin and see what they have in their arsenal. <br />
+            Or <g:link controller="gearList" action="initialize">create your own list.</g:link>
+        </div>
     </div>
     <div id="gear-list-display">
         <g:render template="/layouts/logo" />

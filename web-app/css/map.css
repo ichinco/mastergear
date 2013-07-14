@@ -8,9 +8,9 @@
 
 .intro {
     width: 380px;
-    bottom: 35px;
+    bottom: 300px;
     left: 0px;
-    position: absolute;
+    position: relative;
     font-size: 30px;
     font-weight: 300;
     color: #333;
