@@ -214,4 +214,11 @@ section.gear-list-category {}
     height: 100px;
 }
 
+.reference {
+    #margin-top:-80px;
+    #display: block;
+    position: relative;
+    top: -80px;
+}
+
 

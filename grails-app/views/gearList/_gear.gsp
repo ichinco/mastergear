@@ -7,6 +7,7 @@
 <%@ page import="com.mastergear.Provider; java.util.regex.Pattern" contentType="text/html;charset=UTF-8" %>
 <html>
     <div class="item-container">
+        <a name="${id}" class="reference" ></a>
         <!-- image -->
         <div class="item-image">
             <g:if test="${gear.providers != null && gear.providers.size() > 0}">
