@@ -29,7 +29,6 @@ Mastergear.Views.GearList = Backbone.View.extend({
         var template = this._getTemplate();
         var finalHtml = "";
         _.each(this.model.models, function (e){
-            console.log(e);
             if (e.attributes.id){
                 var attributes = e.attributes;
                 finalHtml += (template(attributes));

@@ -47,7 +47,8 @@ Mastergear.Views.GoogleMap = Backbone.View.extend({
         _.each(this.model.models, function (e){
             var marker = new google.maps.Marker({
                 position: new google.maps.LatLng(e.attributes.latitude, e.attributes.longitude),
-                map: map
+                map: map,
+                icon: "images/marker.png"
               });
             google.maps.event.addListener(marker, 'click', handler(e.attributes.id, model));
         });
