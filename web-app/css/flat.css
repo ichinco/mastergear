@@ -1,49 +1,55 @@
-html, body.flat
+.background
 {
+   position: fixed;
    top:0;
    left:0;
    margin:0;
    height: 100%;
    width: 100%;
-   background: rgb(255,255,255);
+   background: #EAEAEA;
+   /*background: rgb(255,255,255);*/
    overflow: hidden;
    /* Old browsers */
 
-   background: -moz-radial-gradient(
-      center center,
-      circle cover,
-      rgb(255, 255, 255), rgb(215, 215, 215)
-   ); /* FF3.6+ */
+   /*background: -moz-radial-gradient(*/
+      /*center center,*/
+      /*circle cover,*/
+      /*rgb(255, 255, 255), rgb(215, 215, 215)*/
+   /*); *//* FF3.6+ */
+/**/
+   /*background: -webkit-radial-gradient(*/
+      /*center center,*/
+      /*circle cover,*/
+      /*rgb(255, 255, 255), rgb(215, 215, 215)*/
+   /*); *//* Chrome10+,Safari5.1+ */
+/**/
+   /*background: -o-radial-gradient(*/
+      /*center center,*/
+      /*circle cover,*/
+      /*rgb(255, 255, 255), rgb(215, 215, 215)*/
+   /*); *//* Opera 12+ */
+/**/
+   /*background: -ms-radial-gradient(*/
+      /*center center,*/
+      /*circle cover,*/
+      /*rgb(255, 255, 255), rgb(215, 215, 215)*/
+   /*); *//* IE 10ish */
+/**/
+   /*background: -ms-radial-gradient(*/
+      /*center center,*/
+      /*circle cover,*/
+      /*rgb(255, 255, 255), rgb(215, 215, 215)*/
+   /*); *//* W3C Standard */
+/**/
+   /*filter: progid:DXImageTransform.Microsoft.gradient(*/
+      /*startColorstr='#ffffff', endColorstr='#efefef',GradientType=1*/
+   /*); *//* IE6-9 fallback on horizontal gradient */
 
-   background: -webkit-radial-gradient(
-      center center,
-      circle cover,
-      rgb(255, 255, 255), rgb(215, 215, 215)
-   ); /* Chrome10+,Safari5.1+ */
 
-   background: -o-radial-gradient(
-      center center,
-      circle cover,
-      rgb(255, 255, 255), rgb(215, 215, 215)
-   ); /* Opera 12+ */
+}
 
-   background: -ms-radial-gradient(
-      center center,
-      circle cover,
-      rgb(255, 255, 255), rgb(215, 215, 215)
-   ); /* IE 10ish */
-
-   background: -ms-radial-gradient(
-      center center,
-      circle cover,
-      rgb(255, 255, 255), rgb(215, 215, 215)
-   ); /* W3C Standard */
-
-   filter: progid:DXImageTransform.Microsoft.gradient(
-      startColorstr='#ffffff', endColorstr='#efefef',GradientType=1
-   ); /* IE6-9 fallback on horizontal gradient */
-
-   font-family: 'Open Sans', sans-serif;
+html, body.flat {
+    font-family: 'Open Sans', sans-serif;
 }
 
 .flat a, body.flat a:active, body.flat a:visited
@@ -64,8 +70,9 @@ html, body.flat
     position: fixed;
     top: 0px;
     left: 0;
-    height: 50px;
+    height: 80px;
     width: 100%;
+    background: #EAEAEA;
 }
 
 .flat .main-navigation .icon
@@ -80,12 +87,17 @@ html, body.flat
 .flat .nav-container .nav-item {
     display: inline-block;
     margin: 0 10px;
+    width: 35px;
 
     -moz-opacity: .5;
     -webkit-opacity: .5;
     -o-opacity: .5;
     opacity: .5;
     filter: alpha(opacity=50%);
+}
+
+.flat .nav-container .nav-item .icon {
+    margin: 0px auto;
 }
 
 .flat .nav-container .nav-item:hover
@@ -118,7 +130,7 @@ html, body.flat
 
 .flat .logo-container
 {
-   position: absolute;
+   position: fixed;
    top: 5px;
    right: 15px;
 }
@@ -161,4 +173,10 @@ body.flat .main-content {
     height: 100%;
     top:0;
     left:0;
+}
+
+.navtext {
+    display: block;
+    text-align: center;
+    font-size: 14px;
 }

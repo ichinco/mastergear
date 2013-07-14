@@ -20,11 +20,13 @@
     <r:layoutResources />
 </head>
 <body class='flat'>
-    <g:render template="/layouts/flat_navigation" />
-    <g:render template="/layouts/logo" />
+    <div class="background"></div>
+
     <div class="main-content" >
         <g:layoutBody/>
     </div>
+    <g:render template="/layouts/flat_navigation" />
+    <g:render template="/layouts/logo" />
     <script type="text/template" id="gear_type_template">
         <div>
             <div class="gear-delete" data-gear-id={{id}} style="background-image:url('${resource(dir: "images", file: "brightmix_delete.png")}')"></div>
