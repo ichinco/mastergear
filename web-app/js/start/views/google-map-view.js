@@ -37,7 +37,7 @@ Mastergear.Views.GoogleMap = Backbone.View.extend({
     onMarkerClick: function(id, model, loc) {
         return function(evt) {
             model.setSelected(id);
-            this.map.panTo(loc);
+//            this.map.panTo(loc);
         };
     },
 
