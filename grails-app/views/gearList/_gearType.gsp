@@ -1,8 +1,8 @@
 <g:if test="${gear.size() > 0}">
-    <div class="bubble">
-        <h2><g:message code="${code}" /></h2>
+    <section class="gear-list-category">
+        <h2 class="category-title"><g:message code="${code}" /></h2>
         <g:each in="${gear}" var="g">
             <g:render template="gear" model="[gear:g.gear, quantity: g.quantity, notes: g.notes]"/>
         </g:each>
-    </div>
+    </section>
 </g:if>

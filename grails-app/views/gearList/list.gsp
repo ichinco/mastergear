@@ -31,8 +31,9 @@
             <header id="gear-list-display-header">
                 <g:render template="gearSummary" model="[list:list, totalWeight:totalWeight]" />
             </header>
-            <section></section>
-            <section id="gear-list"></section>
+            <div id="list-item-container">
+                <g:render template="gearType" model="[gear : pack, code: 'geartype.pack']"/>
+            </div>
         </article>
     </body>
 </html>
