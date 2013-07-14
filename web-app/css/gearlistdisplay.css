@@ -1,11 +1,33 @@
+html, body.flat
+{
+    overflow: scroll;
+}
+
 .main-content
 {
     margin-left: 20px;
 }
 
+.main-content .gear-list-layout
+{
+    display: table-row;
+}
+
+.main-content .gear-list-layout .gear-list-left-panel
+{
+    display: table-cell;
+    vertical-align: top;
+}
+
+.main-content .gear-list-layout .gear-list-main-panel
+{
+    display: table-cell;
+}
+
 #gear-list-display-header .list-info
 {
-    width: 65%;
+    width: 80%;
+    min-width: 500px;
 }
 
 #gear-list-display-header .list-info h1
@@ -62,6 +84,13 @@
     font-size: 14px;
     color: #888;
     margin-bottom: 3px;
+    cursor: hand;
+    cursor: pointer;
+}
+
+#gearlist-side .list-container .list-item:hover
+{
+    color: #aaa;
 }
 
 section.gear-list-category {}
@@ -76,7 +105,7 @@ section.gear-list-category {}
 .gear-list-category .item-container
 {
     display: table;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 .gear-list-category .item-container .item-image
@@ -88,9 +117,6 @@ section.gear-list-category {}
 {
     max-width: 150px;
     max-height: 150px;
-    -moz-box-shadow: inset 2px 3px 8px #000000;
-    -webkit-box-shadow: inset 2px 3px 8px #000000;
-    box-shadow: inset 2px 3px 8px #000000;
     position: relative;
     top: 50%;
     margin-top: -75px;
@@ -138,7 +164,49 @@ section.gear-list-category {}
     margin-bottom: 12px;
 }
 
+.gear-list-category .item-container .item-info .item-provider .provider-logo
+{
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    margin: 0px 5px 0px 10px;
+    background-image: url('/mastergear/images/provider-logos.png');
+    vertical-align: middle;
+    background-repeat: no-repeat;
+}
+.gear-list-category .item-container .item-info .item-provider a
+{
+    font-size: 16px;
+    font-weight: 300;
+    margin-right: 3px;
+}
 
+.gear-list-category .item-container .item-info .item-provider .amazon
+{
+    background-size: auto 18px;
+    width: 18px;
+    height: 18px;
+}
 
+.gear-list-category .item-container .item-info .item-provider .EMS
+{
+    background-position: -22px;
+}
+.gear-list-category .item-container .item-info .item-provider .REI
+{
+    background-position: -44px;
+    width: 30px;
+    margin-top: -2px;
+}
+.gear-list-category .item-container .item-info .item-provider .ramsey
+{
+    background-position: -74px;
+}
+
+#gear-list-footer
+{
+    display: block;
+    height: 100px;
+}
 
 

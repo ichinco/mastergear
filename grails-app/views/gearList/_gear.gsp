@@ -32,12 +32,10 @@
                     Provider provider = gear.providers.first();
                 %>
                 <div class="item-provider">
-                    <div class="provider-links">
-                        buy from:
-                        <g:each in="${gear.providers}" var="p">
-                            <g:message code="providertype.html.icon.${p.type.toString().toLowerCase()}" args="${ [p.providerId, provider.imageId] }" />
-                        </g:each>
-                    </div>
+                    buy from:
+                    <g:each in="${gear.providers}" var="p">
+                        <g:message code="providertype.html.icon.${p.type.toString().toLowerCase()}" args="${ [p.providerId, provider.imageId] }" />
+                    </g:each>
                 </div>
             </g:if>
             <div class="item-description">
