@@ -62,6 +62,9 @@ grails.hibernate.cache.queries = false
 environments {
     development {
         grails.logging.jul.usebridge = true
+        grails.resources.debug = true
+        grails.resources.processing.enabled = false
+        grails.resources.adhoc.excludes = ['**/*.*']
     }
     production {
         grails.logging.jul.usebridge = false

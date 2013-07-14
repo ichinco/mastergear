@@ -55,9 +55,10 @@ grails.project.dependency.resolution = {
         compile ":resources:1.2.RC2"
 
         // Uncomment these (or add new ones) to enable additional resources capabilities
-        //runtime ":zipped-resources:1.0"
-        //runtime ":cached-resources:1.0"
-        //runtime ":yui-minify-resources:0.1.5"
+        compile ":cache-headers:1.1.5"
+        runtime ":zipped-resources:1.0"
+        runtime ":cached-resources:1.0"
+//        runtime ":yui-minify-resources:0.1.5"
 
         build ":tomcat:$grailsVersion"
 
