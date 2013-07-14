@@ -34,9 +34,10 @@ Mastergear.Views.GoogleMap = Backbone.View.extend({
         this.model.fetch();
     },
 
-    onMarkerClick: function(id, model) {
+    onMarkerClick: function(id, model, loc) {
         return function(evt) {
             model.setSelected(id);
+//            this.map.panTo(loc);
         };
     },
 
@@ -45,12 +46,31 @@ Mastergear.Views.GoogleMap = Backbone.View.extend({
         var handler = this.onMarkerClick;
         var model = this.model;
         _.each(this.model.models, function (e){
+            var loc = new google.maps.LatLng(e.attributes.latitude, e.attributes.longitude);
             var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(e.attributes.latitude, e.attributes.longitude),
+                position: loc,
                 map: map,
-                icon: "images/marker.png"
+                icon: "images/marker.png",
+                title: e.name
               });
-            google.maps.event.addListener(marker, 'click', handler(e.attributes.id, model));
+            google.maps.event.addListener(marker, 'click', handler(e.attributes.id, model, loc));
+
+            var infowindow = new google.maps.InfoWindow({
+                content: "<div>" + e.attributes.name + "</div>",
+                pixelOffset:new google.maps.Size(0, 0),
+                hideCloseButton:true,
+                arrowSize:15,
+                arrowPosition: 50
+            });
+
+            google.maps.event.addListener(marker, 'mouseover', function(evt) {
+                infowindow.open(map, marker);
+            });
+
+            // assuming you also want to hide the infowindow when user mouses-out
+            google.maps.event.addListener(marker, 'mouseout', function() {
+                infowindow.close();
+            });
         });
     }
 
