@@ -1,12 +1,13 @@
-html, body.flat
+html
 {
-    overflow: scroll;
+    overflow: auto;
 }
-
+/*
 .main-content
 {
     margin-left: 20px;
 }
+*/
 
 .main-content .gear-list-layout
 {
@@ -17,11 +18,14 @@ html, body.flat
 {
     display: table-cell;
     vertical-align: top;
+    position: fixed;
 }
 
 .main-content .gear-list-layout .gear-list-main-panel
 {
     display: table-cell;
+    position: absolute;
+    left: 250px;
 }
 
 #gear-list-display-header .list-info
@@ -62,10 +66,11 @@ html, body.flat
 
 #gearlist-side .list-container
 {
-    width: 15%;
+    width: 200px;
     padding: 0px;
     float: left;
     margin-right: 45px;
+    font-weight: 300;
 }
 
 #gearlist-side .list-container li
