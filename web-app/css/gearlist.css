@@ -34,6 +34,20 @@
 {
     position: absolute;
     fill: white;
+    cursor: pointer;
+}
+
+#gear-list-display .close-img
+{
+    right: 0px;
+    margin-right: -19px;
+    top: 95px;
+    position: absolute;
+    background-image: url('../images/navicons.png');
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    pointer-events : none;
 }
 
 #gear-list-display .gear-list-item:first-child

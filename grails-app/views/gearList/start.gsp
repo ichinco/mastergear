@@ -32,6 +32,7 @@
                     cx='30px'
                     cy='30px' />
         </svg>
+        <div class="close-img"></div>
         <div class="gearlist"></div>
     </div>
 
