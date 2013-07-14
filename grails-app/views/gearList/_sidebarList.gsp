@@ -1,7 +1,8 @@
 <%@ page import="com.mastergear.GearType" %>
-
-<h2><g:message code="${code}" /></h2>
-<g:each in="${gear}" var="g">
-    ${g.gear.title}
-</g:each>
+<g:if test="${gear.size() > 0}">
+    <li class="heading-item"><g:message code="${code}" /></li>
+    <g:each in="${gear}" var="g">
+    <li class="list-item">${g.gear.title}</li>
+    </g:each>
+</g:if>
 

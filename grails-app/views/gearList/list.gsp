@@ -6,23 +6,35 @@
 --%>
 
 <!DOCTYPE html>
-<%@ page import="java.text.NumberFormat; com.mastergear.GearType" contentType="text/html;charset=UTF-8" %>
 
 <html>
-<head>
-    <meta name="layout" content="flat">
-    <link type="text/css" rel="stylesheet"
-          href="${resource(dir:'css', file:'gearlistdisplay.css')}" />
-</head>
-<body>
-    <article>
-        <header id="gear-list-display-header">
-            <g:render template="gearSummary" model="[list:list, totalWeight:totalWeight]" />
-        </header>
-        <section></section>
-        <section id="gear-list"></section>
-    </article>
-</body>
+    <head>
+        <meta name="layout" content="flat">
+        <link type="text/css" rel="stylesheet"--}%
+              href="${resource(dir:'css', file:'gearlistdisplay.css')}" />
+    </head>
+    <body>
+        <menu id="gearlist-side">
+            <ul class="list-container">
+                <g:render template="sidebarList"  model="[gear : pack, code:'geartype.pack']" />
+                <g:render template="sidebarList"  model="[gear : sleep, code:'geartype.sleep']" />
+                <g:render template="sidebarList"  model="[gear : cooking, code:'geartype.cooking']" />
+                <g:render template="sidebarList"  model="[gear : food, code:'geartype.food']" />
+                <g:render template="sidebarList"  model="[gear : water, code:'geartype.water']" />
+                <g:render template="sidebarList"  model="[gear : clothes, code:'geartype.clothes']" />
+                <g:render template="sidebarList"  model="[gear : electronics, code:'geartype.electronics']" />
+                <g:render template="sidebarList"  model="[gear : other, code:'geartype.other']" />
+                <g:render template="sidebarList"  model="[gear : emergency, code:'geartype.emergency']" />
+            </ul>
+        </menu>
+        <article>
+            <header id="gear-list-display-header">
+                <g:render template="gearSummary" model="[list:list, totalWeight:totalWeight]" />
+            </header>
+            <section></section>
+            <section id="gear-list"></section>
+        </article>
+    </body>
 </html>
 <%--
 <html>
@@ -54,3 +66,5 @@
     <g:render template="gearType" model="[gear : other, code: 'geartype.other']"/>
 </body>
 </html>
+
+--%>
