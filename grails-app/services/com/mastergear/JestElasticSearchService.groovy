@@ -15,6 +15,8 @@ class JestElasticSearchService {
 
     static singleton = true;
 
+    def grailsApplication
+
     private JestClient client;
     private static final String INDEX = "com.mastergear";
     private static final String TYPE = "gear";
@@ -23,7 +25,7 @@ class JestElasticSearchService {
     def createJest() {
         ClientConfig clientConfig = new ClientConfig();
         LinkedHashSet<String> servers = new LinkedHashSet<String>();
-        servers.add("http://qiqgsxgp:nxxu4adr05zwy4q@elm-4941848.us-east-1.bonsai.io:80");
+        servers.add(grailsApplication.config.elasticsearch.serverpath);
         clientConfig.getProperties().put(ClientConstants.SERVER_LIST, servers);
         clientConfig.getProperties().put(ClientConstants.IS_MULTI_THREADED, true);
 

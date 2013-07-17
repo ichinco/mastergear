@@ -14,7 +14,7 @@ environments {
     development {
         dataSource {
             dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:postgresql://ec2-107-20-147-106.compute-1.amazonaws.com:5432/dekdff62cl17q7?user=fasgditgasposh&password=e86svWxfxIvvwof9mDd2drThFR&ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory"
+            url = System.getenv("DB_URL")
             driverClassName = "org.postgresql.Driver"
 
             dialect = 'org.hibernate.dialect.PostgreSQLDialect'
@@ -29,7 +29,7 @@ environments {
     production {
         dataSource {
             dbCreate = "update"
-            url = "jdbc:postgresql://ec2-107-20-147-106.compute-1.amazonaws.com:5432/dekdff62cl17q7?user=fasgditgasposh&password=e86svWxfxIvvwof9mDd2drThFR&ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory"
+            url = System.getenv("DB_URL")
             driverClassName = "org.postgresql.Driver"
             pooled = true
             dialect = 'org.hibernate.dialect.PostgreSQLDialect'
