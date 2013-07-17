@@ -10,7 +10,7 @@
 <html>
 <head>
     <title>Create a new gear list</title>
-    <meta name="layout" content="mastergear">
+    <meta name="layout" content="flat">
 </head>
 <body>
     <div class="bubble">
