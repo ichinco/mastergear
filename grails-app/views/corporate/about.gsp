@@ -9,13 +9,9 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <meta name="layout" content="mastergear">
+    <meta name="layout" content="flat">
 </head>
 <body>
-    <div class="bubble title" >
-        <h1>feathergear</h1>
-        <div class="tagline">Find out what your gear adds up to.</div>
-    </div>
     <div class="bubble">
         <h2>About Feathergear</h2>
         <p>
