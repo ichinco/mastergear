@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <meta name="layout" content="mastergear">
+    <meta name="layout" content="flat">
     <title>${trail.name} - feathergear</title>
 </head>
 <body>
