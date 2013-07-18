@@ -36,6 +36,9 @@ Mastergear.Views.GearList = Backbone.View.extend({
             }
         });
         this.$el.html(finalHtml);
+
+        console.log(this.$el);
+
         return this;
     },
 

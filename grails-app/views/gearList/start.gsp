@@ -46,7 +46,6 @@
                 <div class='{{hikeType}} hike-symbol'></div>
             </div>
             <div class='gear-list-item'>
-
                     <!-- this really should be the title -->
                     <div class='list-title'>{{user.username}}</div>
                     <div class='list-description'>{{listDescription}}</div>
@@ -58,6 +57,8 @@
 
             </div>
         </a>
+    </script>
+    <script type="text/javascript">
     </script>
 </body>
 </html>
