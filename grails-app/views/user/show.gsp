@@ -10,11 +10,11 @@
 <html>
 <head>
     <meta name="layout" content="mastergear">
-    <title>${user.username} - feathergear</title>
+    <title>${user.computeDisplayableUsername()} - feathergear</title>
 </head>
 <body>
     <div class="bubble">
-        <h1>${user.username}</h1>
+        <h1>${user.computeDisplayableUsername()}</h1>
         <g:if test="${profile.twitterId}"><div>twitter: ${profile.twitterId}</div></g:if>
         <div>favorite hike: <g:link controller="trail" action="show" params="[id : profile.favoriteTrail.id]">${profile.favoriteTrail.name}</g:link></div>
     </div>

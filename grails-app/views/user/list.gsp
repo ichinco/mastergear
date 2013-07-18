@@ -21,7 +21,7 @@
         <h1>Users</h1>
         <div class="lists">
             <g:each in="${users}" var="user">
-                <g:link controller="User" action="show" params="[userId : user.id]">${user.username}</g:link>
+                <g:link controller="User" action="show" params="[userId : user.id]">${user.computeDisplayableUsername()}</g:link>
             </g:each>
         </div>
     </div>
