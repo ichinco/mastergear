@@ -14,23 +14,25 @@
 </head>
 <body>
     <article>
-    <header class="trails-display">
-       <div class="trails-title">
+    <header id="trails-title">
+       <div class="trails-title-container">
            <h2>Trails</h2>
        </div>
     </header>
     <section id="trail-list">
     <div class="trail-list-container">
         <ul class="trail-list">
-        <li>
-            <div class="trail-item-container">
-                <g:each in="${trails}" var="trail">
-                    <div class="trail-item-text">
-                        <g:link controller="TrailShow" action="show" params="[id : trail.id]">${trail.name}</g:link>
+            <g:each in="${trails}" var="trail">
+                <li>
+                    <div class="trail-item-container">
+                        <div class="trail-item-text">
+                            <g:link controller="TrailShow" action="show" params="[id : trail.id]">
+                                ${trail.name}
+                            </g:link>
+                        </div>
                     </div>
-                </g:each>
-            </div>
-        </li>
+                </li>
+            </g:each>
         </ul>
     </div>
     </section>

@@ -186,3 +186,39 @@ body.flat .main-content {
     max-width: 700px;
 
 }
+
+#trails-title {}
+
+#trails-title .trails-title-container {}
+
+#trails-title .trails-title-container h2
+{
+    font-size: 30pt;
+    font-weight: 300;
+    color: #666666;
+}
+
+
+#trails-title .trails-title-container,
+.flat .trail-list-container
+{
+    width: 50%;
+    margin: auto;
+}
+
+.flat .trail-list-container .trail-list
+{
+    padding: 0px;
+}
+
+.flat .trail-list-container .trail-list li
+{
+    list-style: none;
+    margin-bottom: 20px;
+    font-size: 16pt;
+}
+
+.flat .trail-list-container .trail-list .trail-item-container
+{
+
+}
