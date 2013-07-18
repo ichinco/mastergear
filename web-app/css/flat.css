@@ -4,7 +4,7 @@ html, body.flat
    top:0;
    left:0;
    margin:0;
-   height: 100%;
+   min-height: 100%;
    width: 100%;
    background: #EAEAEA;
    /*background: rgb(255,255,255);*/
@@ -46,7 +46,10 @@ html, body.flat
 
     font-family: 'Open Sans', sans-serif;
 }
-
+body.front-page
+{
+    overflow: hidden;
+}
 .flat a, body.flat a:active, body.flat a:visited
 {
     color: RGB(95, 150, 20);
