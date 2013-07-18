@@ -43,10 +43,14 @@ class GearUser {
 		password = springSecurityService.encodePassword(password)
 	}
 
+    public String computeDisplayableUsername(){
+        return anonymous ? "anonymous" : username
+    }
+
     public static void register() {
         JSON.registerObjectMarshaller(GearUser) {
             return [id: it.id,
-                    username:it.anonymous ? "anonymous" : it.username,
+                    username: it.computeDisplayableUsername(),
                     dateCreated: it.dateCreated.getTime(),
                     lastUpdated: it.lastUpdated.getTime()]
         }

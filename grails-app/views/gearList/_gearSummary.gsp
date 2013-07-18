@@ -16,7 +16,7 @@
     <div class="trail-location">(${list.trail.name})</div>
     <div class="user">by
         <g:link controller="user" action="show" params="[userId: list.user.id]">
-            ${list.user.username}
+            ${list.user.computeDisplayableUsername()}
         </g:link>
     </div>
     <%--

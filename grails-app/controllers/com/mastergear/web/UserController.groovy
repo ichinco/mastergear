@@ -35,7 +35,7 @@ class UserController {
 
     def list(){
         render view: "list", model:[
-            users : GearUser.list()
+            users : GearUser.findAllByAnonymous(false)
         ]
     }
 }
