@@ -13,14 +13,28 @@
     <title>users - feathergear</title>
 </head>
 <body>
-    <div class="bubble">
-        <h1>Users</h1>
-        <div class="lists">
+    <article>
+    <header id="trails-title">
+       <div class="trails-title-container">
+           <h2>Users</h2>
+       </div>
+    </header>
+    <section id="trail-list">
+    <div class="trail-list-container">
+        <ul class="trail-list">
             <g:each in="${users}" var="user">
-                <g:link controller="User" action="show" params="[userId : user.id]">${user.computeDisplayableUsername()}</g:link>
+                <li>
+                    <div class="trail-item-container">
+                        <div class="trail-item-text">
+                            <g:link controller="User" action="show" params="[userId : user.id]">${user.computeDisplayableUsername()}</g:link>
+                        </div>
+                    </div>
+                </li>
             </g:each>
-        </div>
+        </ul>
     </div>
+    </section>
+    </article>
 </body>
 </html>
 
