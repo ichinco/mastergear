@@ -23,16 +23,19 @@ modules = {
         resource 'js/start/models/gearlist-model.js'
     }
 
-
-
     startviews {
         dependsOn 'lib'
         dependsOn 'moment'
         dependsOn 'malihuScrollbar'
+        dependsOn 'tooltip'
 
         resource 'js/start/views/google-map-view.js'
         resource 'js/start/views/intro-dialog.js'
         resource 'js/start/views/gearlist-view.js'
+    }
+
+    tooltip {
+        resource 'js/start/views/tooltip.js'
     }
 
     flat {

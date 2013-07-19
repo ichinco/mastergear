@@ -46,3 +46,10 @@
 #map .leaflet-control-zoom > .leaflet-control-zoom-out
 {
 }
+
+.tooltip {
+    background-color:#FFFBF0;
+    padding:5px;
+    width:200px;
+    text-align: center;
+}

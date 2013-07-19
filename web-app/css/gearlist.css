@@ -4,6 +4,7 @@
 
 #gear-list-display
 {
+    display: none;
     position: absolute;
     float: right;
     right: 60px;
