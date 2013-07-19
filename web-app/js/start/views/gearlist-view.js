@@ -36,6 +36,14 @@ Mastergear.Views.GearList = Backbone.View.extend({
             }
         });
         this.$el.html(finalHtml);
+
+        $('#gear-list-display').mCustomScrollbar({
+            scrollButtons:{
+                enable:true,
+            },
+            theme : 'dark-thick'
+        });
+
         return this;
     },
 

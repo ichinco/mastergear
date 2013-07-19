@@ -8,13 +8,13 @@
 
 <%@ page import="com.mastergear.HikeType" contentType="text/html;charset=UTF-8" %>
 <!DOCTYPE html>
-<html>
+<html class="front-page">
 <head>
     <meta name="layout" content="flat">
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCURdG3H4OW33dNUQGrxI531CAJcYovDeE&sensor=false"></script>
     <r:require module="start" />
 </head>
-<body>
+<body class="front-page">
     <div id="map-container">
         <div id="map">
 
@@ -45,7 +45,6 @@
                 <div class='{{hikeType}} hike-symbol'></div>
             </div>
             <div class='gear-list-item'>
-
                     <!-- this really should be the title -->
                     <div class='list-title'>{{user.username}}</div>
                     <div class='list-description'>{{listDescription}}</div>
@@ -57,6 +56,13 @@
 
             </div>
         </a>
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(evt)
+            {
+                $('body').addClass('front-page');
+            }
+        )
     </script>
 </body>
 </html>

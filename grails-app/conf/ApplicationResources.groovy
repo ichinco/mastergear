@@ -6,8 +6,6 @@ modules = {
     lib {
         dependsOn 'jquery' //provided by plugin
         dependsOn 'backbone' //provided by plugin
-
-
     }
     leaflet {
         resource url: 'js/leaflet/leaflet.js'
@@ -15,5 +13,15 @@ modules = {
     }
     moment {
         resource url: 'js/moment.min.js'
+    }
+
+    jqueryMouseWheel{
+        resource url: 'js/jquery.mousewheel.min.js'
+    }
+
+    malihuScrollbar {
+        dependsOn 'jqueryMouseWheel'
+        resource url: 'js/scroll/jquery.mCustomScrollbar.min.js'
+        resource url: 'js/scroll/jquery.mCustomScrollbar.css'
     }
 }
