@@ -24,23 +24,6 @@
     <r:require module="initlist" />
 </head>
 <body>
-    <div class="trail-selection pop-background">
-        <div class="pop">
-            <div class="content">
-                <div class="close-pop" style="background-image: url(${resource(dir:"images", file:"brightmix_delete.png")})"></div>
-                %{--<g:textField name="search" class="trail-search" />--}%
-                <h1>Select Trail</h1>
-                <div class="get-suggestions">
-                    <g:form class="search-form" >
-                        <g:textField name="category" class="category-desc" />
-                        <g:submitButton name="search" class="category" />
-                        <img class="loading" src="${resource(dir:'images', file:'spinner.gif')}" />
-                    </g:form>
-                </div>
-                <div class="trails"></div>
-            </div>
-        </div>
-    </div>
     <div class="bubble">
         <g:form controller="gearList" action="initializeSave" class="object-form">
             <h1>Create a Gear List</h1>
@@ -52,12 +35,24 @@
             <label for="hikeType">hike type</label>
             <g:select name="hikeType" from="${hikeTypeValues}" keys="${HikeType.values()}" /><br />
             <label for="trail">trail</label>
-            <div class="selected-trail"></div> <button class="select-trail">select</button><br />
+            <div class="selected-trail"></div> <button class="select-trail">change</button><br />
+
             <label for="listDescription">description</label>
             <g:textArea name="listDescription" rows="10" cols="50" /><br />
             <label for="create"></label>
             <button>create</button>
         </g:form>
+
+        <div class="pick-trail">
+            <div class="get-suggestions">
+                <g:form class="search-form" >
+                    <g:textField name="category" class="category-desc" />
+                    <g:submitButton name="search" class="category" />
+                    <img class="loading" src="${resource(dir:'images', file:'spinner.gif')}" />
+                </g:form>
+            </div>
+            <div class="trails"></div>
+        </div>
     </div>
 
 <script type="text/template" id="trail_form_template">
