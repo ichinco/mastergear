@@ -56,7 +56,10 @@
     </div>
 
 <script type="text/template" id="trail_form_template">
-    <input type="hidden" name="trail" value="{{id}}"/>
+    <input type="hidden" name="trail" value="{{location}}"/>
+    <input type="hidden" name="latitude" value="{{latitude}}"/>
+    <input type="hidden" name="longitude" value="{{longitude}}"/>
+    <input type="hidden" name="trailName" value="{{name}}"/>
     <div class="trail-object" data-trail-id={{id}}>{{location}}</div>
 </script>
 <script type="text/template" id="trail_template">
