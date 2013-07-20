@@ -16,6 +16,7 @@ modules = {
     }
 
     jqueryMouseWheel{
+        dependsOn 'jquery'
         resource url: 'js/jquery.mousewheel.min.js'
     }
 

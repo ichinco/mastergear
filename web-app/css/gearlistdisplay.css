@@ -25,9 +25,9 @@ html
 {
     display: table-cell;
     position: absolute;
-    left: 250px;
+    left: 350px;
 }
-
+#list-item-container,
 #gear-list-display-header .list-info
 {
     width: 80%;
