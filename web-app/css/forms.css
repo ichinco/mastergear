@@ -1,0 +1,88 @@
+/* general forms */
+/* overrides the CSS values for flat.css */
+body.flat .main-content, .main-content
+{
+    margin-left: 15%;
+    width: 50%;
+    min-width: 500px;
+}
+
+fieldset
+{
+    border-width: 0px;
+    width: 80%;
+    margin: 5px 0px;
+    padding: 0px;
+}
+
+textarea, select, input
+{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    outline: none;
+}
+
+input[type='submit']
+{
+    border-width: 0px;
+    background-color: #666;
+    color: RGB(190, 255, 110);
+    font-size: 36px;
+    padding: 0px 70px 0px 15px;
+    float: right;
+    margin-top: 30px;
+}
+
+select,
+textarea,
+input[type='text']
+{
+    width: 100%;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    color: #666;
+    padding: 5px 15px;
+    box-sizing: border-box;
+    ms-box-sizing: border-box;
+    webkit-box-sizing: border-box;
+    moz-box-sizing: border-box;
+    -moz-box-shadow: inset 2px 2px 3px 0px rgba(95, 95, 95, .45);
+    -webkit-box-shadow: inset 2px 2px 3px 0px rgba(95, 95, 95, .45);
+    box-shadow: inset 2px 2px 3px 0px rgba(95, 95, 95, .45);
+}
+
+textarea
+{
+    resize: none;
+}
+
+select
+{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+label
+{
+    margin-left: 5px;
+    font-size: 30px;
+    /* maybe these might be moved to specific forms */
+
+    font-weight: 300;
+    color: #666;
+    display: block;
+}
+
+/* Form: Gear List */
+#create-gearlist
+{}
+
+#create-gearlist h1
+{
+    font-weight: 300;
+    font-size: 40px;
+    margin: 15px 0px 25px -30px;
+    color: #666;
+}

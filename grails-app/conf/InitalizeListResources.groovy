@@ -41,7 +41,7 @@ modules = {
     }
 
     stylesheets {
-        resource url: '/css/mastergear.css', attrs:[rel: "stylesheet/less", type:'css']
+        resource url: '/css/forms.css', attrs:[rel: "stylesheet", type:'css']
     }
 
 
