@@ -5,7 +5,7 @@
   Time: 8:54 PM
   To change this template use File | Settings | File Templates.
 --%>
-
+<!DOCTYPE html>
 <%@ page import="com.mastergear.HikeType; com.mastergear.Season" contentType="text/html;charset=UTF-8" %>
 <%
     List<String> seasonValues = Season.values().collect {
@@ -16,14 +16,14 @@
         message(code:"hiketype." + it.toString().toLowerCase());
     }
 %>
-
 <html>
 <head>
     <title>Create a new gear list</title>
-    <meta name="layout" content="mastergear">
+    <meta name="layout" content="flat">
     <r:require module="initlist" />
 </head>
 <body>
+    <%--
     <div class="trail-selection pop-background">
         <div class="pop">
             <div class="content">
@@ -69,5 +69,52 @@
             <button>create</button>
         </g:form>
     </div>
+    --%>
+    <main id="create-gearlist">
+        <h1>create a gearlist</h1>
+        <div id="create-gearlist-form-container">
+            <g:form controller="gearList" action="initializeSave" class="gearlist-create-form">
+                <!-- important: this is needed to process user data -->
+                <g:hiddenField name="user" value='-1'><</g:hiddenField>
+
+                <!-- title -->
+                <fieldset class="title">
+                    <label for="title">title</label>
+                    <g:textField name="title" size="100" />
+                </fieldset>
+
+                <!-- season -->
+                <fieldset class="season">
+                    <label for="season">season</label>
+                    <g:select name="season"
+                              from="${seasonValues}"
+                              keys="${Season.values()}" />
+                </fieldset>
+
+                <!-- hike type -->
+                <fieldset class="hike type">
+                    <label for="hikeType">hike type</label>
+                    <g:select name="hikeType"
+                              from="${hikeTypeValues}"
+                              keys="${HikeType.values()}" /><br />
+                </fieldset>
+
+                <!-- trail -->
+                <fieldset class="trail">
+                    <label for="trail">trail</label>
+                    <g:textField name="trail" size="100" />
+                </fieldset>
+
+                <!-- description -->
+                <fieldset class="description">
+                    <label for="listDescription">description</label>
+                    <g:textArea name="listDescription" rows="10" cols="50" /><br />
+                </fieldset>
+
+                <!-- submit button -->
+                <g:submitButton class="create-gearlist-submit" name="add items"></g:submitButton>
+            </g:form>
+        </div>
+    </main>
 </body>
 </html>
