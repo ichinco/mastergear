@@ -22,6 +22,7 @@ class GeocodingService {
             response.success = { resp, json ->
                 println resp.statusLine
 
+                int i = 0;
                 // parse the JSON response object:
                 trails =
                     json.results.collect {
@@ -32,6 +33,8 @@ class GeocodingService {
                         t.location = it.formatted_address
                         t.dateCreated = new Date();
                         t.lastUpdated = new Date();
+                        t.id = i;
+                        i++;
 
                         return t;
                     }

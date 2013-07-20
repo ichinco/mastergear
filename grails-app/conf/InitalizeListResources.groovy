@@ -23,7 +23,6 @@ modules = {
         dependsOn 'lib'
 
         resource url: 'js/initialize-list/views/select-trail-button.js'
-        resource url: 'js/initialize-list/views/select-trail-dialog.js'
         resource url: 'js/initialize-list/views/possible-trails-list.js'
         resource url: 'js/initialize-list/views/trail.js'
         resource url: 'js/initialize-list/views/create-trail-view.js'

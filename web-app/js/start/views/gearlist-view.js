@@ -19,11 +19,11 @@ Mastergear.Views.GearList = Backbone.View.extend({
     },
 
     show : function(evt) {
-        this.$el.parent().show();
+        this.$el.parents("#gear-list-display").show();
     },
 
     close : function(evt) {
-        this.$el.parent().hide();
+        this.$el.parents("#gear-list-display").hide();
     },
 
     render: function() {
@@ -39,7 +39,7 @@ Mastergear.Views.GearList = Backbone.View.extend({
 
         $('#gear-list-display').mCustomScrollbar({
             scrollButtons:{
-                enable:true,
+                enable:true
             },
             theme : 'dark-thick'
         });

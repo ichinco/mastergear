@@ -59,6 +59,19 @@
             <button>create</button>
         </g:form>
     </div>
+
+<script type="text/template" id="trail_form_template">
+    <input type="hidden" name="trail" value="{{location}}"/>
+    <input type="hidden" name="latitude" value="{{latitude}}"/>
+    <input type="hidden" name="longitude" value="{{longitude}}"/>
+    <input type="hidden" name="trailName" value="{{name}}"/>
+    <div class="trail-object" data-trail-id={{id}}>{{location}}</div>
+</script>
+<script type="text/template" id="trail_template">
+    <div>
+        <div class="trail-object" data-trail-id={{id}}>{{location}}</div>
+    </div>
+</script>
     --%>
     <main id="create-gearlist">
         <h1>create a gearlist</h1>
@@ -104,7 +117,17 @@
                 <!-- submit button -->
                 <g:submitButton class="create-gearlist-submit" name="add items"></g:submitButton>
             </g:form>
+            <div class="pick-trail">
+                <div class="get-suggestions">
+                    <g:form class="search-form" >
+                        <g:textField name="category" class="category-desc" />
+                        <g:submitButton name="search" class="category" />
+                        <img class="loading" src="${resource(dir:'images', file:'spinner.gif')}" />
+                    </g:form>
+                </div>
+                <div class="trails"></div>
+            </div>
         </div>
-    </main>
+    </main>    
 </body>
 </html>

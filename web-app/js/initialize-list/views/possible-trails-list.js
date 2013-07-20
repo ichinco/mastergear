@@ -16,6 +16,8 @@ Mastergear.Views.TrailSelection = Backbone.View.extend({
         _.bindAll(this);
         this.model.bind('create-trail-dialog-open', this.close);
         this.model.bind('all', this.render);
+        this.model.bind('trail-selected', this.close);
+        this.model.bind('select-trail-open', this.open);
     },
 
     _getTemplate: _.once(function() {
@@ -35,6 +37,10 @@ Mastergear.Views.TrailSelection = Backbone.View.extend({
 
     close : function (){
         this.$el.hide();
+    },
+
+    open : function (){
+        this.$el.show();
     }
 
 });

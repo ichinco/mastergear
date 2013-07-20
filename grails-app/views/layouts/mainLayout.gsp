@@ -72,11 +72,6 @@
             <div class="gear-object" data-gear-id={{id}}>{{brand.name}}: {{title}}</div>
         </div>
     </script>
-    <script type="text/template" id="trail_template">
-        <div>
-            <div class="trail-object" data-trail-id={{id}}>{{name}}</div>
-        </div>
-    </script>
     <script type="text/javascript">
         !function(d,s,id){
             var js,fjs=d.getElementsByTagName(s)[0];
