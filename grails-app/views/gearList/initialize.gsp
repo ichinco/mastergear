@@ -117,6 +117,7 @@
                 <!-- submit button -->
                 <g:submitButton class="create-gearlist-submit" name="add items"></g:submitButton>
             </g:form>
+            <%--
             <div class="pick-trail">
                 <div class="get-suggestions">
                     <g:form class="search-form" >
@@ -127,6 +128,7 @@
                 </div>
                 <div class="trails"></div>
             </div>
+            --%>
         </div>
     </main>    
 </body>
