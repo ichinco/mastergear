@@ -59,5 +59,15 @@
             <button>create</button>
         </g:form>
     </div>
+
+<script type="text/template" id="trail_form_template">
+    <input type="hidden" name="trail" value="{{id}}"/>
+    <div class="trail-object" data-trail-id={{id}}>{{location}}</div>
+</script>
+<script type="text/template" id="trail_template">
+    <div>
+        <div class="trail-object" data-trail-id={{id}}>{{location}}</div>
+    </div>
+</script>
 </body>
 </html>
