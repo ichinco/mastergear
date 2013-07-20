@@ -28,6 +28,7 @@ modules = {
         resource url: 'js/initialize-list/views/trail.js'
         resource url: 'js/initialize-list/views/create-trail-view.js'
         resource url: 'js/initialize-list/views/no-matches-view.js'
+        resource url: 'js/initialize-list/views/trail-query-view.js'
     }
     initlist {
         dependsOn 'initlistView'
