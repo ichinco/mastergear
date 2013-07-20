@@ -30,24 +30,14 @@
                 <div class="close-pop" style="background-image: url(${resource(dir:"images", file:"brightmix_delete.png")})"></div>
                 %{--<g:textField name="search" class="trail-search" />--}%
                 <h1>Select Trail</h1>
-                <div class="trails"></div>
-                <button class="no-trail">None of these</button>
-                <div class="create-trail">
-                    <div class="object-form">
-                        <label for="trail-name">name</label>
-                        <g:textField name="trail-name" class="trail-name" /><br />
-                        <label for="location">city, state</label>
-                        <g:textField name="location" class="location" /><br />
-                        <label for="latitude">latitude</label>
-                        <g:textField name="latitude" class="latitude" /> N<br />
-                        <label for="longitude">longitude</label>
-                        <g:textField name="longitude" class="longitude" /> E<br />
-                        <label for="maxElevation">max elevation</label>
-                        <g:textField name="maxElevation" class="maxElevation" /> ft<br />
-                        <label for="create"></label>
-                        <button class="create">create trail</button>
-                    </div>
+                <div class="get-suggestions">
+                    <g:form class="search-form" >
+                        <g:textField name="category" class="category-desc" />
+                        <g:submitButton name="search" class="category" />
+                        <img class="loading" src="${resource(dir:'images', file:'spinner.gif')}" />
+                    </g:form>
                 </div>
+                <div class="trails"></div>
             </div>
         </div>
     </div>
@@ -56,7 +46,7 @@
             <h1>Create a Gear List</h1>
             <g:hiddenField name="user" value="-1" />
             <label for="title">title</label>
-            <g:textField name="title" size="100" />
+            <g:textField name="title" size="100" /><br />
             <label for="season">season</label>
             <g:select name="season" from="${seasonValues}" keys="${Season.values()}" /><br />
             <label for="hikeType">hike type</label>

@@ -48,6 +48,7 @@ grails.project.dependency.resolution = {
         // runtime 'mysql:mysql-connector-java:5.1.22'
         compile "io.searchbox:jest:0.0.3"
         compile 'org.codehaus.gpars:gpars:1.0.0'
+
     }
 
     plugins {
@@ -74,5 +75,6 @@ grails.project.dependency.resolution = {
 //        compile ':spring-security-ui:0.2'
         compile ":backbonejs:0.9.10.3"
         compile ":csv:0.3.1"
+        compile ":rest:0.7"
     }
 }

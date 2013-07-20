@@ -40,7 +40,10 @@ Mastergear.Router = Backbone.Router.extend({
             model : trailModel
         });
 
-        possibleTrailModel.fetch({remove : true, add : true, change : true})
+        var getTrail = new Mastergear.Views.TrailQuery({
+            el : '.get-suggestions',
+            model : possibleTrailModel
+        })
     }
 });
 
