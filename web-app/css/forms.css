@@ -15,14 +15,15 @@ fieldset
     padding: 0px;
 }
 
-textarea, select, input
+textarea, select, input, button
 {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     outline: none;
 }
 
-input[type='submit']
+input[type='submit'],
+button
 {
     border-width: 0px;
     background-color: #666;
