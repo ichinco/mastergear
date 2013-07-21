@@ -8,8 +8,6 @@ Mastergear.Views.TrailQuery = Backbone.View.extend({
 
     initialize : function() {
         _.bindAll(this);
-        this.model.bind('trail-selected', this.close);
-        this.model.bind('select-trail-open', this.open);
     },
 
     queryTrails : function(evt) {

@@ -55,7 +55,6 @@
                 <!-- trail -->
                 <fieldset class="trail">
                     <label for="trail">trail</label>
-                    <g:textField name="trail" size="100" />
                     <div class="selected-trail"></div> <button class="select-trail">select</button>
                 </fieldset>
 
@@ -68,15 +67,25 @@
                 <!-- submit button -->
                 <g:submitButton class="create-gearlist-submit" name="add items"></g:submitButton>
             </g:form>
-            <div class="pick-trail">
-                <div class="get-suggestions">
-                    <g:form class="search-form" >
-                        <g:textField name="category" class="category-desc" />
-                        <g:submitButton name="search" class="category" />
-                        <img class="loading" src="${resource(dir:'images', file:'spinner.gif')}" />
-                    </g:form>
+            <div class="trail-selection pop-background">
+                <div class="pop">
+                    <div class="content">
+                        <div class="close-pop" style="background-image: url(${resource(dir:"images", file:"brightmix_delete.png")})"></div>
+                        %{--<g:textField name="search" class="trail-search" />--}%
+                        <h1>Select Trail</h1>
+                        <div class="get-suggestions">
+                            <g:form class="search-form" >
+                                <g:textField name="category" class="category-desc" />
+                                <g:submitButton name="search" class="category" />
+                                <img class="loading" src="${resource(dir:'images', file:'spinner.gif')}" />
+                            </g:form>
+                        </div>
+                        <div class="trails"></div>
+                    </div>
                 </div>
-                <div class="trails"></div>
+            </div>
+            <div class="pick-trail">
+
             </div>
         </div>
     </main>

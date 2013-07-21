@@ -10,6 +10,11 @@ Mastergear.Router = Backbone.Router.extend({
         var trailModel = new Mastergear.Models.Trail();
         trailModel.setPossibleTrails(possibleTrailModel);
 
+        var selectTrailDialog = new Mastergear.Views.SelectTrailDialog({
+            el : '.trail-selection',
+            model : possibleTrailModel
+        });
+
         var selectTrailButton = new Mastergear.Views.SelectTrailButton({
             el : 'button.select-trail',
             model : possibleTrailModel
