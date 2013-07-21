@@ -26,13 +26,14 @@ Mastergear.Collection.GearList = Backbone.Collection.extend({
     },
 
     fetch: function(options){
-        this.trigger('fetching');
+        this.trigger('suggestions-updating');
         options = options || {};
         if (this.itemType != null) {
             options.data = options.data || {};
             options.data.term = this.itemType;
         }
-        return Backbone.Collection.prototype.fetch.call(this, options);
+        Backbone.Collection.prototype.fetch.call(this, options);
+        this.trigger('suggestions-updated');
     }
 
 });

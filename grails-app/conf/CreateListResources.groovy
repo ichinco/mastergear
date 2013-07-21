@@ -18,6 +18,7 @@ modules = {
 
         resource url: 'js/create-list/models/gear-model.js'
         resource url: 'js/create-list/models/gear-list-gear-model.js'
+        resource url: 'js/create-list/models/create-gear-model.js'
     }
 
     createlistView {

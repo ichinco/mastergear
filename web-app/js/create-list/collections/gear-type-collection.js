@@ -3,7 +3,6 @@ Mastergear.Collection = Mastergear.Collection || {};
 
 Mastergear.Collection.GearType = Backbone.Collection.extend({
 
-    suggestionModel : null,
     model : Mastergear.Models.GearListGear,
     gearType : null,
     listId : null,
@@ -12,29 +11,6 @@ Mastergear.Collection.GearType = Backbone.Collection.extend({
     initialize : function(attr){
         this.gearType = attr.gearType;
         this.listId = attr.listId;
-    },
-
-    setItemType : function(type) {
-        this.suggestionModel.setItemType(type);
-    },
-
-    suggestionsUpdated : function(evt) {
-        this.trigger('suggestions-updated');
-    },
-
-    suggestionsUpdating : function(evt) {
-        this.trigger('suggestions-updating');
-    },
-
-    setSelectionModel : function(selectionModel) {
-        this.suggestionModel = selectionModel;
-        this.suggestionModel.bind('select-gear', this.gearSelected, this);
-        this.suggestionModel.bind('reset', this.suggestionsUpdated, this);
-        this.suggestionModel.bind('request', this.suggestionsUpdating, this);
-    },
-
-    gearSelected : function(){
-        this.addGearList(this.suggestionModel.getSelected());
     },
 
     addGearList : function(gear){

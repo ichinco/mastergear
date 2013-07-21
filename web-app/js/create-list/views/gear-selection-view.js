@@ -39,27 +39,3 @@ Mastergear.Views.GearSelection = Backbone.View.extend({
     }
 
 });
-
-Mastergear.Views.GearSelectionInput = Backbone.View.extend({
-
-    events: {
-        'click .create-competition': 'close'
-    },
-
-    initialize : function() {
-        _.bindAll(this);
-        this.model.bind('new-gear-dialog-open', this.show);
-    },
-
-    show: function() {
-        this.$el.show();
-    },
-
-    close : function (){
-        this.model.create({
-            name : this.$el.children('.name').first().val(),
-            description : this.$el.children('.description').first().val()
-        });
-        this.$el.hide();
-    }
-});

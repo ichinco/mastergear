@@ -4,13 +4,19 @@ Mastergear.Views = Mastergear.Views || {};
 Mastergear.Views.AddGearDialog = Backbone.View.extend({
 
     events: {
-        'click .close-pop'  : 'close'
+        'click .close-pop'  : 'close',
+        'change .gearType' : 'setGearType'
     },
 
     initialize : function() {
         _.bindAll(this);
         this.model.bind('new-gear-dialog-open', this.show);
         this.model.bind('new-gear-dialog-close', this.close);
+    },
+
+    setGearType : function(evt){
+        var gearType = this.$el.find(".gearType").val();
+        this.model.setCurrentGearType(gearType);
     },
 
     show: function() {
