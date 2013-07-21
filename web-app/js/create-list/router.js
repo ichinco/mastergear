@@ -31,6 +31,7 @@ Mastergear.Router = Backbone.Router.extend({
 
     main: function() {
         var createGearModel = new Mastergear.Models.CreateGear();
+        createGearModel.setCurrentGearType("pack");
         var possiblePackModel = new Mastergear.Collection.GearList();
 
         var createReviewView = new Mastergear.Views.CreateReview({
@@ -39,7 +40,8 @@ Mastergear.Router = Backbone.Router.extend({
 
         var newGearDialog = new Mastergear.Views.AddGearDialog({
             el : '.add-gear',
-            model : createGearModel
+            model : createGearModel,
+            possibleGearModel : possiblePackModel
         });
 
         var packView = new Mastergear.Views.AddGearButton({

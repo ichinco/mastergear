@@ -39,8 +39,9 @@
         <div class="pop">
             <div class="content">
                 <div class="close-pop" style="background-image: url(${resource(dir:"images", file:"brightmix_delete.png")})"></div>
+                <button class="add-gear-button">add</button>
                 <h1>Add Gear</h1>
-                <fieldset class="season">
+                <fieldset class="gearType-field">
                     <label for="type">type</label>
                     <g:select name="type"
                               from="${geartypeValues}"

@@ -57,12 +57,11 @@
 
             $(document).ready(function(event)
             {
-                console.log($('.gear-list-left-panel').offset().top);
                 $('.gear-list-left-panel').mCustomScrollbar({
                     scrollButtons:{
-                        enable:true,
+                        enable:true
                     },
-                    theme : 'dark-thick',
+                    theme : 'dark-thick'
                 });
             });
 

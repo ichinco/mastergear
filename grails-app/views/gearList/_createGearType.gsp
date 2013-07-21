@@ -9,7 +9,7 @@
     }
 %>
 
-<section class="gear-list-category ${gearType}">
+<section class="gear-list-category ${gearType.toString().toLowerCase()}">
     <h2 class="category-title"><g:message code="geartype.${gearType}" /></h2>
     <div class="added-gear"></div>
 </section>

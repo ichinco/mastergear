@@ -5,17 +5,22 @@ Mastergear.Models.CreateGear = Backbone.Model.extend({
 
     gearTypeMap : {},
     currentGearType : null,
+    selectedGear : null,
 
     addGearTypeModel : function(type, model) {
         this.gearTypeMap[type] = model;
     },
 
-    addGearToModel : function(gear) {
-        this.gearTypeMap[currentGearType].addGearList(gear);
+    addGearToModel : function() {
+        this.gearTypeMap[this.currentGearType].addGearList(this.selectedGear);
     },
 
     setCurrentGearType : function(type) {
         this.currentGearType = type.toLowerCase();
+    },
+
+    setSelected : function(gear) {
+        this.selectedGear = gear;
     }
 
 });
