@@ -1,5 +1,7 @@
 package com.mastergear
 
+import grails.converters.JSON
+
 class Provider {
 
     Date dateCreated
@@ -43,5 +45,24 @@ class Provider {
        subCategory size:500
        productGroup size:500
        keywords type:'text'
+    }
+
+    public static void register(grailsApplication) {
+        JSON.registerObjectMarshaller(Provider) {
+            def g = grailsApplication.mainContext.getBean('org.codehaus.groovy.grails.plugins.web.taglib.ApplicationTagLib');
+            return [id: it.id,
+                    gender: g.message(code: "geargender.${it.gender.toString().toLowerCase()}"),
+                    type: g.message(code: "providertype.${it.type.toString().toLowerCase()}"),
+                    category: it.category,
+                    longDescription: it.longDescription,
+                    shortDescription: it.shortDescription,
+                    subCategory: it.subCategory,
+                    keywords: it.keywords,
+                    productGroup: it.productGroup,
+                    imageUrl : g.message(code:"providertype.html.${it.type.toString().toLowerCase()}", args:[it.providerId, it.imageId, it.imageUrl]),
+                    iconUrl : g.message(code:"providertype.html.icon.${it.type.toString().toLowerCase()}", args:[it.providerId, it.imageId]),
+                    dateCreated: it.dateCreated.getTime(),
+                    lastUpdated: it.lastUpdated.getTime()]
+        }
     }
 }

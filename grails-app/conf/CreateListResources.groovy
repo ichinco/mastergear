@@ -37,13 +37,14 @@ modules = {
         dependsOn 'createlistModel'
         dependsOn 'createlistCollection'
         dependsOn 'stylesheets'
+        dependsOn 'createstylesheets'
         dependsOn 'lib'
 
         resource url: '/js/create-list/router.js'
     }
 
-    stylesheets {
-        resource url: '/css/mastergear.css', attrs:[rel: "stylesheet/less", type:'css']
+    createstylesheets {
+        resource url: '/css/gearlist-create.css', attrs:[rel: "stylesheet", type:'css']
     }
 
     lib {

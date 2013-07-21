@@ -21,8 +21,9 @@ class GearListGearController {
         GearType type = GearType.valueOf(params.gearType.toUpperCase());
         List<GearListGear> gearListGear = GearListGear.findAllByListAndGearType(list, type);
 
-        JSON.use('deep');
-        render gearListGear as JSON
+        render (contentType:'text/json'){
+            gearListGearInstance: gearListGear
+        }
     }
 
     def create() {
@@ -37,7 +38,7 @@ class GearListGearController {
             gearListGearInstance.list = list;
         }
 
-        if (!gearListGearInstance.list || !gearListGearInstance.list.user.username.equals(session.getId())){
+        if (!gearListGearInstance.list){ // || !gearListGearInstance.list.user.username.equals(session.getId())){
             render (contentType:'text/json'){
                 gearListGearInstance: gearListGearInstance
             }

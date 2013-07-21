@@ -1,5 +1,7 @@
 package com.mastergear
 
+import grails.converters.JSON
+
 class GearListGear {
 
     Date dateCreated
@@ -17,6 +19,20 @@ class GearListGear {
 
     static mapping = {
         notes size:500
+    }
+
+    public static void register(grailsApplication) {
+        JSON.registerObjectMarshaller(GearListGear) {
+            def g = grailsApplication.mainContext.getBean('org.codehaus.groovy.grails.plugins.web.taglib.ApplicationTagLib');
+            return [id: it.id,
+                    gear: it.gear,
+                    list: it.list,
+                    quantity: it.quantity,
+                    notes: it.notes,
+                    type: g.message(code:"geartype.${it.gearType.toString().toLowerCase()}"),
+                    dateCreated: it.dateCreated.getTime(),
+                    lastUpdated: it.lastUpdated.getTime()]
+        }
     }
 
 }

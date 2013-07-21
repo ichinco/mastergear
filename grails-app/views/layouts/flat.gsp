@@ -27,19 +27,6 @@
     </div>
     <g:render template="/layouts/flat_navigation" />
     <g:render template="/layouts/logo" />
-    <script type="text/template" id="gear_type_template">
-        <div>
-            <div class="gear-delete" data-gear-id={{id}} style="background-image:url('${resource(dir: "images", file: "brightmix_delete.png")}')"></div>
-            <div class="gear-object" data-gear-id={{id}}>{{gear.brand.name}} {{gear.title}} {{gear.item.name}}</div>
-            <button class="review-gear" data-gear-id={{id}}>review</button>
-        </div>
-    </script>
-    <script type="text/template" id="gear_template">
-        <div>
-            <div class="gear-object" data-gear-id={{id}}>{{brand.name}}: {{title}}</div>
-        </div>
-    </script>
-
 
     <g:javascript library="application"/>
     <r:layoutResources />
