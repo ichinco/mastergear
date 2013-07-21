@@ -128,7 +128,9 @@
     <div class="item-container gear-object" data-gear-id={{id}}>
         <div class="item-image">
             <div class="image-wrapper">
-                {{providers[0].imageUrl}}
+                {! if (providers.length > 0) { !}
+                    {{providers[0].imageUrl}}
+                {! } !}
             </div>
         </div>
 
@@ -140,7 +142,7 @@
                 <div class="item-provider">
                     buy from:
                     {! for (var i = 0; i < providers.length; i++) { !}
-                        {! var provider = providers[0]; !}
+                        {! var provider = providers[i]; !}
                         {{provider.iconUrl}}
                     {! } !}
                 </div>
