@@ -44,9 +44,9 @@ input[type='text']
     color: #666;
     padding: 5px 15px;
     box-sizing: border-box;
-    ms-box-sizing: border-box;
-    webkit-box-sizing: border-box;
-    moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     -moz-box-shadow: inset 2px 2px 3px 0px rgba(95, 95, 95, .45);
     -webkit-box-shadow: inset 2px 2px 3px 0px rgba(95, 95, 95, .45);
     box-shadow: inset 2px 2px 3px 0px rgba(95, 95, 95, .45);
@@ -59,9 +59,11 @@ textarea
 
 select
 {
+    /* TODO: till we can figure something out
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    */
 }
 
 label

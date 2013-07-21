@@ -2,7 +2,6 @@ var Mastergear = Mastergear || {};
 Mastergear.Collection = Mastergear.Collection || {};
 
 Mastergear.Collection.PossibleTrails = Backbone.Collection.extend({
-
     selectedTrail : null,
     userQuery : null,
 

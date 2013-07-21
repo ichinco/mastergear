@@ -102,12 +102,6 @@
                               keys="${HikeType.values()}" /><br />
                 </fieldset>
 
-                <!-- trail -->
-                <fieldset class="trail">
-                    <label for="trail">trail</label>
-                    <g:textField name="trail" size="100" />
-                </fieldset>
-
                 <!-- description -->
                 <fieldset class="description">
                     <label for="listDescription">description</label>
