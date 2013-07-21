@@ -29,7 +29,9 @@
             </div>
         </div>
     </div>
-    <g:render template="gearSummary" model="[list:list, totalWeight:totalWeight]" />
+    <div id="gear-list-display-header">
+        <g:render template="gearSummary" model="[list:list, totalWeight:totalWeight]" />
+    </div>
 
     <g:render template="createGearType" model="[gearType:'pack']" />
     <g:render template="createGearType" model="[gearType:'sleep']" />
@@ -41,42 +43,43 @@
     <g:render template="createGearType" model="[gearType:'emergency']" />
     <g:render template="createGearType" model="[gearType:'other']" />
 
-    <script type="text/template" id="gear_type_template">
-        <div class="item-container">
-            <a name="{{id}}" class="reference" ></a>
-            <div class="item-image">
-                <div class="image-wrapper">
-                    {{gear.providers[0].imageUrl}}
-                </div>
+<script type="text/template" id="gear_type_template">
+    <div class="item-container">
+        <a name="{{id}}" class="reference" ></a>
+        <div class="item-image">
+            <div class="image-wrapper">
+                {{gear.providers[0].imageUrl}}
             </div>
+        </div>
 
-            <!-- item information -->
-            <div class="item-info">
-                <h3 class="item-title">
-                    {{gear.brand}} {{gear.title}} {{gear.itemType}}
-                </h3>
-                    <div class="item-provider">
-                        buy from:
-                        %{--<g:each in="${gear.providers}" var="p">--}%
-                            %{--<g:message code="providertype.html.icon.${p.type.toString().toLowerCase()}" args="${ [p.providerId, provider.imageId] }" />--}%
-                        %{--</g:each>--}%
-                    </div>
-                <div class="item-description">
-                    {{notes}}
+        <!-- item information -->
+        <div class="item-info">
+            <h3 class="item-title">
+                {{gear.brand}} {{gear.title}} {{gear.itemType}}
+            </h3>
+                <div class="item-provider">
+                    buy from:
+                    {! for (var i = 0; i < gear.providers.length; i++) { !}
+                        {! var provider = gear.providers[0]; !}
+                        {{provider.iconUrl}}
+                    {! } !}
                 </div>
-                <div class="item-data">
-                    weight: {{gear.weight}}oz
-                </div>
+            <div class="item-description">
+                {{notes}}
             </div>
-            <div class="gear-delete" data-gear-id={{id}} style="background-image:url('${resource(dir: "images", file: "brightmix_delete.png")}')"></div>
-            <button class="review-gear" data-gear-id={{id}}>review</button>
+            <div class="item-data">
+                weight: {{gear.weight}}oz
+            </div>
         </div>
-    </script>
-    <script type="text/template" id="gear_template">
-        <div>
-            <div class="gear-object" data-gear-id={{id}}>{{brand.name}}: {{title}}</div>
-        </div>
-    </script>
+        <div class="gear-delete" data-gear-id={{id}} style="background-image:url('${resource(dir: "images", file: "brightmix_delete.png")}')"></div>
+        <button class="review-gear" data-gear-id={{id}}>review</button>
+    </div>
+</script>
+<script type="text/template" id="gear_template">
+    <div>
+        <div class="gear-object" data-gear-id={{id}}>{{brand.name}}: {{title}}</div>
+    </div>
+</script>
 
     <script type="text/javascript">
     var Mastergear = Mastergear || {};

@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta name="layout" content="flat">
-        <link type="text/css" rel="stylesheet"--}%
+        <link type="text/css" rel="stylesheet"
               href="${resource(dir:'css', file:'gearlistdisplay.css')}" />
         <r:require module="scrollbar" />
     </head>

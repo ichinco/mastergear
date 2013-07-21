@@ -9,7 +9,7 @@
     }
 %>
 
-<div class="bubble ${gearType}">
+<section class="gear-list-category ${gearType}">
     <div class="add-gear pop-background">
         <div class="pop">
             <div class="content">
@@ -44,7 +44,7 @@
             </div>
         </div>
     </div>
-    <h2><g:message code="geartype.${gearType}" /></h2>
+    <h2 class="category-title"><g:message code="geartype.${gearType}" /></h2>
     <div class="added-gear"></div>
     <button class="add-gear-button">add gear</button>
-</div>
+</section>

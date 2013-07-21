@@ -45,11 +45,6 @@ modules = {
 
     createstylesheets {
         resource url: '/css/gearlist-create.css', attrs:[rel: "stylesheet", type:'css']
+        resource url: '/css/gearlistdisplay.css', attrs:[rel: "stylesheet", type:'css']
     }
-
-    lib {
-        dependsOn 'jquery' //provided by plugin
-        dependsOn 'backbone' //provided by plugin
-    }
-
 }
