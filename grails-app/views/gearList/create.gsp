@@ -35,12 +35,20 @@
         </div>
     </div>
 
-    <div class="add-gear pop-background">
+    <div id="create-item-dialog" class="add-gear pop-background">
         <div class="pop">
             <div class="content">
-                <div class="close-pop" style="background-image: url(${resource(dir:"images", file:"brightmix_delete.png")})"></div>
-                <button class="add-gear-button">add</button>
-                <h1>Add Gear</h1>
+                <h1>add gear item</h1>
+                <div class="get-suggestions">
+                    <g:form class="search-form" >
+                        <fieldset>
+                            <label>search items</label>
+                            <g:textField name="category" class="category-desc" />
+                            <g:submitButton name="search" class="category" />
+                            <img class="loading" src="${resource(dir:'images', file:'spinner.gif')}" />
+                        <fieldset>
+                    </g:form>
+                </div>
                 <fieldset class="gearType-field">
                     <label for="type">type</label>
                     <g:select name="type"
@@ -48,32 +56,10 @@
                               class="gearType"
                               keys="${GearType.values()}" />
                 </fieldset>
-                <div class="get-suggestions">
-                    <g:form class="search-form" >
-                        <g:textField name="category" class="category-desc" />
-                        <g:submitButton name="search" class="category" />
-                        <img class="loading" src="${resource(dir:'images', file:'spinner.gif')}" />
-                    </g:form>
-                    <div class="gear-suggestion"></div>
-                    %{--<button class="no-match">none of these</button>--}%
-                </div>
-                <div class="gear-create object-form">
-                    <g:hiddenField name="listId" value="${list.id}" />
-                    <label for="brand">brand</label>
-                    <g:textField name="brand" class="brand" /><br />
-                    <label for="style">style</label>
-                    <g:textField name="style" class="style" /><br />
-                    <label for="itemType">type (ie, pack, pants, sunhat)</label>
-                    <g:textField name="itemType" class="item-type" /><br />
-                    <label for="weight">weight</label>
-                    <g:textField name="weight" class="weight" />oz<br />
-                    <label for="gender">gender</label>
-                    <g:select name="gender" class="gender" from="${genderValues}" keys="${com.mastergear.GearGender.values()}"/><br />
-                    <label for="provider">link to buy</label>
-                    <g:textField name="provider" class="provider" /><br />
-                    <label for="create-gear"></label>
-                    <button class="create-gear">add</button>
-                </div>
+                <button class="add-gear-button">add item</button>
+            </div>
+            <div class="gear-suggestion">
+
             </div>
         </div>
     </div>
@@ -100,19 +86,18 @@
                 {{gear.providers[0].imageUrl}}
             </div>
         </div>
-
         <!-- item information -->
         <div class="item-info">
             <h3 class="item-title">
                 {{gear.brand}} {{gear.title}} {{gear.itemType}}
             </h3>
-                <div class="item-provider">
-                    buy from:
-                    {! for (var i = 0; i < gear.providers.length; i++) { !}
-                        {! var provider = gear.providers[0]; !}
-                        {{provider.iconUrl}}
-                    {! } !}
-                </div>
+            <div class="item-provider">
+                buy from:
+                {! for (var i = 0; i < gear.providers.length; i++) { !}
+                    {! var provider = gear.providers[0]; !}
+                    {{provider.iconUrl}}
+                {! } !}
+            </div>
             <div class="item-description">
                 {{notes}}
             </div>
@@ -149,7 +134,6 @@
         </div>
     </div>
 </script>
-
     <script type="text/javascript">
     var Mastergear = Mastergear || {};
     Mastergear.listId = ${list.id};
