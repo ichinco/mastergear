@@ -3,21 +3,11 @@ Mastergear.Collection = Mastergear.Collection || {};
 
 Mastergear.Collection.GearList = Backbone.Collection.extend({
 
-    selectedGear : null,
-    itemType : null, // default to camping
+    itemType : null,
 
     setItemType : function(itemType) {
         this.itemType = itemType;
         this.fetch();
-    },
-
-    setSelected : function(selectedGear) {
-        this.selectedGear = selectedGear;
-        this.trigger('select-gear');
-    },
-
-    getSelected : function(){
-        return this.selectedGear;
     },
 
     initialize : function() {
