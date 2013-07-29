@@ -15,7 +15,7 @@ Mastergear.Views.GearList = Backbone.View.extend({
         this.model.bind("trail-selected", this.show);
         this.model.bind("reset", this.render);
         this.close(null);
-        this.$el.parent().find("#close-button").bind("click", this.close);
+        this.$el.parent().find(".close-button").bind("click", this.close);
     },
 
     show : function(evt) {

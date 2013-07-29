@@ -32,24 +32,16 @@
     height: 60px;
 }
 
-#gear-list-display #close-button
+#gear-list-display .close-button
 {
     position: absolute;
-    fill: white;
     cursor: pointer;
-}
-
-#gear-list-display .close-img
-{
-    right: 0px;
-    margin-right: -19px;
-    top: 95px;
-    position: absolute;
-    background-image: url('../images/navicons.png');
-    background-size: cover;
     width: 30px;
     height: 30px;
-    pointer-events : none;
+    background-image: url('../images/navicons.png');
+    background-size: cover;
+    top:10px;
+    right:10px;
 }
 
 #gear-list-display .gear-list-item:first-child
