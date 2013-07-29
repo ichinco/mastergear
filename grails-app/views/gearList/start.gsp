@@ -40,7 +40,7 @@
             </div>
             <div class='gear-list-item'>
                     <!-- this really should be the title -->
-                    <div class='list-title'>{{user.username}}</div>
+                    <div class='list-title'>{{title}}</div>
                     <div class='list-description'>{{listDescription}}</div>
 
                     <!-- reformat the date so that it is human readable -->
