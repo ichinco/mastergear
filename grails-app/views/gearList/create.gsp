@@ -23,7 +23,7 @@
     <div id="review-gear" class="pop-background">
         <div class="pop">
             <div class="content">
-                <div class="close-pop" style="background-image: url(${resource(dir:"images", file:"brightmix_delete.png")})"></div>
+                <div class="close-button"></div>
                 <h1></h1>
                 <div>
                     Tell us why you can't leave it home. Do you make any modifications to it?
@@ -39,6 +39,7 @@
         <div class="pop">
             <div class="content">
                 <h1>add gear item</h1>
+                <div class="close-button"></div>
                 <div class="get-suggestions">
                     <g:form class="search-form" >
                         <fieldset>
