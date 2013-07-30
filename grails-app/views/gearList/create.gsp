@@ -49,6 +49,7 @@
                         <fieldset>
                     </g:form>
                 </div>
+                <div class="selected-gear"></div>
                 <fieldset class="gearType-field">
                     <label for="type">type</label>
                     <g:select name="type"
@@ -107,6 +108,13 @@
         </div>
         <div class="gear-delete" data-gear-id={{id}} style="background-image:url('${resource(dir: "images", file: "brightmix_delete.png")}')"></div>
         <button class="review-gear" data-gear-id={{id}}>review</button>
+    </div>
+</script>
+<script type="text/template" id="selected_gear_template">
+    <div class="item-container gear-object" data-gear-id={{id}}>
+        <h3 class="item-title">
+            {{brand}} {{title}} {{itemType}}
+        </h3>
     </div>
 </script>
 <script type="text/template" id="gear_template">

@@ -45,6 +45,7 @@ html, body.flat
    /*); *//* IE6-9 fallback on horizontal gradient */
 
     font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
 }
 
 body.front-page
@@ -192,6 +193,15 @@ body.flat .main-content {
     margin: 20px auto;
     max-width: 700px;
 
+}
+
+
+.close-button {
+    cursor: hand;
+    cursor: pointer;
+    position: absolute;
+    background-image: url('../images/navicons.png');
+    background-size: cover;
 }
 
 #trails-title {}

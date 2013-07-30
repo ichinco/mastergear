@@ -27,12 +27,12 @@
     text-decoration: none;
 }
 
-.intro .close {
-    cursor: hand;
-    cursor: pointer;
-    position: absolute;
-    top: 5px;
-    right: 15px;
+.intro .close-button
+{
+    right: 10px;
+    top: 10px;
+    width: 15px;
+    height: 15px;
 }
 
 #map .leaflet-control-zoom > .leaflet-control-zoom-in,

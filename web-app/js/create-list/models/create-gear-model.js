@@ -21,6 +21,11 @@ Mastergear.Models.CreateGear = Backbone.Model.extend({
 
     setSelected : function(gear) {
         this.selectedGear = gear;
+        this.trigger("gear-selected");
+    },
+
+    getSelected : function() {
+        return this.selectedGear;
     }
 
 });

@@ -20,20 +20,14 @@
 
         </div>
         <div class="intro">
-            <div class="close">x</div>
+            <div class="close-button"></div>
             Browse gear lists that other hikers have created. Click
             on a pin and see what they have in their arsenal.
         </div>
     </div>
     <div id="gear-list-display">
-        <g:render template="/layouts/logo" />
-        <svg xmlns='http://www.w3.org/2000/svg'
-             version='1.1'>
-            <circle id='close-button' r='30px'
-                    cx='30px'
-                    cy='30px' />
-        </svg>
-        <div class="close-img"></div>
+        <div class='close-button'>
+        </div>
         <div class="gearlist"></div>
     </div>
 
@@ -46,7 +40,7 @@
             </div>
             <div class='gear-list-item'>
                     <!-- this really should be the title -->
-                    <div class='list-title'>{{user.username}}</div>
+                    <div class='list-title'>{{title}}</div>
                     <div class='list-description'>{{listDescription}}</div>
 
                     <!-- reformat the date so that it is human readable -->

@@ -51,7 +51,8 @@ Mastergear.Router = Backbone.Router.extend({
 
         var gearHintView = new Mastergear.Views.GearHintView({
             el : '.get-suggestions',
-            model : possiblePackModel
+            model : possiblePackModel,
+            createGearModel : createGearModel
         });
 
         var gearSuggestionView = new Mastergear.Views.GearSelection({
@@ -59,10 +60,15 @@ Mastergear.Router = Backbone.Router.extend({
             model : possiblePackModel
         });
 
-//        var createGearView = new Mastergear.Views.CreateGear({
-//            el : '.gear-create',
-//            model : createGearModel
-//        });
+        var selectedGearView = new Mastergear.Views.SelectedGearView({
+            el : '.add-gear .selected-gear',
+            possibleGearModel : createGearModel
+        });
+
+        var leftPanel = new Mastergear.Views.LeftPanel({
+            el : '.content',
+            model : createGearModel
+        });
 
         this.buildAddView('pack',createReviewView, createGearModel);
 

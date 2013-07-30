@@ -73,6 +73,7 @@
                         <div class="close-pop" style="background-image: url(${resource(dir:"images", file:"brightmix_delete.png")})"></div>
                         %{--<g:textField name="search" class="trail-search" />--}%
                         <h1>Select Trail</h1>
+                        <div class="close-button"></div>
                         <div class="get-suggestions">
                             <g:form class="search-form" >
                                 <g:textField name="category" class="category-desc" />

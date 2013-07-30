@@ -20,14 +20,14 @@ Mastergear.Views.GearHintView = Backbone.View.extend({
         this.$el.find(".loading").hide();
     },
 
-    initialize : function() {
+    initialize : function(attr) {
         _.bindAll(this);
-        this.model.bind('create-gear-dialog-close', this.close);
         this.model.bind('suggestions-updated', this.gearUpdated);
         this.model.bind('suggestions-updating', this.gearUpdating);
+        attr.createGearModel.bind('new-gear-dialog-open', this.clear);
     },
 
-    close : function (){
-        this.$el.hide();
+    clear : function (){
+        this.$el.find(".category-desc").val("");
     }
 });

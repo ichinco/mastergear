@@ -1,3 +1,79 @@
-.pop-background {
-    display: none;
+#create-gearlist
+{}
+
+#create-gearlist h1
+{
+    font-weight: 300;
+    font-size: 40px;
+    margin: 15px 0px 25px -30px;
+    color: #666;
+}
+
+#create-item-dialog .content
+{
+    vertical-align: top;
+    width: 49%;
+    height: 100%;
+    display: inline-block;
+}
+
+#create-item-dialog .content > *
+{
+    margin-left: 15px;
+    font-weight: 300;
+}
+
+#create-item-dialog .content h1
+{
+    font-size: 45px;
+    color: #888;
+    padding-bottom: 15px;
+}
+
+#create-item-dialog .get-suggestions input[type='text']
+{
+    width: -moz-calc(100% - 90px);
+    width: -webkit-calc(100% - 90px);
+    width: -o-calc(100% - 90px);
+    width: calc(100% - 90px);
+}
+
+#create-item-dialog .get-suggestions input[type='submit']
+{
+    font-size: 16px;
+    margin: 0px;
+    width : 80px;
+    text-align: center;
+    text-align: center;
+    padding: 5px 0px;
+}
+
+#create-item-dialog .content .add-gear-button
+{
+    position: relative;
+    bottom: 10px;
+    right: 0px;
+}
+
+#create-item-dialog .gear-suggestion
+{
+    overflow: auto;
+    height: 95%;
+    margin-top:10px;
+    margin-bottom: 10px;
+    width: 50%;
+    display: inline-block;
+}
+#create-item-dialog .gear-suggestion .item-container
+{
+
+}
+
+#create-item-dialog .gear-suggestion .item-container .item-image
+{
+
+}
+
+#review-gear .content {
+    padding: 20px 50px;
 }
