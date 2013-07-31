@@ -239,3 +239,7 @@ body.flat .main-content {
 {
 
 }
+
+.loading {
+    display: block;
+}

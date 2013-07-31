@@ -15,7 +15,7 @@ Mastergear.Views.TrailSelection = Backbone.View.extend({
     initialize : function() {
         _.bindAll(this);
         this.model.bind('create-trail-dialog-open', this.close);
-        this.model.bind('all', this.render);
+        this.model.bind('reset', this.render);
     },
 
     _getTemplate: _.once(function() {
@@ -30,6 +30,7 @@ Mastergear.Views.TrailSelection = Backbone.View.extend({
             finalHtml += (template(attributes));
         });
         this.$el.html(finalHtml);
+        this.model.trigger('trails-updated');
         return this;
     },
 

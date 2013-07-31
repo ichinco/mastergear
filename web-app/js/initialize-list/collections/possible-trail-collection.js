@@ -25,6 +25,7 @@ Mastergear.Collection.PossibleTrails = Backbone.Collection.extend({
     },
 
     fetch: function(options){
+        this.trigger('trails-updating');
         options = options || {};
         if (this.userQuery != null) {
             options.data = options.data || {};
