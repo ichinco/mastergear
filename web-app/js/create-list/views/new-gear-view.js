@@ -4,7 +4,7 @@ Mastergear.Views = Mastergear.Views || {};
 Mastergear.Views.AddGearDialog = Backbone.View.extend({
 
     events: {
-        'click .close-pop'  : 'close',
+        'click .close-button'  : 'close',
         'change .gearType' : 'setGearType',
         'click .gear-object': 'selectGear',
         'click .add-gear-button' : 'addGearAndClose'

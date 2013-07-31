@@ -107,7 +107,7 @@
                 weight: {{gear.weight}}oz
             </div>
         </div>
-        <div class="gear-delete" data-gear-id={{id}} style="background-image:url('${resource(dir: "images", file: "brightmix_delete.png")}')"></div>
+        <button class="gear-delete" data-gear-id={{id}}>remove</button>
         <button class="review-gear" data-gear-id={{id}}>review</button>
     </div>
 </script>

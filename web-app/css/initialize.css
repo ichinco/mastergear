@@ -1,3 +1,10 @@
 .trail-selection.pop-background {
     display: none;
 }
+
+.trail-object {
+    cursor: hand;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-button: 10px;
+}
