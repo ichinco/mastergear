@@ -8,6 +8,17 @@ Mastergear.Views.TrailQuery = Backbone.View.extend({
 
     initialize : function() {
         _.bindAll(this);
+        this.hideLoader();
+        this.model.bind("trails-updated", this.hideLoader);
+        this.model.bind("trails-updating", this.showLoader);
+    },
+
+    hideLoader : function() {
+        this.$el.find(".loading").hide();
+    },
+
+    showLoader : function() {
+        this.$el.find(".loading").show();
     },
 
     queryTrails : function(evt) {

@@ -21,6 +21,7 @@ Mastergear.Views.GearSelection = Backbone.View.extend({
             }
         });
         this.$el.html(finalHtml);
+        this.model.trigger("suggestions-updated");
         return this;
     },
 
