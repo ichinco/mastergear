@@ -116,6 +116,7 @@ section.gear-list-category {}
 .gear-list-category .item-container .item-image
 {
     display: table-cell;
+    vertical-align: top;
 }
 
 .gear-list-category .item-container .item-image img

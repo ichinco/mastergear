@@ -100,25 +100,25 @@
     padding: 0px;
 }
 
-.item-info h3
+#create-item-dialog .item-info h3
 {
     margin: 0px;
 }
 
-.item-info .item-provider
+#create-item-dialog .item-info .item-provider
 {
     color: #888;
     margin: 5px 0px;
 }
 
-.item-info .item-provider a
+#create-item-dialog .item-info .item-provider a
 {
     display: inline-block;
     margin-left: 3px;
     font-weight: 300;
 }
 
-.item-image .image-wrapper
+#create-item-dialog .item-image .image-wrapper
 {
     width: 80px;
     height: 80px;
@@ -126,7 +126,7 @@
     margin: 10px;
 }
 
-.item-image img
+#create-item-dialog .item-image img
 {
     max-width: 75px;
     height: 75px;
