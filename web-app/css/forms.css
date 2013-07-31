@@ -130,12 +130,3 @@ label
     right: 15px;
     top: 15px;
 }
-
-#create-item-dialog .pop
-{
-    width: 50%;
-    top: 0px;
-    margin: -2px -25%;
-    height: 80%;
-    padding-top: 30px;
-}

@@ -64,15 +64,6 @@
     width: 50%;
     display: inline-block;
 }
-#create-item-dialog .gear-suggestion .item-container
-{
-
-}
-
-#create-item-dialog .gear-suggestion .item-container .item-image
-{
-
-}
 
 #review-gear .content {
     padding: 20px 50px;
@@ -80,10 +71,65 @@
 
 #create-item-dialog .pop
 {
+    position: fixed;
+    width: 950px;
+    left: 50%;
+    top: -2px;
+    margin: 0px 0px 0px -475px;
+    height: 80%;
+    padding-top: 30px;
+}
+
+#create-item-dialog .item-container
+{
+    display: table;
+    margin-bottom: 20px;
+}
+
+#create-item-dialog .item-container > *
+{
+    display: table-cell;
+    vertical-align: top;
+}
+
+#create-item-dialog fieldset
+{
+    border-width: 0px;
+    width: 90%;
+    margin: 5px 0px;
+    padding: 0px;
+}
+
+.item-info h3
+{
+    margin: 0px;
+}
+
+.item-info .item-provider
+{
+    color: #888;
+    margin: 5px 0px;
+}
+
+.item-info .item-provider a
+{
+    display: inline-block;
+    margin-left: 3px;
+    font-weight: 300;
+}
+
+.item-image .image-wrapper
+{
+    width: 80px;
+    height: 80px;
+    background: white;
+    margin: 10px;
 }
 
 .item-image img
 {
-    width: 75px;
-    margin: 10px;
+    max-width: 75px;
+    height: 75px;
+    width: auto;
+    margin: 2px;
 }
