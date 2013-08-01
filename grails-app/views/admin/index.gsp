@@ -17,6 +17,7 @@
         <div><g:link controller="trailAdmin" action="index">Edit Trails</g:link></div>
         <div><g:link controller="gearUserAdmin" action="index">Edit Users</g:link></div>
         <div><g:link controller="gearAdmin" action="index">Edit Gear</g:link></div>
+        <div><g:link controller="providerAdmin" action="index">Edit Providers</g:link></div>
     </nav>
 
 

@@ -3,7 +3,9 @@ import com.mastergear.GearList
 import com.mastergear.GearListGear
 import com.mastergear.GearUser
 import com.mastergear.Provider
+import com.mastergear.Role
 import com.mastergear.Trail
+import com.mastergear.UserRole
 
 class BootStrap {
 
