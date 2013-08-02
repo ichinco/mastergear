@@ -21,7 +21,7 @@ class GearList {
         season nullable:false
         trail nullable:false
         listDescription size:0..500
-        title nullable:false, blank:false
+        title nullable:false, blank:false, size:15..100
     }
 
     static mapping = {
