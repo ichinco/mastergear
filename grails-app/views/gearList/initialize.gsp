@@ -31,37 +31,45 @@
                 <g:hiddenField name="user" value='-1'><</g:hiddenField>
 
                 <!-- title -->
-                <fieldset class="title">
+                <fieldset class="title ${hasErrors(bean:list,field:'title','errors')}">
                     <label for="title">title</label>
-                    <g:textField name="title" size="100" />
+                    <g:renderErrors bean="${list}" field="title" />
+                    <g:textField name="title" size="100" value="${fieldValue(bean:list,field:'title')}" />
                 </fieldset>
 
                 <!-- season -->
-                <fieldset class="season">
+                <fieldset class="season ${hasErrors(bean:list,field:'season','errors')}">
                     <label for="season">season</label>
+                    <g:renderErrors bean="${list}" field="season" />
                     <g:select name="season"
                               from="${seasonValues}"
-                              keys="${Season.values()}" />
+                              keys="${Season.values()}"
+                              value="${fieldValue(bean:list,field:'season')}"/>
                 </fieldset>
 
                 <!-- hike type -->
-                <fieldset class="hike type">
+                <fieldset class="hike type ${hasErrors(bean:list,field:'hikeType','errors')}">
                     <label for="hikeType">hike type</label>
+                    <g:renderErrors bean="${list}" field="hikeType" />
                     <g:select name="hikeType"
                               from="${hikeTypeValues}"
-                              keys="${HikeType.values()}" /><br />
+                              keys="${HikeType.values()}"
+                              value="${fieldValue(bean:list,field:'hikeType')}"  />
+                    <br />
                 </fieldset>
 
                 <!-- trail -->
-                <fieldset class="trail">
+                <fieldset class="trail ${hasErrors(bean:list,field:'trail','errors')}">
                     <label for="trail">trail</label>
+                    <g:renderErrors bean="${list}" field="trail" />
                     <div class="selected-trail"></div> <button class="select-trail">select</button>
                 </fieldset>
 
                 <!-- description -->
-                <fieldset class="description">
+                <fieldset class="description ${hasErrors(bean:list,field:'listDescription','errors')}">
                     <label for="listDescription">description</label>
-                    <g:textArea name="listDescription" rows="10" cols="50" /><br />
+                    <g:renderErrors bean="${list}" field="listDescription" />
+                    <g:textArea name="listDescription" rows="10" cols="50" value="${fieldValue(bean:list,field:'listDescription')}" /><br />
                 </fieldset>
 
                 <!-- submit button -->

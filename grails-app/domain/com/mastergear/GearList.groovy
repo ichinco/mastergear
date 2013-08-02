@@ -18,6 +18,10 @@ class GearList {
 
     static constraints = {
         imageUrl nullable: true
+        season nullable:false
+        trail nullable:false
+        listDescription size:0..500
+        title nullable:false, blank:false
     }
 
     static mapping = {
