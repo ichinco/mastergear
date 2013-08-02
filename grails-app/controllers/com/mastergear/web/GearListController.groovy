@@ -31,7 +31,7 @@ class GearListController {
     }
 
     def initialize() {
-        render view: "initialize"
+        render view: "initialize", model: [list: new GearList()]
     }
 
     def trailList() {
@@ -79,9 +79,10 @@ class GearListController {
             }
             gearList.trail = t;
         }
+        gearList.save(flush : true);
 
-        if (!gearList.save(flush : true)){
-            flash.message = "gearlist save error";
+        if (gearList.hasErrors()){
+            return render(view:"initialize", model: [list: gearList])
         }
 
         redirect(action: "create", params: [id : gearList.id])
