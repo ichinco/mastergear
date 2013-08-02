@@ -1,0 +1,84 @@
+.email-container
+{
+    height: 450px;
+    position: absolute;
+    width: 40%;
+    top: 45%;
+    left: 50%;
+    margin-top: -225px;
+    margin-left: -20%;
+}
+
+.email-container .email-text
+{
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #888;
+}
+
+.email-container .email-icon
+{
+    width: 120px;
+    height: 120px;
+    background-size: cover;
+    background-color: #ccc;
+    border-radius: 60px;
+
+    -moz-border-radius: 60px;
+    -webkit-border-radius: 60px;
+    -o-border-radius: 60px;
+
+    margin: 25px auto;
+
+    opacity: .75;
+    -moz-opacity: .75;
+    -webkit-opacity: .75;
+    filter: alpha(opacity=75%);
+}
+
+.email-container .email-icon:hover
+{
+    background-color: #abbf78;
+}
+
+.email-container #email
+{
+    font-size: 24px;
+    font-style: italic;
+    color: #aaa;
+}
+
+.email-container #email
+{
+    font-size: 24px;
+    font-style: italic;
+}
+
+.email-container #email:focus
+{
+    font-style: normal;
+    border-color: #abbf78;
+    color: #333;
+}
+
+.email-container #notify-me
+{
+    font-size: 30px;
+    background-color: #ccc;
+    color: #000;
+    padding: 3px 20px;
+    cursor: hand;
+    cursor: pointer;
+}
+
+.email-container #notify-me:hover
+{
+    background-color: #abbf78;
+    color: #333;
+}
+
+.email-container #notify-me:active
+{
+    background-color: #666;
+    color: #abbf78;
+}

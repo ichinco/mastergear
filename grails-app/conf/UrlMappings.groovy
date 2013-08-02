@@ -52,6 +52,10 @@ class UrlMappings {
             }
         }
 
+        "/$controller/$action"{
+
+        }
+
 		"/"( controller:"gearList",  action: "index")
 		"500"(view:'/error')
 	}
