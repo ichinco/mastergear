@@ -176,7 +176,7 @@ section.gear-list-category {}
     width: 22px;
     height: 22px;
     margin: 0px 5px 0px 10px;
-    background-image: url('/mastergear/images/provider-logos.png');
+    background-image: url('../images/provider-logos.png');
     vertical-align: middle;
     background-repeat: no-repeat;
 }
