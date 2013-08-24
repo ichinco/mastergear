@@ -38,7 +38,7 @@ class GearListGearController {
             gearListGearInstance.list = list;
         }
 
-        if (!gearListGearInstance.list){ // || !gearListGearInstance.list.user.username.equals(session.getId())){
+        if (!gearListGearInstance.list || !gearListGearInstance.list.user.username.equals(session.getId())){
             render (contentType:'text/json'){
                 gearListGearInstance: gearListGearInstance
             }
