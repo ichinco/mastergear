@@ -73,7 +73,7 @@
                 </fieldset>
 
                 <!-- submit button -->
-                <g:submitButton class="create-gearlist-submit" name="add items"></g:submitButton>
+                <g:submitButton class="create-gearlist-submit" name="add-items" value="build list"></g:submitButton>
             </g:form>
             <div class="trail-selection pop-background">
                 <div class="pop">

@@ -5,6 +5,7 @@ body.flat .main-content, .main-content
     margin-left: 15%;
     width: 50%;
     min-width: 500px;
+    max-width: 800px;
 }
 
 fieldset
@@ -26,12 +27,21 @@ input[type='submit'],
 button
 {
     border-width: 0px;
-    background-color: #666;
-    color: RGB(190, 255, 110);
-    font-size: 36px;
-    padding: 0px 70px 0px 15px;
+    background-color: #ddd;
+    color: #888;
+    font-size: 22px;
     float: right;
     margin-top: 30px;
+    width: 150px;
+    display: block;
+    cursor: hand;
+    cursor: pointer;
+}
+
+input[type='submit']:hover,
+button:hover
+{
+    color: #222;
 }
 
 select,
@@ -129,4 +139,18 @@ label
     height: 20px;
     right: 15px;
     top: 15px;
+}
+
+#add-items
+{
+    margin-right: 20%;
+    font-size: 36px;
+    width: 200px;
+    background-color: #888;
+    color: RGB(180, 255, 120);
+}
+
+#add-items:hover
+{
+    background-color: #666;
 }
