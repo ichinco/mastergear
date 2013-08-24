@@ -20,12 +20,12 @@ class GearList {
         imageUrl nullable: true
         season nullable:false
         trail nullable:false
-        listDescription size:0..500
+        listDescription size:0..255
         title nullable:false, blank:false, size:15..100
     }
 
     static mapping = {
-        listDescription size: 500
+        listDescription size: 255
         imageUrl size: 500
         title size: 100, nullable:true
     }
