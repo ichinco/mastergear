@@ -23,11 +23,11 @@ class GearListController {
         GearList list = GearList.get(id);
         GearUser user = list.user
 
-//        if (user.username.equals(session.getId())) {
+        if (!grailsApplication.config.grails.addlist.checksession || user.username.equals(session.getId())) {
             render view: "create", model: [list : list, totalWeight: gearListService.getListWeight(list)]
-//        } else {
-//            render view: "cookies"
-//        }
+        } else {
+            render view: "cookies"
+        }
     }
 
     def initialize() {

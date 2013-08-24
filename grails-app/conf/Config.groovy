@@ -65,9 +65,12 @@ environments {
         grails.resources.debug = true
         grails.resources.processing.enabled = false
         grails.resources.adhoc.excludes = ['**/*.*']
+
+        grails.addlist.checksession = false
     }
     production {
         grails.logging.jul.usebridge = false
+        grails.addlist.checksession = true
         // TODO: grails.serverURL = "http://www.changeme.com"
     }
 }
