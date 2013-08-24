@@ -4,6 +4,8 @@ import grails.converters.JSON
 
 class Trail {
 
+    static hasMany = [gearLists : GearList]
+
     Date dateCreated
     Date lastUpdated
 

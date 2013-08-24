@@ -20,11 +20,13 @@ class TrailsController {
     }
 
     def show(String query) {
-        List<Trail> trails;
+        def trails = [];
         if (query) {
             trails = geocodingService.getTrail(query);
         } else {
-            trails = Trail.list();
+            trails.addAll(Trail.where {
+                gearLists.size() > 0
+            }.list());
         }
 
         render (contentType:'text/json'){
