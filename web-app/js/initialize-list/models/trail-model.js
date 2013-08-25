@@ -8,7 +8,7 @@ Mastergear.Models.Trail = Backbone.Model.extend({
 
     initialize : function(){
         _.bindAll(this);
-        this.url = "trail/";
+        this.url = "../trail/";
     },
 
     setPossibleTrails : function(possibleTrails) {

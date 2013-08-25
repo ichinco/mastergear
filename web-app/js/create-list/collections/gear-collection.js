@@ -12,7 +12,7 @@ Mastergear.Collection.GearList = Backbone.Collection.extend({
 
     initialize : function() {
         this.model = Mastergear.Models.Gear;
-        this.url = "/mastergear/gear/search"
+        this.url = "../gear/search"
     },
 
     fetch: function(options){

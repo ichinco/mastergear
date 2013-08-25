@@ -6,7 +6,7 @@ Mastergear.Collection.GearType = Backbone.Collection.extend({
     model : Mastergear.Models.GearListGear,
     gearType : null,
     listId : null,
-    url : "/mastergear/gearListGear/list",
+    url : ".../gearListGear/list",
 
     initialize : function(attr){
         this.gearType = attr.gearType;

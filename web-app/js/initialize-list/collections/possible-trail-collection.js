@@ -7,7 +7,7 @@ Mastergear.Collection.PossibleTrails = Backbone.Collection.extend({
 
     initialize : function(){
         this.model = Mastergear.Models.Trail;
-        this.url = "trail/";
+        this.url = "../trail/";
     },
 
     setSelected : function(trail){
