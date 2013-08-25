@@ -63,6 +63,8 @@
     margin-bottom: 10px;
     width: 50%;
     display: inline-block;
+    cursor: pointer;
+    cursor: hand;
 }
 
 #review-gear .content {
