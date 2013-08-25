@@ -1,4 +1,3 @@
-
 /**
  * User: denise
  * Date: 3/31/13
@@ -20,20 +19,21 @@ modules = {
 
     initlistView {
         dependsOn 'initlistModel'
+        dependsOn 'initlistCollection'
         dependsOn 'lib'
 
+        resource url: 'js/initialize-list/views/trail-query-view.js'
         resource url: 'js/initialize-list/views/select-trail-button.js'
         resource url: 'js/initialize-list/views/possible-trails-list.js'
         resource url: 'js/initialize-list/views/trail.js'
         resource url: 'js/initialize-list/views/create-trail-view.js'
         resource url: 'js/initialize-list/views/no-matches-view.js'
-        resource url: 'js/initialize-list/views/trail-query-view.js'
         resource url: 'js/initialize-list/views/select-trail-dialog.js'
     }
     initlist {
-        dependsOn 'initlistView'
-        dependsOn 'initlistModel'
         dependsOn 'initlistCollection'
+        dependsOn 'initlistModel'
+        dependsOn 'initlistView'
         dependsOn 'stylesheets'
         dependsOn 'lib'
 

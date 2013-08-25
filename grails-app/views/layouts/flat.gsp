@@ -16,6 +16,18 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:100,400' rel='stylesheet' type='text/css' />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css' />
     <script src="${resource(dir:'js', file:'jquery.js')}" type="text/javascript"></script>
+    <script type="text/javascript">
+        var Mastergear = Mastergear || {};
+        Mastergear.Urls = Mastergear.Urls || {};
+
+        Mastergear.Urls = {
+            trail : '${createLink(controller:"trails")}',
+            search : '${createLink(controller:"gear", action:"search")}',
+            gearListGear : '${createLink(controller:"gearListGear", action:"list")}',
+            gear: '${createLink(controller:"gear")}',
+            gearlist : '${createLink(controller:"gearList")}'
+        };
+    </script>
     <g:layoutHead/>
     <r:layoutResources />
 </head>

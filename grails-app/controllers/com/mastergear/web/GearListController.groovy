@@ -41,7 +41,7 @@ class GearListController {
     def initializeSave() {
         String seasonString = params.season;
         String hikeType = params.hikeType;
-        String trail = params.trail;
+        String trailId = params.trail;
         String userId = params.user;
 
         GearList gearList = new GearList();
@@ -67,8 +67,8 @@ class GearListController {
             gearList.hikeType = HikeType.valueOf(hikeType);
         }
 
-        if (trail){
-            Trail t = Trail.findByLocation(trail);
+        if (trailId){
+            Trail t = Trail.findByLocation(trailId);
             if (!t) {
                 t = new Trail();
                 t.latitude = Double.parseDouble(params.latitude);
