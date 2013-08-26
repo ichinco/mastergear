@@ -43,8 +43,11 @@
     <g:javascript library="application"/>
     <r:layoutResources />
     <script type="text/javascript">
+
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-39726351-1']);
+      _gaq.push(['_setDomainName', 'feathergear.herokuapp.com']);
+      _gaq.push(['_setAllowLinker', true]);
       _gaq.push(['_trackPageview']);
 
       (function() {
