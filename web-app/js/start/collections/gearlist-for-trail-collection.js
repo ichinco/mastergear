@@ -7,7 +7,7 @@ Mastergear.Collection.GearListForTrail = Backbone.Collection.extend({
 
     initialize : function(){
         this.model = Mastergear.Models.GearList;
-        this.url = "gearlist"
+        this.url = Mastergear.Urls.gearlist;
     },
 
     setPossibleTrailCollection : function(possibleTrailCollection) {

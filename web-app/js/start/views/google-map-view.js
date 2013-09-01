@@ -54,7 +54,7 @@ Mastergear.Views.GoogleMap = Backbone.View.extend({
             var marker = new google.maps.Marker({
                 position: loc,
                 map: map,
-                icon: "images/marker.png",
+                icon: Mastergear.Urls.images + "marker.png",
                 title: e.name
               });
             google.maps.event.addListener(marker, 'click', handler(e.attributes.id, model, loc));

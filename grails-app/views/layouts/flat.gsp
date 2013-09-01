@@ -25,9 +25,9 @@
             search : '${createLink(controller:"gear", action:"search")}',
             gearListGear : '${createLink(controller:"gearListGear", action:"list")}',
             gear: '${createLink(controller:"gear")}',
-            gearlist : '${createLink(controller:"gearList")}',
-            gearListGearItem : '${createLink(controller:"gearListGear")}'
-
+            gearlist : '${createLink(controller:"gearLists")}',
+            gearListGearItem : '${createLink(controller:"gearListGear")}',
+            images : '${resource(dir:'images')}/'
         };
     </script>
     <g:layoutHead/>
