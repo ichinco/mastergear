@@ -35,7 +35,7 @@ class CorporateController {
                         priority(0.8)
                     }
                 }
-                GearUser.list().each { domain ->
+                GearUser.findAllByAnonymous(false).each { domain ->
                     url {
                         loc(g.createLink(absolute: true, controller: 'user', action: 'show', params: [userId: domain.id]))
                         changefreq('hourly')
