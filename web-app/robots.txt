@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: http://feathergear.herokuapp.com/corporate/sitemap
