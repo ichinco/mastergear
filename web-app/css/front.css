@@ -1,0 +1,42 @@
+.hike-symbol {
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+}
+
+section h1 {
+    font-size: 85px;
+    font-weight: 300;
+    vertical-align: top;
+    margin: 10px;
+}
+
+li {
+    color : #000000;
+    list-style-type: none;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    max-width: 500px;
+}
+
+li .description {
+    color: #000000;
+    margin-bottom: 3px;
+}
+
+li .title {
+    font-size: 24px;
+    margin-bottom: 5px;
+    color: #000000;
+}
+
+li .list-info,
+li .trail-info{
+    color: #000000;
+    font-size: 14px;
+}
+
+.list-info span,
+.trail-info span {
+    font-weight: 500;
+}

@@ -15,7 +15,24 @@ class GearListController {
     def userService;
 
     def index() {
-        render(view: 'start')
+        def gearLists = GearList.list();
+        def day = gearLists.findAll({
+            it.hikeType.equals(HikeType.DAY)
+        })
+        def backpacking = gearLists.findAll({
+            it.hikeType.equals(HikeType.BACKPACKING)
+        })
+        def carcamping = gearLists.findAll({
+            it.hikeType.equals(HikeType.CARCAMPING)
+        })
+        def gearListMap = new HashMap<HikeType, List<GearList>>();
+        gearListMap.put(HikeType.DAY, day);
+        gearListMap.put(HikeType.BACKPACKING, backpacking);
+        gearListMap.put(HikeType.CARCAMPING, carcamping);
+
+        render(view: 'start', model:[
+                lists : gearListMap
+        ])
     }
 
     def create() {

@@ -243,3 +243,20 @@ body.flat .main-content {
 .loading {
     display: block;
 }
+
+.hike-symbol {
+    background-image: url('../images/hiketypesprite.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.hike-symbol.Backpacking {
+    background-position: 0 0;
+}
+.hike-symbol.Day {
+    background-position: -200px 0;
+}
+.hike-symbol.Car {
+    background-position: -100px 0;
+}
