@@ -38,7 +38,7 @@
                         <div class="title">${list.title}</div>
                     </g:link>
                     <div class="description">${list.listDescription}</div>
-                    <div class="trail-info">Hiked in <g:message code="season.${list.season.toString().toLowerCase()}" /> at ${list.trail.name}</div>
+                    <div class="trail-info">Hiked in <span><g:message code="season.${list.season.toString().toLowerCase()}" /></span> at <span>${list.trail.name}</span></div>
                     <div class="list-info">List created on <g:formatDate date="${list.dateCreated}" format="yyyy-MM-dd" /> by ${list.user.computeDisplayableUsername()}</div>
                 </li>
             </g:each>
@@ -53,7 +53,7 @@
                         <div class="title">${list.title}</div>
                     </g:link>
                     <div class="description">${list.listDescription}</div>
-                    <div class="trail-info">Hiked in <g:message code="season.${list.season.toString().toLowerCase()}" /> at ${list.trail.name}</div>
+                    <div class="trail-info">Hiked in <span><g:message code="season.${list.season.toString().toLowerCase()}" /></span> at <span>${list.trail.name}</span></div>
                     <div class="list-info">List created on <g:formatDate date="${list.dateCreated}" format="yyyy-MM-dd" /> by ${list.user.computeDisplayableUsername()}</div>
                 </li>
             </g:each>
