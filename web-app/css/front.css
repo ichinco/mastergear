@@ -40,3 +40,21 @@ li .trail-info{
 .trail-info span {
     font-weight: 500;
 }
+
+body.flat a.create-list-button-front {
+    background-color: #E80000;
+    width: 200px;
+    height: 100px;
+    color: #FFFFFF;
+    position:fixed;
+    right: 0px;
+    top: 30%;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    cursor: hand;
+}
+
+body.flat a.create-list-button-front .text {
+    margin: 18.5% auto;
+}
