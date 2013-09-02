@@ -260,3 +260,7 @@ body.flat .main-content {
 .hike-symbol.Car {
     background-position: -100px 0;
 }
+
+img {
+    border: 0;
+}
