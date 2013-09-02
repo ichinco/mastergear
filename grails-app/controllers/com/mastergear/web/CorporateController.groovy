@@ -30,7 +30,7 @@ class CorporateController {
                 }
                 GearList.list().each { domain ->
                     url {
-                        loc(g.createLink(absolute: true, controller: 'gearList', action: 'showList', id: domain.id))
+                        loc(g.createLink(absolute: true, controller: 'gearList', action: 'show', id: domain.id))
                         changefreq('hourly')
                         priority(0.8)
                     }
@@ -44,7 +44,7 @@ class CorporateController {
                 }
                 Trail.list().each { domain ->
                     url {
-                        loc(g.createLink(absolute: true, controller: 'trail', action: 'show', id: domain.id))
+                        loc(g.createLink(absolute: true, controller: 'trailShow', action: 'show', id: domain.id))
                         changefreq('hourly')
                         priority(0.8)
                     }
