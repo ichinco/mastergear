@@ -20,7 +20,7 @@
                 <h1 class="title">${user.computeDisplayableUsername()}</h1>
 
                 <g:if test="${profile.twitterId}"><div>twitter: ${profile.twitterId}</div></g:if>
-                <div>favorite hike: <g:link controller="trail" action="show" params="[id : profile.favoriteTrail.id]">${profile.favoriteTrail.name}</g:link></div>
+                <div>favorite hike: <g:link controller="trailShow" action="show" params="[id : profile.favoriteTrail.id]">${profile.favoriteTrail.name}</g:link></div>
             </header>
 
             <section class="gear-list-category user-list">

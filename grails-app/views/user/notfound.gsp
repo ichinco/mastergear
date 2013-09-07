@@ -11,7 +11,7 @@
 <head>
     <meta name="layout" content="flat">
     <r:require module="startcss" />
-    <title>${user.computeDisplayableUsername()} - feathergear</title>
+    <title>no such user - feathergear</title>
 </head>
 <body>
     This user does not exist.
