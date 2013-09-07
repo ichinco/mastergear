@@ -38,8 +38,6 @@ class TrailController {
     def show(Long id) {
         def trailInstance = Trail.get(id)
         if (!trailInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'trail.label', default: 'Trail'), id])
-            redirect(action: "list")
             return
         }
 

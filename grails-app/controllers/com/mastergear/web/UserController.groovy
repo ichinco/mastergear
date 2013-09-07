@@ -14,6 +14,10 @@ class UserController {
     def show() {
         int userId = Integer.parseInt(params.userId);
         GearUser user = GearUser.get(userId);
+        if (!user || user.isAnonymous()) {
+            render view: "notfound";
+            return;
+        }
         def trails = UserTrail.findAllByUser(user);
         def profile = UserProfile.findByUser(user);
         def lists = GearList.findAllByUser(user);
