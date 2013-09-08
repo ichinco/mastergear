@@ -1,5 +1,11 @@
 package com.mastergear
 
+import org.apache.http.entity.ContentType
+
+import static groovyx.net.http.ContentType.*
+import groovyx.net.http.HTTPBuilder
+import static groovyx.net.http.Method.*
+
 import java.util.concurrent.Future
 import static groovyx.gpars.GParsPool.withPool;
 
@@ -27,6 +33,61 @@ class ProviderImportService {
                 }
             }.callAsync();
         }
+    }
+
+    def getSpecs() {
+        final JobSchedulingService jobService = jobSchedulingService
+
+        jobSchedulingService.scheduleJob("SpecCrawler", {
+            int jobId ->
+                double soFar = 0D;
+
+                List<Provider> providers = Provider.findAllByType(ProviderType.REI);
+                double total = providers.size();
+
+                Provider.withTransaction{
+                Spec.withTransaction{
+                    providers.each {
+                        Provider provider ->
+                        if (Spec.findAllByProvider(provider).size() == 0){
+                            String url = provider.linkUrl;
+                            if (url) {
+                                def http = new HTTPBuilder(url)
+
+                                def html = http.get([:])
+
+                                html."**".findAll { it.@class.toString().contains("specs")}.each {
+                                    List<Spec> specs = new LinkedList<Spec>();
+                                    it."**".findAll {it.@class.toString().contains("label")}.each {
+                                        Spec spec = new Spec();
+                                        spec.provider = provider;
+                                        spec.name = it.text();
+                                        specs.add(spec);
+                                    }
+
+                                    it."**".findAll {it.@id.toString().contains("inner_spec_table")}.each{
+                                        it."**".findAll{it.name().equals("TD")}.eachWithIndex {
+                                            obj,i ->
+                                                def value = obj.text();
+                                                if (i < specs.size()){
+                                                    specs.get(i).value = value;
+                                                }
+                                        }
+                                    }
+
+                                    Spec.saveAll(specs);
+                                }
+                            }
+                        }
+
+                        soFar++;
+
+                        if (soFar % 1000 == 0){
+                            jobService.updateJobProgress(jobId, (int) ((soFar * 100) / total));
+                        }
+                    }
+                }}
+        })
     }
 
     def syncWithElasticSearchAsync() {

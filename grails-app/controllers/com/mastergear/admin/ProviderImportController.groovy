@@ -15,6 +15,10 @@ class ProviderImportController {
         providerImportService.importAvantlinkDatafeed();
     }
 
+    def getSpecs() {
+        providerImportService.getSpecs();
+    }
+
     def syncWithElasticSearch() {
         providerImportService.syncWithElasticSearchAsync();
     }
