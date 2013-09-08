@@ -13,6 +13,7 @@ class ProviderImportService {
 
     def jestElasticSearchService
     def jobSchedulingService;
+    def weightParseService;
 
     private Exception lastException;
 
@@ -33,6 +34,38 @@ class ProviderImportService {
                 }
             }.callAsync();
         }
+    }
+
+    def populateWeight() {
+        final JobSchedulingService jobService = jobSchedulingService;
+        final WeightParseService weightService = weightParseService;
+
+        jobSchedulingService.scheduleJob("PopulateWeight", {
+            int jobId ->
+                double total = Gear.count();
+                double soFar = 0D;
+
+                Gear.withTransaction{
+                    Gear.list().each {
+                        Provider p = Provider.findByGearAndType(it, ProviderType.REI);
+                        def specs = Spec.findAllByProvider(p);
+                        if (specs.size() > 0){
+                            specs.sort {
+                                WeightName.getWeightName(it.name).getSortOrder();
+                            }
+                            if (WeightName.getWeightName(specs.get(0).name).isWeight()){
+                                it.setWeight(weightService.weightParse(specs.get(0).value));
+                                it.save(flush:true);
+                            }
+                        }
+                        soFar++;
+
+                        if (soFar % 1000 == 0){
+                            jobService.updateJobProgress(jobId, (int) ((soFar * 100) / total));
+                        }
+                    }
+                }
+        })
     }
 
     def getSpecs() {

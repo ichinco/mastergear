@@ -19,6 +19,10 @@ class ProviderImportController {
         providerImportService.getSpecs();
     }
 
+    def populateWeight() {
+        providerImportService.populateWeight();
+    }
+
     def syncWithElasticSearch() {
         providerImportService.syncWithElasticSearchAsync();
     }
