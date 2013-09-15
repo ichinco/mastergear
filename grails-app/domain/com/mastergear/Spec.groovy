@@ -8,6 +8,7 @@ class Spec {
     Provider provider
     String name
     String value
+    String sizeOrType;
 
     static constraints = {
     }

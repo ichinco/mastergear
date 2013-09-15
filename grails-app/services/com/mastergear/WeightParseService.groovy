@@ -14,7 +14,9 @@ class WeightParseService {
             }
             switch (tokens[i]){
                 case "lb.":
+                case "lb":
                 case "lbs.":
+                case "lbs":
                 case "pound":
                 case "pounds":
                     total += convertPoundsToOunces(value);
@@ -22,14 +24,19 @@ class WeightParseService {
                 case "ounces":
                 case "ounce":
                 case "oz.":
+                case "oz":
                     total += value;
                     break;
                 case "kilogram":
                 case "kilograms":
+                case "kg":
+                case "kg.":
                     total += convertKgToOunces(value);
                     break;
                 case "gram":
                 case "grams":
+                case "g":
+                case "g.":
                     total += convertGToOunces(value);
                     break;
                 default:

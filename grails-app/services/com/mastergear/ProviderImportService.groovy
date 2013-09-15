@@ -90,12 +90,25 @@ class ProviderImportService {
                                 def html = http.get([:])
 
                                 html."**".findAll { it.@class.toString().contains("specs")}.each {
+                                    List<String> sizes = new LinkedList<String>();
+                                    it."**".findAll {it.@id.toString().contains("headerScroll")}.each {
+                                        it."**".findAll {it.name().toLowerCase().equals("span")}.each {
+                                            sizes.add(it.text());
+                                        }
+                                    }
+                                    if (sizes.size() == 0) {
+                                        sizes.add("all");
+                                    }
                                     List<Spec> specs = new LinkedList<Spec>();
                                     it."**".findAll {it.@class.toString().contains("label")}.each {
-                                        Spec spec = new Spec();
-                                        spec.provider = provider;
-                                        spec.name = it.text();
-                                        specs.add(spec);
+                                        sizes.each {
+                                            size ->
+                                                Spec spec = new Spec();
+                                                spec.sizeOrType = size;
+                                                spec.provider = provider;
+                                                spec.name = it.text();
+                                                specs.add(spec);
+                                        }
                                     }
 
                                     it."**".findAll {it.@id.toString().contains("inner_spec_table")}.each{
