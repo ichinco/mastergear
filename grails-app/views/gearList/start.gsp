@@ -21,7 +21,7 @@
             <g:each in="${lists.get(HikeType.DAY)}" var="list">
                 <li>
                     <g:link controller="gearList" action="show" id="${list.id}">
-                        <div class="title">${list.title}</div>
+                        <div class="title">${list.title}: ${weights.get(list.id)}</div>
                     </g:link>
                     <div class="description">${list.listDescription}</div>
                     <div class="trail-info">Hiked in <span><g:message code="season.${list.season.toString().toLowerCase()}" /></span> at <span>${list.trail.name}</span></div>
@@ -36,7 +36,7 @@
             <g:each in="${lists.get(HikeType.BACKPACKING)}" var="list">
                 <li>
                     <g:link controller="gearList" action="show" id="${list.id}">
-                        <div class="title">${list.title}</div>
+                        <div class="title">${list.title}: ${weights.get(list.id)}</div>
                     </g:link>
                     <div class="description">${list.listDescription}</div>
                     <div class="trail-info">Hiked in <span><g:message code="season.${list.season.toString().toLowerCase()}" /></span> at <span>${list.trail.name}</span></div>

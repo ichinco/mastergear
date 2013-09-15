@@ -13,6 +13,7 @@ class GearListController {
 
     def gearListService;
     def userService;
+    def weightPrintService;
 
     def index() {
         def gearLists = GearList.list();
@@ -30,8 +31,14 @@ class GearListController {
         gearListMap.put(HikeType.BACKPACKING, backpacking);
         gearListMap.put(HikeType.CARCAMPING, carcamping);
 
+        def weightMap = gearLists.collectEntries {
+            def gearListGearObjects = GearListGear.findAllByList(it);
+            [it.id, weightPrintService.getTotalWeight(gearListGearObjects)];
+        }
+
         render(view: 'start', model:[
-                lists : gearListMap
+                lists : gearListMap,
+                weights : weightMap
         ])
     }
 

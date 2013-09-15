@@ -10,4 +10,25 @@ class WeightPrintService {
         String ozString = remainingOz > 0 ? String.format("%soz", remainingOz) : "";
         return lbString + ozString;
     }
+
+    def getOzInLbOz(String oz) {
+        if (oz.size() > 0){
+            return getOzInLbOz(Double.parseDouble(oz));
+        } else {
+            return "";
+        }
+    }
+
+    def getTotalWeight(List<GearListGear> gear) {
+        def weights = gear.collect {
+            it.gear.weight
+        }
+
+        def sum = 0D;
+        weights.each {
+            sum += it;
+        }
+
+        return getOzInLbOz(sum);
+    }
 }
