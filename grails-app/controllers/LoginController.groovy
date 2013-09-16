@@ -61,7 +61,7 @@ class LoginController {
 		def config = SpringSecurityUtils.securityConfig
 
 		if (springSecurityService.isLoggedIn()) {
-			redirect uri: config.successHandler.defaultTargetUrl
+			redirect url: params.targetUri.replace(request.contextPath,"")
 			return
 		}
 
