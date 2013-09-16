@@ -47,6 +47,16 @@
         <div class="item-data">
             <g:if test="${gear.weight > 0}">weight: <g:weightInLbOz oz="${gear.weight}"/></g:if>
         </div>
+
+        <div class="item-opinion">
+            <div class="inline-text">Should they</div>
+            <button class="opinion" data-opinion-type="take" data-gear-id="${id}">take it</button>
+            <div class="inline-text">,</div>
+            <button class="opinion leave" data-opinion-type="leave" data-gear-id="${id}">leave it</button>
+            <div class="inline-text">, or</div>
+            <button class="opinion" data-opinion-type="switch" data-gear-id="${id}">switch it</button>
+            <div class="inline-text">?</div>
+        </div>
     </div>
 </div>
 </html>

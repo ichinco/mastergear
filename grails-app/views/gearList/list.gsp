@@ -10,27 +10,29 @@
 <html>
     <head>
         <meta name="layout" content="flat">
-        <link type="text/css" rel="stylesheet"
-              href="${resource(dir:'css', file:'gearlistdisplay.css')}" />
         <r:require module="scrollbar" />
+        <r:require module="showList" />
     </head>
     <body>
+        <div class="get-opinion">
+
+        </div>
         <div class="gear-list-layout">
-            <div class="gear-list-left-panel">
-                <menu id="gearlist-side">
-                    <ul class="list-container">
-                        <g:render template="sidebarList"  model="[gear : pack, code:'geartype.pack']" />
-                        <g:render template="sidebarList"  model="[gear : sleep, code:'geartype.sleep']" />
-                        <g:render template="sidebarList"  model="[gear : cooking, code:'geartype.cooking']" />
-                        <g:render template="sidebarList"  model="[gear : food, code:'geartype.food']" />
-                        <g:render template="sidebarList"  model="[gear : water, code:'geartype.water']" />
-                        <g:render template="sidebarList"  model="[gear : clothes, code:'geartype.clothes']" />
-                        <g:render template="sidebarList"  model="[gear : electronics, code:'geartype.electronics']" />
-                        <g:render template="sidebarList"  model="[gear : other, code:'geartype.other']" />
-                        <g:render template="sidebarList"  model="[gear : emergency, code:'geartype.emergency']" />
-                    </ul>
-                </menu>
-            </div>
+            %{--<div class="gear-list-left-panel">--}%
+                %{--<menu id="gearlist-side">--}%
+                    %{--<ul class="list-container">--}%
+                        %{--<g:render template="sidebarList"  model="[gear : pack, code:'geartype.pack']" />--}%
+                        %{--<g:render template="sidebarList"  model="[gear : sleep, code:'geartype.sleep']" />--}%
+                        %{--<g:render template="sidebarList"  model="[gear : cooking, code:'geartype.cooking']" />--}%
+                        %{--<g:render template="sidebarList"  model="[gear : food, code:'geartype.food']" />--}%
+                        %{--<g:render template="sidebarList"  model="[gear : water, code:'geartype.water']" />--}%
+                        %{--<g:render template="sidebarList"  model="[gear : clothes, code:'geartype.clothes']" />--}%
+                        %{--<g:render template="sidebarList"  model="[gear : electronics, code:'geartype.electronics']" />--}%
+                        %{--<g:render template="sidebarList"  model="[gear : other, code:'geartype.other']" />--}%
+                        %{--<g:render template="sidebarList"  model="[gear : emergency, code:'geartype.emergency']" />--}%
+                    %{--</ul>--}%
+                %{--</menu>--}%
+            %{--</div>--}%
             <div class="gear-list-main-panel">
                 <article>
                     <header id="gear-list-display-header">
