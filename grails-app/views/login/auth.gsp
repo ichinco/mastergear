@@ -62,6 +62,19 @@
 				<input type='submit' id="submit" value='${message(code: "springSecurity.login.button")}'/>
 			</p>
 		</form>
+
+        <g:if test="${anonymousAllowed}">
+            <g:form controller="login" action="continueAnonymously" method="post">
+                <g:hiddenField name="targetUri" value="${targetUri}" />
+                <h1>Continue</h1>
+                <p>
+                    You can create a list anonymously, but you cannot comment or view your previously used gear.
+                </p>
+                <p>
+                    <input type='submit' id="submit_anon" value='go'/>
+                </p>
+            </g:form>
+        </g:if>
 	</div>
 </div>
 <script type='text/javascript'>

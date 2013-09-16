@@ -14,7 +14,7 @@
     <r:external dir="css" file="front.css" />
 </head>
 <body>
-    <g:link class="create-list-button-front" controller="gearList" action="initialize"><div class="text">create a gear list</div></g:link>
+    <g:link class="create-list-button-front" controller="login" action="auth" params="[targetUri: g.createLink(controller:'gearList',action:'initialize'), anonymousAllowed:true]"><div class="text">create a gear list</div></g:link>
     <section>
         <h1><div class='Day Hike hike-symbol'></div>Day Hike Lists</h1>
         <ul>

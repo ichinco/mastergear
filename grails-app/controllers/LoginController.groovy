@@ -49,6 +49,10 @@ class LoginController {
 		}
 	}
 
+    def continueAnonymously = {
+        redirect url:"${params.targetUri.replace(request.contextPath,"")}"
+    }
+
 	/**
 	 * Show the login page.
 	 */
@@ -61,12 +65,13 @@ class LoginController {
 			return
 		}
 
-        String redirect = params.targetUri ? "?spring-security-redirect=\${params.targetUri.replace(request.contextPath,\"\")}" : "";
+        String redirect = params.targetUri ? "?spring-security-redirect=${params.targetUri.replace(request.contextPath,"")}" : "";
 		String view = 'auth'
 		String postUrl = "${request.contextPath}${config.apf.filterProcessesUrl}${redirect}"
 		render view: view, model: [postUrl: postUrl,
 		                           rememberMeParameter: config.rememberMe.parameter,
-                                   targetUri : params.targetUri]
+                                   targetUri : params.targetUri,
+                                   anonymousAllowed : params.anonymousAllowed]
 	}
 
 	/**

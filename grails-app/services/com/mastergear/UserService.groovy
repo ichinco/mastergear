@@ -31,6 +31,7 @@ class UserService {
         profile.twitterId = "";
         profile.gearPhilosophy = "";
         profile.user = user;
+        profile.favoriteTrail = Trail.get(1);
         profile.save(flush: true);
     }
 }
