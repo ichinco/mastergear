@@ -35,7 +35,7 @@ class GearController {
 
     def search(String term) {
         String query = """{
-                    "explain" : true,
+//                    "explain" : true,
                     "from" : 0, "size" : 100,
                     "query" : {
                           "multi_match" : {
