@@ -1,9 +1,6 @@
+import com.mastergear.GearUser
 import grails.converters.JSON
-
-import javax.servlet.http.HttpServletResponse
-
 import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils
-
 import org.springframework.security.authentication.AccountExpiredException
 import org.springframework.security.authentication.CredentialsExpiredException
 import org.springframework.security.authentication.DisabledException
@@ -11,6 +8,8 @@ import org.springframework.security.authentication.LockedException
 import org.springframework.security.core.context.SecurityContextHolder as SCH
 import org.springframework.security.web.WebAttributes
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
+
+import javax.servlet.http.HttpServletResponse
 
 class LoginController {
 
@@ -23,6 +22,19 @@ class LoginController {
 	 * Dependency injection for the springSecurityService.
 	 */
 	def springSecurityService
+
+    def userService;
+
+    def create = {
+        GearUser user = GearUser.findByUsername(params.j_desired_username);
+        if (user) {
+            flash.message = "This username is already taken";
+            redirect action: 'auth', params: params
+        } else {
+            userService.createUser(params.j_desired_username, params.j_new_password, params.j_email)
+            springSecurityService.reauthenticate(params.j_desired_username, params.j_new_password);
+        }
+    }
 
 	/**
 	 * Default action; redirects to 'defaultTargetUrl' if logged in, /login/auth otherwise.

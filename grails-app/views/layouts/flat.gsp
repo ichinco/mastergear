@@ -40,6 +40,7 @@
         <g:layoutBody/>
     </div>
     <g:render template="/layouts/flat_navigation" />
+    <g:render template="/layouts/login" />
     <g:render template="/layouts/logo" />
 
     <g:javascript library="application"/>

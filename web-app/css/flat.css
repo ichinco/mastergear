@@ -141,6 +141,12 @@ body.front-page
    right: 15px;
 }
 
+.flat .login {
+    position: fixed;
+    top: 16px;
+    right: 200px;
+}
+
 .flat .logo-container .logo
 {
    margin: 7px 2px;

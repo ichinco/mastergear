@@ -10,6 +10,7 @@ class UserProfile {
     String gearPhilosophy;
     String twitterId;
     Trail favoriteTrail;
+    String email;
 
     static constraints = {
     }
