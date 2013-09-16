@@ -14,6 +14,7 @@
 
         <g:form controller="login" action="create" method="POST" autocomplete="off" class="create-form">
             <h1>New User</h1>
+            <g:hiddenField name="targetUri" value="${targetUri}" />
             <p>
                 <label for="desired_username"><g:message code="springSecurity.login.username.label"/></label>
             </p>

@@ -33,6 +33,7 @@ class LoginController {
         } else {
             userService.createUser(params.j_desired_username, params.j_new_password, params.j_email)
             springSecurityService.reauthenticate(params.j_desired_username, params.j_new_password);
+            redirect url:"${params.targetUri.replace(request.contextPath,"")}"
         }
     }
 
@@ -44,7 +45,7 @@ class LoginController {
 			redirect uri: SpringSecurityUtils.securityConfig.successHandler.defaultTargetUrl
 		}
 		else {
-			redirect action: 'auth', params: params
+			redirect action: 'auth'
 		}
 	}
 
@@ -60,10 +61,12 @@ class LoginController {
 			return
 		}
 
+        String redirect = params.targetUri ? "?spring-security-redirect=\${params.targetUri.replace(request.contextPath,\"\")}" : "";
 		String view = 'auth'
-		String postUrl = "${request.contextPath}${config.apf.filterProcessesUrl}"
+		String postUrl = "${request.contextPath}${config.apf.filterProcessesUrl}${redirect}"
 		render view: view, model: [postUrl: postUrl,
-		                           rememberMeParameter: config.rememberMe.parameter]
+		                           rememberMeParameter: config.rememberMe.parameter,
+                                   targetUri : params.targetUri]
 	}
 
 	/**
@@ -126,7 +129,7 @@ class LoginController {
 		}
 		else {
 			flash.message = msg
-			redirect action: 'auth', params: params
+			redirect action: 'auth'
 		}
 	}
 
