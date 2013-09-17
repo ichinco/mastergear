@@ -23,5 +23,7 @@ modules = {
         dependsOn 'lib'
         dependsOn 'stylesheets'
         dependsOn 'showListStylesheets'
+
+        resource url: 'js/show-list/router.js'
     }
 }

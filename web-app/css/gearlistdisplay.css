@@ -232,4 +232,8 @@ div.inline-text{
     display: inline;
 }
 
+.get-opinion {
+    display: none;
+}
+
 

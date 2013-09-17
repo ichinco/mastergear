@@ -14,8 +14,44 @@
         <r:require module="showList" />
     </head>
     <body>
-        <div class="get-opinion">
-
+        <div id="take-opinion" data-opinion-type="take" class="pop-background">
+            <div class="pop">
+                <div class="content">
+                    <div class="close-button"></div>
+                    <h1></h1>
+                    <div>
+                        Tell us why you would take it.
+                    </div>
+                    <g:textArea name="gear-opinion" class="gear-review" rows="4" cols="75" />
+                    <button class="create-opinion">give advice</button>
+                </div>
+            </div>
+        </div>
+        <div id="leave-opinion" data-opinion-type="leave" class="pop-background">
+            <div class="pop">
+                <div class="content">
+                    <div class="close-button"></div>
+                    <h1></h1>
+                    <div>
+                        Tell us why you would leave it.
+                    </div>
+                    <g:textArea name="gear-opinion" class="gear-review" rows="4" cols="75" />
+                    <button class="create-opinion">give advice</button>
+                </div>
+            </div>
+        </div>
+        <div id="switch-opinion" data-opinion-type="switch" class="pop-background">
+            <div class="pop">
+                <div class="content">
+                    <div class="close-button"></div>
+                    <h1></h1>
+                    <div>
+                        Tell us what you would take instead.
+                    </div>
+                    <g:textArea name="gear-opinion" class="gear-review" rows="4" cols="75" />
+                    <button class="create-opinion">give advice</button>
+                </div>
+            </div>
         </div>
         <div class="gear-list-layout">
             %{--<div class="gear-list-left-panel">--}%

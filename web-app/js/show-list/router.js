@@ -9,7 +9,17 @@ Mastergear.Router = Backbone.Router.extend({
         var opinionModel = new Mastergear.Models.OpinionModel();
 
         var opinionCreateView = new Mastergear.Views.OpinionCreateView({
-            el : '.get-opinion',
+            el : '#take-opinion',
+            model : opinionModel
+        });
+
+        var leaveCreateView = new Mastergear.Views.OpinionCreateView({
+            el : '#leave-opinion',
+            model : opinionModel
+        });
+
+        var switchCreateView = new Mastergear.Views.OpinionCreateView({
+            el : '#switch-opinion',
             model : opinionModel
         });
 

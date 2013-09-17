@@ -28,7 +28,7 @@
             gearlist : '${createLink(controller:"gearLists")}',
             gearListGearItem : '${createLink(controller:"gearListGear")}',
             images : '${resource(dir:'images')}/',
-            gearListGearOpinion: ${createLink(controller:"gearListGearOpinion")}
+            gearListGearOpinion: '${createLink(controller:"gearListGearOpinion")}'
         };
     </script>
     <g:layoutHead/>
