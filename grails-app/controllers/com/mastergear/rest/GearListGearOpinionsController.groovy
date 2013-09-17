@@ -13,4 +13,8 @@ class GearListGearOpinionsController {
             opinions : opinions
         }
     }
+
+    def save() {
+        forward controller: "gearListGearOpinion", action:"save", params: params
+    }
 }

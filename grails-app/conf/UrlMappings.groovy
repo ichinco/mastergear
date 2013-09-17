@@ -33,7 +33,7 @@ class UrlMappings {
 
         "/gearListGearOpinion/"(parseRequest:true){
               controller = "gearListGearOpinions"
-              action = [GET: "show"]
+              action = [GET: "show", POST: "save"]
         }
 
         "/gear/list"(parseRequest:true){
