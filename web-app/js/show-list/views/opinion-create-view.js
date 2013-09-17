@@ -16,7 +16,10 @@ Mastergear.Views.OpinionCreateView = Backbone.View.extend({
     },
 
     sendOpinion : function() {
-
+        var text = this.$el.find(".gear-review").val();
+        this.model.setTextOpinion(text);
+        this.model.save({}, {async : false});
+        this.close();
     },
 
     close : function (){

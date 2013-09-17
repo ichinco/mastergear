@@ -1,13 +1,17 @@
 package com.mastergear.rest
 
+import com.mastergear.GearListGear
 import com.mastergear.GearListGearOpinion
+import com.mastergear.GearUser
 import grails.plugins.springsecurity.Secured
 import org.springframework.dao.DataIntegrityViolationException
 
 @Secured(['IS_AUTHENTICATED_FULLY'])
 class GearListGearOpinionController {
 
-    static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+    def springSecurityService;
+
+    static allowedMethods = [show:"GET", save: "POST", update: "POST", delete: "POST"]
 
     def index() {
         redirect(action: "list", params: params)
@@ -24,22 +28,24 @@ class GearListGearOpinionController {
 
     def save() {
         def gearListGearOpinionInstance = new GearListGearOpinion(params)
+        gearListGearOpinionInstance.setUser((GearUser) springSecurityService.getCurrentUser());
+        gearListGearOpinionInstance.setGearListGear(GearListGear.get(params.gearListGearId.toLong()));
+
         if (!gearListGearOpinionInstance.save(flush: true)) {
-            render(view: "create", model: [gearListGearOpinionInstance: gearListGearOpinionInstance])
+            render (contentType:"text/json") {
+                success : false
+            }
             return
         }
 
-        flash.message = message(code: 'default.created.message', args: [message(code: 'gearListGearOpinion.label', default: 'GearListGearOpinion'), gearListGearOpinionInstance.id])
-        redirect(action: "show", id: gearListGearOpinionInstance.id)
+        render (contentType:"text/json") {
+            success : true
+            gearListGearOpinionInstance : gearListGearOpinionInstance
+        }
     }
 
     def show(Long id) {
         def gearListGearOpinionInstance = GearListGearOpinion.get(id)
-        if (!gearListGearOpinionInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'gearListGearOpinion.label', default: 'GearListGearOpinion'), id])
-            redirect(action: "list")
-            return
-        }
 
         [gearListGearOpinionInstance: gearListGearOpinionInstance]
     }

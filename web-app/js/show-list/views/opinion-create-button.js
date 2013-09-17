@@ -11,6 +11,7 @@ Mastergear.Views.OpinionCreateButton = Backbone.View.extend({
     },
 
     openDialog : function(e) {
+        this.model.clear();
 
         var id = $(e.currentTarget).data("gear-id");
         var opinionType = $(e.currentTarget).data("opinion-type");
