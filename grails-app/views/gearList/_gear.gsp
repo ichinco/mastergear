@@ -65,15 +65,17 @@
         </g:if>
 
 
-        <div class="item-opinion">
-            <div class="inline-text">Should they</div>
-            <button class="opinion" data-opinion-type="take" data-gear-id="${id}">take it</button>
-            <div class="inline-text">,</div>
-            <button class="opinion leave" data-opinion-type="leave" data-gear-id="${id}">leave it</button>
-            <div class="inline-text">, or</div>
-            <button class="opinion" data-opinion-type="switch" data-gear-id="${id}">switch it</button>
-            <div class="inline-text">?</div>
-        </div>
+        <g:if test="${isLoggedIn}">
+            <div class="item-opinion">
+                <div class="inline-text">Should they</div>
+                <button class="opinion" data-opinion-type="take" data-gear-id="${id}">take it</button>
+                <div class="inline-text">,</div>
+                <button class="opinion leave" data-opinion-type="leave" data-gear-id="${id}">leave it</button>
+                <div class="inline-text">, or</div>
+                <button class="opinion" data-opinion-type="switch" data-gear-id="${id}">switch it</button>
+                <div class="inline-text">?</div>
+            </div>
+        </g:if>
     </div>
     <!-- image -->
     <a name="${id}" class="reference"></a>

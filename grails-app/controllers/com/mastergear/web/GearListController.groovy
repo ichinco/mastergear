@@ -116,7 +116,7 @@ class GearListController {
         Integer listId = Integer.parseInt(params.id);
 
         GearList list = GearList.get(listId);
-            def pack = GearListGear.findAllByListAndGearType(list, GearType.PACK);
+        def pack = GearListGear.findAllByListAndGearType(list, GearType.PACK);
         def sleep = GearListGear.findAllByListAndGearType(list, GearType.SLEEP);
         def cooking = GearListGear.findAllByListAndGearType(list, GearType.COOKING);
         def food = GearListGear.findAllByListAndGearType(list, GearType.FOOD);

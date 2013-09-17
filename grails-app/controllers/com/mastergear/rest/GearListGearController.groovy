@@ -47,6 +47,9 @@ class GearListGearController {
             return;
         }
 
+        if (params.weight){
+            gearListGearInstance.weight = Double.parseDouble(params.weight);
+        }
         gearListGearInstance.quantity = 1;
         gearListGearInstance.notes = params.notes ? params.notes : "";
 

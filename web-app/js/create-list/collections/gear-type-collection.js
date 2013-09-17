@@ -13,12 +13,13 @@ Mastergear.Collection.GearType = Backbone.Collection.extend({
         this.listId = attr.listId;
     },
 
-    addGearList : function(gear){
+    addGearList : function(gear, weight){
         var gearListGear = new Mastergear.Models.GearListGear();
         var attr = {};
         attr.gear = gear.attributes;
         attr.gearType = {name : this.gearType};
         attr.list = {id : this.listId};
+        attr.weight = weight;
         gearListGear.set(attr);
         gearListGear.save({}, {async : false});
         this.add(gearListGear);

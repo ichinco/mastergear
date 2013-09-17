@@ -13,8 +13,10 @@ class GearListGear {
     int quantity
     String notes;
     GearType gearType;
+    Double weight; //overrides the gear weight
 
     static constraints = {
+        weight nullable:true
     }
 
     static mapping = {

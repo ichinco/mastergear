@@ -58,6 +58,10 @@
                               class="gearType"
                               keys="${GearType.values()}" />
                 </fieldset>
+                <fieldset class="weight-field">
+                    <label for="weight">weight (in oz)</label>
+                    <g:textField name="weight" class="weight" />
+                </fieldset>
                 <button class="add-gear-button">add item</button>
             </div>
             <div class="gear-suggestion">
