@@ -29,6 +29,7 @@ class GearListGear {
             return [id: it.id,
                     gear: it.gear,
                     list: it.list,
+                    weight: it.weight && it.weight > 0 ? it.weight : it.gear.weight,
                     quantity: it.quantity,
                     notes: it.notes,
                     type: g.message(code:"geartype.${it.gearType.toString().toLowerCase()}"),

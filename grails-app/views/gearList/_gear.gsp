@@ -45,7 +45,8 @@
         </div>
 
         <div class="item-data">
-            <g:if test="${gear.weight > 0}">weight: <g:weightInLbOz oz="${gear.weight}"/></g:if>
+            <g:if test="${weight && weight > 0}">weight: <g:weightInLbOz oz="${weight}"/></g:if>
+            <g:elseif test="${gear.weight > 0}">weight: <g:weightInLbOz oz="${gear.weight}"/></g:elseif>
         </div>
 
         <%
