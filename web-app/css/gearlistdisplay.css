@@ -229,8 +229,9 @@ button.existing-opinion {
     float:none;
 }
 
-div.inline-text{
+.inline-text{
     display: inline;
+    float: none;
 }
 
 .get-opinion {

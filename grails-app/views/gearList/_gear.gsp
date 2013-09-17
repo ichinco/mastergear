@@ -77,6 +77,12 @@
                 <div class="inline-text">?</div>
             </div>
         </g:if>
+        <g:else>
+            <div>
+                <g:link controller="login" action="auth" params="[targetUri:request.requestURI]"><button class="inline-text">log in</button></g:link>
+                <div class="inline-text">to leave feedback</div>
+            </div>
+        </g:else>
     </div>
     <!-- image -->
     <a name="${id}" class="reference"></a>
