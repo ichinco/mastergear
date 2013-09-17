@@ -31,6 +31,11 @@ class UrlMappings {
               action = [GET: "show", PUT: "update", DELETE: "delete", POST: "save"]
         }
 
+        "/gearListGearOpinion/"(parseRequest:true){
+              controller = "gearListGearOpinions"
+              action = [GET: "show"]
+        }
+
         "/gear/list"(parseRequest:true){
               controller = "gear"
               action = "list"

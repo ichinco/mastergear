@@ -222,7 +222,8 @@ section.gear-list-category {}
     top: -80px;
 }
 
-button.opinion {
+button.opinion,
+button.existing-opinion {
     display: inline;
     max-width: 100px;
     float:none;
@@ -234,6 +235,22 @@ div.inline-text{
 
 .get-opinion {
     display: none;
+}
+
+.opinions h2 {
+    margin-bottom: 5px;
+}
+
+.opinions h3 {
+    margin: 2px 0;
+}
+
+.opinions p {
+    margin: 0 0;
+}
+
+.opinions .review {
+    margin: 5px 0;
 }
 
 

@@ -26,7 +26,7 @@ Mastergear.Router = Backbone.Router.extend({
         var opinionCreateButton = new Mastergear.Views.OpinionCreateButton({
             el : 'button.opinion',
             model : opinionModel
-        })
+        });
     }
 });
 

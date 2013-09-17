@@ -14,6 +14,18 @@
         <r:require module="showList" />
     </head>
     <body>
+
+        <div id="show-opinions" class="pop-background">
+            <div class="pop">
+                <div class="content">
+                    <div class="close-button"></div>
+                    <p>What others think about this item</p>
+                    <div class="reviews">
+
+                    </div>
+                </div>
+            </div>
+        </div>
         <div id="take-opinion" data-opinion-type="take" class="pop-background">
             <div class="pop">
                 <div class="content">

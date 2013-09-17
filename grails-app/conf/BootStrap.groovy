@@ -11,6 +11,7 @@ class BootStrap {
         Provider.register(grailsApplication);
         Gear.register(grailsApplication);
         GearListGear.register(grailsApplication);
+        GearListGearOpinion.register(grailsApplication);
     }
     def destroy = {
     }

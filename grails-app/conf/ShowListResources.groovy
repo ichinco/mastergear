@@ -3,6 +3,7 @@ modules = {
         dependsOn 'lib'
 
         resource url:'js/show-list/models/opinion-model.js'
+        resource url:'js/show-list/collections/gear-list-gear-opinion-collection.js'
     }
 
     showListViews{
@@ -11,6 +12,8 @@ modules = {
 
         resource url: 'js/show-list/views/opinion-create-button.js'
         resource url: 'js/show-list/views/opinion-create-view.js'
+        resource url: 'js/show-list/views/opinion-show-button.js'
+        resource url: 'js/show-list/views/opinion-show-view.js'
     }
 
     showListStylesheets {
