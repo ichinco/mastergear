@@ -35,15 +35,20 @@ class GearController {
 
     def search(String term) {
         String query = """{
-//                    "explain" : true,
                     "from" : 0, "size" : 100,
                     "query" : {
-                          "multi_match" : {
-                            "use_dis_max" : false,
-                            "query" : "${term}",
-                            "fields" : [ "brand^2", "title^2",
-                            "category","subCategory^3","productGroup^3","keywords^3"]
-                          }
+                      "bool" : {
+                        "should" : [
+                            {"match" : {"title" : "${term}"}},
+                            {"term" : {"category": "${term}"}},
+                            {"term" : {"keywords": "${term}"}},
+                            {"match" : {"brand" : "${term}"}}
+                        ],
+                        "must_not" : [
+                            {"match":{"productGroup":"accessories"}},
+                            {"match":{"subCategory":"accessories"}}
+                        ]
+                      }
                     }}"""
         def result = jestElasticSearchService.getGear(query);
 

@@ -79,6 +79,10 @@ class JestElasticSearchService {
 
         JestResult result = client.execute(search)
 
+        if (!result.isSucceeded()) {
+            throw new RuntimeException(result.errorMessage)
+        }
+
         List<Object> sourceList = (List<Object>) result.extractSource();
 
         List<Gear> gear = sourceList.collect({
