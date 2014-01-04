@@ -42,7 +42,8 @@ class GearController {
                             {"match" : {"title" : "${term}"}},
                             {"term" : {"category": "${term}"}},
                             {"term" : {"keywords": "${term}"}},
-                            {"match" : {"brand" : "${term}"}}
+                            {"match" : {"brand" : "${term}"}},
+                            {"match" : {"shortDescription" : "${term}"}}
                         ],
                         "must_not" : [
                             {"match":{"productGroup":"accessories"}},
