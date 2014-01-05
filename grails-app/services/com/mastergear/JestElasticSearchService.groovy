@@ -18,7 +18,7 @@ class JestElasticSearchService {
     def grailsApplication
 
     private JestClient client;
-    private static final String INDEX = "com.mastergear";
+    private static final String INDEX = "com.mastergear.1";
     private static final String TYPE = "gear";
 
     @PostConstruct

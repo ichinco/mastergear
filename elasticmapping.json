@@ -35,7 +35,8 @@
                     "analyzer": "analyzer_snowball"
                 },
                 "keywords": {
-                    "type": "string"
+                    "type": "string",
+                    "analyzer" : "analyzer_keyword"
                 },
                 "longDescription": {
                     "type": "string"
