@@ -1,3 +1,4 @@
+<%@ page import="com.mastergear.HikeType; com.mastergear.Season" %>
 <%--
   Created by IntelliJ IDEA.
   User: denise
@@ -6,13 +7,12 @@
   To change this template use File | Settings | File Templates.
 --%>
 <!DOCTYPE html>
-<%@ page import="com.mastergear.jobs.HikeType; com.mastergear.jobs.HikeType; com.mastergear.HikeType; com.mastergear.Season" contentType="text/html;charset=UTF-8" %>
 <%
     List<String> seasonValues = Season.values().collect {
         message(code:"season." + it.toString().toLowerCase());
     }
 
-    List<String> hikeTypeValues = com.mastergear.jobs.HikeType.values().collect {
+    List<String> hikeTypeValues = HikeType.values().collect {
         message(code:"hiketype." + it.toString().toLowerCase());
     }
 %>
@@ -53,7 +53,7 @@
                     <g:renderErrors bean="${list}" field="hikeType" />
                     <g:select name="hikeType"
                               from="${hikeTypeValues}"
-                              keys="${com.mastergear.jobs.HikeType.values()}"
+                              keys="${HikeType.values()}"
                               value="${fieldValue(bean:list,field:'hikeType')}"  />
                     <br />
                 </fieldset>
