@@ -1,3 +1,4 @@
+<%@ page import="com.mastergear.HikeType" %>
 <%--
   Created by IntelliJ IDEA.
   User: denise
@@ -6,7 +7,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 
-<%@ page import="com.mastergear.jobs.HikeType" contentType="text/html;charset=UTF-8" %>
 <!DOCTYPE html>
 <html class="front-page">
 <head>
