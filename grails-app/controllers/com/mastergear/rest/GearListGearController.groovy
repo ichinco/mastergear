@@ -4,7 +4,6 @@ import com.mastergear.Gear
 import com.mastergear.GearList
 import com.mastergear.GearListGear
 import com.mastergear.GearType
-import grails.converters.deep.JSON
 import org.springframework.dao.DataIntegrityViolationException
 
 class GearListGearController {

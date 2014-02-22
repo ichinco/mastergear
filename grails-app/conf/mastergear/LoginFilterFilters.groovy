@@ -12,6 +12,7 @@ class LoginFilterFilters {
                 request.isLoggedIn = springSecurityService.isLoggedIn();
                 if (request.isLoggedIn) {
                     request.username = ((GearUser) springSecurityService.currentUser).username;
+                    request.userId = ((GearUser) springSecurityService.currentUser).id
                 }
             }
             after = { Map model ->

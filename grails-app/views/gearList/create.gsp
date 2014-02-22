@@ -6,7 +6,7 @@
 --%>
 
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%@ page import="com.mastergear.GearType; com.mastergear.Provider; com.mastergear.ProviderType; com.mastergear.GearGender; com.mastergear.HikeType; com.mastergear.Season" contentType="text/html;charset=UTF-8" %>
+<%@ page import="com.mastergear.jobs.GearType; com.mastergear.jobs.GearType; com.mastergear.GearType; com.mastergear.Provider; com.mastergear.ProviderType; com.mastergear.GearGender; com.mastergear.HikeType; com.mastergear.Season" contentType="text/html;charset=UTF-8" %>
 
 <%
     List<String> geartypeValues = GearType.values().collect {

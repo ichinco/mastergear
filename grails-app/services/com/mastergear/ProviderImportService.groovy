@@ -1,10 +1,7 @@
 package com.mastergear
 
-import org.apache.http.entity.ContentType
-
-import static groovyx.net.http.ContentType.*
+import com.mastergear.GearGender
 import groovyx.net.http.HTTPBuilder
-import static groovyx.net.http.Method.*
 
 import java.util.concurrent.Future
 import static groovyx.gpars.GParsPool.withPool;

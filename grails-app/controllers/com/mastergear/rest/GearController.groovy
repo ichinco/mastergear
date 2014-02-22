@@ -11,6 +11,8 @@ import org.springframework.dao.DataIntegrityViolationException
 class GearController {
 
     def jestElasticSearchService;
+    def amazonAssociatesRestService;
+    def amazonProductApiService;
 
     static allowedMethods = [save: ["PUT","POST"], update: "PUT", delete: "DELETE"]
 
@@ -40,13 +42,15 @@ class GearController {
                       "bool" : {
                         "should" : [
                             {"match" : {"title" : { "query":"${term}"}}},
-                            {"term" : {"category": {"value":"${term}"}}},
-                            {"term" : {"productGroup": {"value":"${term}"}}},
+                            {"term" : {"category": {"value":"${term}", "boost":2.0}}},
+                            {"term" : {"productGroup": {"value":"${term}", "boost":2.0}}},
+                            {"term" : {"keywords": {"value":"${term}", "boost":1.0}}},
                             {"match" : {"brand_exact" : "${term}"}}
                         ]
                       }
                     }}"""
-        def result = jestElasticSearchService.getGear(query);
+//        def result = jestElasticSearchService.getGear(query);
+        def result = amazonProductApiService.getGear(term);
 
         render (contentType:'text/json'){
             gearInstanceList: result

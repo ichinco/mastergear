@@ -76,5 +76,8 @@ grails.project.dependency.resolution = {
         compile ":backbonejs:0.9.10.3"
         compile ":csv:0.3.1"
         compile ":rest:0.7"
+
+        runtime ':twitter-bootstrap:3.0.3'
+        compile ":cxf-client:1.6.0"
     }
 }

@@ -30,13 +30,13 @@ class Gear {
         JSON.registerObjectMarshaller(Gear) {
             def g = grailsApplication.mainContext.getBean('org.codehaus.groovy.grails.plugins.web.taglib.ApplicationTagLib');
             return [id: it.id,
-                    brand: it.brand.name,
-                    itemType: it.item.name,
+                    brand: it.brand?.name,
+                    itemType: it.item?.name,
                     title: it.title,
                     weight: it.weight,
                     providers: it.providers,
-                    dateCreated: it.dateCreated.getTime(),
-                    lastUpdated: it.lastUpdated.getTime()]
+                    dateCreated: it.dateCreated?.getTime(),
+                    lastUpdated: it.lastUpdated?.getTime()]
         }
     }
 }

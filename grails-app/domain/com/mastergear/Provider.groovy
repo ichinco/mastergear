@@ -1,5 +1,6 @@
 package com.mastergear
 
+import com.mastergear.GearGender
 import grails.converters.JSON
 
 class Provider {
@@ -61,8 +62,8 @@ class Provider {
                     productGroup: it.productGroup,
                     imageUrl : g.message(code:"providertype.html.${it.type.toString().toLowerCase()}", args:[it.providerId, it.imageId, it.imageUrl]),
                     iconUrl : g.message(code:"providertype.html.icon.${it.type.toString().toLowerCase()}", args:[it.providerId, it.imageId]),
-                    dateCreated: it.dateCreated.getTime(),
-                    lastUpdated: it.lastUpdated.getTime()]
+                    dateCreated: it.dateCreated?.getTime(),
+                    lastUpdated: it.lastUpdated?.getTime()]
         }
     }
 }

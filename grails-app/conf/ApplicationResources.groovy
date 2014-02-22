@@ -6,6 +6,8 @@ modules = {
     lib {
         dependsOn 'jquery' //provided by plugin
         dependsOn 'backbone' //provided by plugin
+        dependsOn 'bootstrap-css'
+        dependsOn 'bootstrap-js'
     }
     leaflet {
         resource url: 'js/leaflet/leaflet.js'

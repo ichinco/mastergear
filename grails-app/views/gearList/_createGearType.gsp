@@ -1,4 +1,4 @@
-<%@ page import="com.mastergear.GearGender; com.mastergear.ProviderType" %>
+<%@ page import="com.mastergear.jobs.GearGender; com.mastergear.GearGender; com.mastergear.ProviderType" %>
 <%
     List<String> genderValues = GearGender.values().collect {
         message(code:"geargender." + it.toString().toLowerCase());

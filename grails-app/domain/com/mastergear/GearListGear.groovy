@@ -1,5 +1,6 @@
 package com.mastergear
 
+import com.mastergear.GearType
 import grails.converters.JSON
 
 class GearListGear {

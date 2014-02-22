@@ -6,13 +6,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <!DOCTYPE html>
-<%@ page import="com.mastergear.HikeType; com.mastergear.Season" contentType="text/html;charset=UTF-8" %>
+<%@ page import="com.mastergear.jobs.HikeType; com.mastergear.jobs.HikeType; com.mastergear.HikeType; com.mastergear.Season" contentType="text/html;charset=UTF-8" %>
 <%
     List<String> seasonValues = Season.values().collect {
         message(code:"season." + it.toString().toLowerCase());
     }
 
-    List<String> hikeTypeValues = HikeType.values().collect {
+    List<String> hikeTypeValues = com.mastergear.jobs.HikeType.values().collect {
         message(code:"hiketype." + it.toString().toLowerCase());
     }
 %>
@@ -28,7 +28,7 @@
         <div id="create-gearlist-form-container">
             <g:form controller="gearList" action="initializeSave" class="gearlist-create-form">
                 <!-- important: this is needed to process user data -->
-                <g:hiddenField name="user" value='-1'><</g:hiddenField>
+                <g:hiddenField name="user" value='${userId}'><</g:hiddenField>
 
                 <!-- title -->
                 <fieldset class="title ${hasErrors(bean:list,field:'title','errors')}">
@@ -53,7 +53,7 @@
                     <g:renderErrors bean="${list}" field="hikeType" />
                     <g:select name="hikeType"
                               from="${hikeTypeValues}"
-                              keys="${HikeType.values()}"
+                              keys="${com.mastergear.jobs.HikeType.values()}"
                               value="${fieldValue(bean:list,field:'hikeType')}"  />
                     <br />
                 </fieldset>

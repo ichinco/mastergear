@@ -1,5 +1,6 @@
 package com.mastergear
 
+import com.mastergear.HikeType
 import grails.converters.JSON
 
 class GearList {
