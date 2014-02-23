@@ -16,6 +16,21 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:100,400' rel='stylesheet' type='text/css' />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css' />
     <script src="${resource(dir:'js', file:'jquery.js')}" type="text/javascript"></script>
+    <script type="text/javascript">
+        var Mastergear = Mastergear || {};
+        Mastergear.Urls = Mastergear.Urls || {};
+
+        Mastergear.Urls = {
+            trail : '${createLink(controller:"trails")}',
+            search : '${createLink(controller:"gear", action:"search")}',
+            gearListGear : '${createLink(controller:"gearListGear", action:"list")}',
+            gear: '${createLink(controller:"gear")}',
+            gearlist : '${createLink(controller:"gearLists")}',
+            gearListGearItem : '${createLink(controller:"gearListGear")}',
+            images : '${resource(dir:'images')}/',
+            gearListGearOpinion: '${createLink(controller:"gearListGearOpinion")}'
+        };
+    </script>
     <g:layoutHead/>
     <r:layoutResources />
 </head>
@@ -26,33 +41,17 @@
         <g:layoutBody/>
     </div>
     <g:render template="/layouts/flat_navigation" />
+    <g:render template="/layouts/login" />
     <g:render template="/layouts/logo" />
-    <script type="text/template" id="gear_type_template">
-        <div>
-            <div class="gear-delete" data-gear-id={{id}} style="background-image:url('${resource(dir: "images", file: "brightmix_delete.png")}')"></div>
-            <div class="gear-object" data-gear-id={{id}}>{{gear.brand.name}} {{gear.title}} {{gear.item.name}}</div>
-            <button class="review-gear" data-gear-id={{id}}>review</button>
-        </div>
-    </script>
-    <script type="text/template" id="gear_template">
-        <div>
-            <div class="gear-object" data-gear-id={{id}}>{{brand.name}}: {{title}}</div>
-        </div>
-    </script>
-    <script type="text/template" id="trail_template">
-    <div>
-        <div class="trail-object" data-trail-id={{id}}>{{name}}</div>
-    </div>
-</script>
-    <script type="text/template" id="trail_form_template">
-        <input type="hidden" name="trail" value="{{id}}"/>
-        <div class="trail-object" data-trail-id={{id}}>{{name}}</div>
-    </script>
+
     <g:javascript library="application"/>
     <r:layoutResources />
     <script type="text/javascript">
+
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-39726351-1']);
+      _gaq.push(['_setDomainName', 'feathergear.herokuapp.com']);
+      _gaq.push(['_setAllowLinker', true]);
       _gaq.push(['_trackPageview']);
 
       (function() {

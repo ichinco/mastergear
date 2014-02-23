@@ -34,7 +34,7 @@ Mastergear.Views.Map = Backbone.View.extend({
         this.model.bind('reset', this.setMarkers);
     },
 
-    onMarkerClick: function(id, model) {
+    onMarkerClick: function(id, model, map) {
         return function(evt) {
             model.setSelected(id);
         };
@@ -46,7 +46,7 @@ Mastergear.Views.Map = Backbone.View.extend({
         var model = this.model;
         _.each(this.model.models, function (e){
             var marker = L.marker([e.attributes.latitude, e.attributes.longitude]).addTo(map);
-            marker.on('click', handler(e.attributes.id, model));
+            marker.on('click', handler(e.attributes.id, model, map));
         });
     }
 

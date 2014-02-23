@@ -29,8 +29,5 @@ class TrailShowController {
     }
 
     def list(){
-        render view: "list", model:[
-            trails : Trail.list()
-        ]
     }
 }

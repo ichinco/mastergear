@@ -4,6 +4,7 @@
 
 #gear-list-display
 {
+    display: none;
     position: absolute;
     float: right;
     right: 60px;
@@ -31,24 +32,12 @@
     height: 60px;
 }
 
-#gear-list-display #close-button
+#gear-list-display .close-button
 {
-    position: absolute;
-    fill: white;
-    cursor: pointer;
-}
-
-#gear-list-display .close-img
-{
-    right: 0px;
-    margin-right: -19px;
-    top: 95px;
-    position: absolute;
-    background-image: url('../images/navicons.png');
-    background-size: cover;
     width: 30px;
     height: 30px;
-    pointer-events : none;
+    top:10px;
+    right:10px;
 }
 
 #gear-list-display .gear-list-item:first-child
@@ -64,9 +53,8 @@
 
 #gear-list-display .gear-list-item .list-title
 {
-    font-size: 45px;
+    font-size: 35px;
     color: #555;
-    margin-bottom: -10px;
 }
 
 #gear-list-display .gear-list-item .list-description
@@ -98,19 +86,6 @@
 #gear-list-display .hike-symbol {
     width: 100px;
     height: 100px;
-    background-image: url('../images/hiketypesprite.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
     margin: 10px;
 }
 
-#gear-list-display .hike-symbol.Backpacking {
-    background-position: 0 0;
-}
-#gear-list-display .hike-symbol.Day {
-    background-position: -200px 0;
-}
-#gear-list-display .hike-symbol.Car {
-    background-position: -100px 0;
-}

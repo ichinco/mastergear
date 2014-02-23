@@ -3,11 +3,12 @@ Mastergear.Models = Mastergear.Models || {};
 
 Mastergear.Models.Trail = Backbone.Model.extend({
 
+    // reference to the trails collection
     possibleTrails : null,
 
     initialize : function(){
         _.bindAll(this);
-        this.url = "/mastergear/trail";
+        this.url = Mastergear.Urls.trail;
     },
 
     setPossibleTrails : function(possibleTrails) {

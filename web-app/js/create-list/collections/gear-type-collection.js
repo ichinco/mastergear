@@ -3,36 +3,23 @@ Mastergear.Collection = Mastergear.Collection || {};
 
 Mastergear.Collection.GearType = Backbone.Collection.extend({
 
-    suggestionModel : null,
     model : Mastergear.Models.GearListGear,
     gearType : null,
     listId : null,
-    url : "/mastergear/gearListGear/list",
+    url : Mastergear.Urls.gearListGear,
 
     initialize : function(attr){
         this.gearType = attr.gearType;
         this.listId = attr.listId;
     },
 
-    setItemType : function(type) {
-        this.suggestionModel.setItemType(type);
-    },
-
-    setSelectionModel : function(selectionModel) {
-        this.suggestionModel = selectionModel;
-        this.suggestionModel.bind('select-gear', this.gearSelected, this);
-    },
-
-    gearSelected : function(){
-        this.addGearList(this.suggestionModel.getSelected());
-    },
-
-    addGearList : function(gear){
+    addGearList : function(gear, weight){
         var gearListGear = new Mastergear.Models.GearListGear();
         var attr = {};
         attr.gear = gear.attributes;
         attr.gearType = {name : this.gearType};
         attr.list = {id : this.listId};
+        attr.weight = weight;
         gearListGear.set(attr);
         gearListGear.save({}, {async : false});
         this.add(gearListGear);

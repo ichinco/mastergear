@@ -37,7 +37,11 @@ Mastergear.Views.GoogleMap = Backbone.View.extend({
     onMarkerClick: function(id, model, loc) {
         return function(evt) {
             model.setSelected(id);
-//            this.map.panTo(loc);
+            $("#map").width("50%");
+            google.maps.event.trigger(map, "resize");
+            this.map.panTo(loc);
+            $("#map").width("100%");
+            google.maps.event.trigger(map, "resize");
         };
     },
 
@@ -50,27 +54,14 @@ Mastergear.Views.GoogleMap = Backbone.View.extend({
             var marker = new google.maps.Marker({
                 position: loc,
                 map: map,
-                icon: "images/marker.png",
+                icon: Mastergear.Urls.images + "marker.png",
                 title: e.name
               });
             google.maps.event.addListener(marker, 'click', handler(e.attributes.id, model, loc));
 
-            var infowindow = new google.maps.InfoWindow({
-                content: "<div>" + e.attributes.name + "</div>",
-                pixelOffset:new google.maps.Size(0, 0),
-                hideCloseButton:true,
-                arrowSize:15,
-                arrowPosition: 50
-            });
-
-            google.maps.event.addListener(marker, 'mouseover', function(evt) {
-                infowindow.open(map, marker);
-            });
-
-            // assuming you also want to hide the infowindow when user mouses-out
-            google.maps.event.addListener(marker, 'mouseout', function() {
-                infowindow.close();
-            });
+            var tooltipOptions={ marker:marker, content:"<div>" + e.attributes.name + "</div>",
+                cssClass:'tooltip' };  // name of a css class to apply to tooltip };
+            var tooltip = new Tooltip(tooltipOptions);
         });
     }
 

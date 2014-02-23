@@ -1,0 +1,25 @@
+.user-list.trail-list img {
+    display : block;
+    max-width: 150px;
+    height:100px;
+}
+
+.user-list.trail-list a.gear-list-item {
+    display : inline-block;
+    width: 150px;
+    margin: 10px;
+}
+
+.user-list .gear-list-category, .user-list #gear-list-display-header {
+    max-width: 700px;
+    margin-left: 30px;
+}
+
+#gear-list-display-header h1 {
+    color: #888;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    font-size: 30pt;
+    margin: 0px;
+    display: inline;
+}

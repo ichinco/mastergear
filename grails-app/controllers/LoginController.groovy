@@ -1,9 +1,6 @@
+import com.mastergear.GearUser
 import grails.converters.JSON
-
-import javax.servlet.http.HttpServletResponse
-
 import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils
-
 import org.springframework.security.authentication.AccountExpiredException
 import org.springframework.security.authentication.CredentialsExpiredException
 import org.springframework.security.authentication.DisabledException
@@ -11,6 +8,8 @@ import org.springframework.security.authentication.LockedException
 import org.springframework.security.core.context.SecurityContextHolder as SCH
 import org.springframework.security.web.WebAttributes
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
+
+import javax.servlet.http.HttpServletResponse
 
 class LoginController {
 
@@ -24,6 +23,20 @@ class LoginController {
 	 */
 	def springSecurityService
 
+    def userService;
+
+    def create = {
+        GearUser user = GearUser.findByUsername(params.j_desired_username);
+        if (user) {
+            flash.message = "This username is already taken";
+            redirect action: 'auth', params: params
+        } else {
+            userService.createUser(params.j_desired_username, params.j_new_password, params.j_email)
+            springSecurityService.reauthenticate(params.j_desired_username, params.j_new_password);
+            redirect url:"${params.targetUri.replace(request.contextPath,"")}"
+        }
+    }
+
 	/**
 	 * Default action; redirects to 'defaultTargetUrl' if logged in, /login/auth otherwise.
 	 */
@@ -32,9 +45,13 @@ class LoginController {
 			redirect uri: SpringSecurityUtils.securityConfig.successHandler.defaultTargetUrl
 		}
 		else {
-			redirect action: 'auth', params: params
+			redirect action: 'auth'
 		}
 	}
+
+    def continueAnonymously = {
+        redirect url:"${params.targetUri.replace(request.contextPath,"")}"
+    }
 
 	/**
 	 * Show the login page.
@@ -44,14 +61,17 @@ class LoginController {
 		def config = SpringSecurityUtils.securityConfig
 
 		if (springSecurityService.isLoggedIn()) {
-			redirect uri: config.successHandler.defaultTargetUrl
+			redirect url: params.targetUri.replace(request.contextPath,"")
 			return
 		}
 
+        String redirect = params.targetUri ? "?spring-security-redirect=${params.targetUri.replace(request.contextPath,"")}" : "";
 		String view = 'auth'
-		String postUrl = "${request.contextPath}${config.apf.filterProcessesUrl}"
+		String postUrl = "${request.contextPath}${config.apf.filterProcessesUrl}${redirect}"
 		render view: view, model: [postUrl: postUrl,
-		                           rememberMeParameter: config.rememberMe.parameter]
+		                           rememberMeParameter: config.rememberMe.parameter,
+                                   targetUri : params.targetUri,
+                                   anonymousAllowed : params.anonymousAllowed]
 	}
 
 	/**
@@ -114,7 +134,7 @@ class LoginController {
 		}
 		else {
 			flash.message = msg
-			redirect action: 'auth', params: params
+			redirect action: 'auth'
 		}
 	}
 

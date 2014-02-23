@@ -4,7 +4,7 @@ Mastergear.Views = Mastergear.Views || {};
 Mastergear.Views.CreateReview = Backbone.View.extend({
     events : {
         'click .create-review': 'saveReview',
-        'click .close-pop' : 'close'
+        'click .close-button' : 'close'
     },
 
     initialize : function() {
@@ -20,7 +20,7 @@ Mastergear.Views.CreateReview = Backbone.View.extend({
     setModel : function(model){
         this.model = model;
         this.$el.find(".gear-review").val(this.model.get("notes"));
-        this.$el.find("h1").html("Review " + this.model.get("gear").brand.name + " " + this.model.get("gear").item.name);
+        this.$el.find("h1").html("Review " + this.model.get("gear").brand + " " + this.model.get("gear").itemType);
         this.model.bind('review', this.show);
     },
 

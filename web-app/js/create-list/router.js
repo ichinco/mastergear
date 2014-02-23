@@ -5,32 +5,18 @@ Mastergear.Router = Backbone.Router.extend({
         this.main();
     },
 
-    buildAddView : function(cssClass, reviewView) {
-        var possiblePackModel = new Mastergear.Collection.GearList();
+    buildAddView : function(cssClass, reviewView, createGearModel) {
+
         var packModel = new Mastergear.Collection.GearType({
             listId : Mastergear.listId,
             gearType : cssClass
         });
         packModel.fetch({remove : true, add : true, change : true});
-        packModel.setSelectionModel(possiblePackModel);
 
-        var newGearDialog = new Mastergear.Views.AddGearDialog({
-            el : '.' + cssClass + ' .add-gear',
-            model : packModel
-        });
-
-        var packView = new Mastergear.Views.AddGearButton({
-            el : '.' + cssClass + ' .add-gear-button',
-            model : packModel
-        });
+        createGearModel.addGearTypeModel(cssClass, packModel);
 
         var noMatchesView = new Mastergear.Views.NoMatchesView({
             el : '.' + cssClass + ' .no-match',
-            model : packModel
-        });
-
-        var createGearView = new Mastergear.Views.CreateGear({
-            el : '.' + cssClass + ' .gear-create',
             model : packModel
         });
 
@@ -40,38 +26,62 @@ Mastergear.Router = Backbone.Router.extend({
             reviewView : reviewView
         });
 
-        var gearHintView = new Mastergear.Views.GearHintView({
-            el : '.' + cssClass + ' .get-suggestions',
-            model : packModel
-        });
 
-        var gearSuggestionView = new Mastergear.Views.GearSelection({
-            el : '.' + cssClass + ' .add-gear .gear-suggestion',
-            model : possiblePackModel
-        });
-
-        var gearSuggestionInputView = new Mastergear.Views.GearSelectionInput({
-            el : '.' + cssClass + ' .add-gear .gear-search',
-            model : possiblePackModel
-        });
-
-        possiblePackModel.fetch({remove : true, add : true, change : true})
     },
 
     main: function() {
+        var createGearModel = new Mastergear.Models.CreateGear();
+        createGearModel.setCurrentGearType("pack");
+        var possiblePackModel = new Mastergear.Collection.GearList();
+
         var createReviewView = new Mastergear.Views.CreateReview({
             el : '#review-gear'
         });
 
-        this.buildAddView('pack',createReviewView);
-        this.buildAddView('sleep',createReviewView);
-        this.buildAddView('cooking',createReviewView);
-        this.buildAddView('food',createReviewView);
-        this.buildAddView('water',createReviewView);
-        this.buildAddView('clothes',createReviewView);
-        this.buildAddView('electronics',createReviewView);
-        this.buildAddView('emergency',createReviewView);
-        this.buildAddView('other',createReviewView);
+        var newGearDialog = new Mastergear.Views.AddGearDialog({
+            el : '.add-gear',
+            model : createGearModel,
+            possibleGearModel : possiblePackModel
+        });
+
+        var packView = new Mastergear.Views.AddGearButton({
+            el : '.add-gear-button',
+            model : createGearModel
+        });
+
+        var gearHintView = new Mastergear.Views.GearHintView({
+            el : '.get-suggestions',
+            model : possiblePackModel,
+            createGearModel : createGearModel
+        });
+
+        var gearSuggestionView = new Mastergear.Views.GearSelection({
+            el : '.add-gear .gear-suggestion',
+            model : possiblePackModel
+        });
+
+        var selectedGearView = new Mastergear.Views.SelectedGearView({
+            el : '.add-gear .selected-gear',
+            possibleGearModel : createGearModel
+        });
+
+        var leftPanel = new Mastergear.Views.LeftPanel({
+            el : '.content',
+            model : createGearModel
+        });
+
+        this.buildAddView('pack',createReviewView, createGearModel);
+
+        this.buildAddView('sleep',createReviewView, createGearModel);
+        this.buildAddView('cooking',createReviewView, createGearModel);
+        this.buildAddView('food',createReviewView, createGearModel);
+        this.buildAddView('water',createReviewView, createGearModel);
+        this.buildAddView('clothes',createReviewView, createGearModel);
+        this.buildAddView('electronics',createReviewView, createGearModel);
+        this.buildAddView('emergency',createReviewView, createGearModel);
+        this.buildAddView('other',createReviewView, createGearModel);
+
+        possiblePackModel.fetch({remove : true, add : true, change : true});
     }
 });
 

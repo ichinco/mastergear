@@ -4,6 +4,8 @@ import com.mastergear.Trail
 
 class TrailsController {
 
+    def geocodingService
+
     def save() {
         def trailInstance = new Trail(params)
         if (!trailInstance.save(flush: true)) {
@@ -17,10 +19,18 @@ class TrailsController {
         }
     }
 
-    def show(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
+    def show(String query) {
+        def trails = [];
+        if (query) {
+            trails = geocodingService.getTrail(query);
+        } else {
+            trails.addAll(Trail.where {
+                gearLists.size() > 0
+            }.list());
+        }
+
         render (contentType:'text/json'){
-            trailInstanceList: Trail.list(params)
+            trailInstanceList: trails
         }
     }
 }

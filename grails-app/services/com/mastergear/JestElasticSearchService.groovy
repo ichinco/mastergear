@@ -18,7 +18,7 @@ class JestElasticSearchService {
     def grailsApplication
 
     private JestClient client;
-    private static final String INDEX = "com.mastergear";
+    private static final String INDEX = "com.mastergear.1";
     private static final String TYPE = "gear";
 
     @PostConstruct
@@ -78,6 +78,10 @@ class JestElasticSearchService {
         search.addType(TYPE);
 
         JestResult result = client.execute(search)
+
+        if (!result.isSucceeded()) {
+            throw new RuntimeException(result.errorMessage)
+        }
 
         List<Object> sourceList = (List<Object>) result.extractSource();
 

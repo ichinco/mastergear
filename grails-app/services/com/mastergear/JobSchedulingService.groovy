@@ -43,9 +43,11 @@ class JobSchedulingService {
 
     def updateJobStatus(int jobId, JobStatus status) {
         Job job = Job.get(jobId);
-        job.setStatus(status);
-        Job.withTransaction {
-            job.save(flush:true);
+        if (job != null) {
+            job.setStatus(status);
+            Job.withTransaction {
+                job.save(flush:true);
+            }
         }
     }
 
@@ -59,7 +61,7 @@ class JobSchedulingService {
 
     def updateResult(int jobId, String result) {
         Job job = Job.get(jobId);
-        job.setResult(result.substring(0,Math.min(result.length(), 500)));
+        job.setResult(result.substring(0,Math.min(result.length(), 255)));
         Job.withTransaction {
             job.save(flush:true);
         }

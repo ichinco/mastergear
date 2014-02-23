@@ -8,55 +8,57 @@
 
 <%@ page import="com.mastergear.HikeType" contentType="text/html;charset=UTF-8" %>
 <!DOCTYPE html>
-<html>
+<html class="front-page">
 <head>
     <meta name="layout" content="flat">
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCURdG3H4OW33dNUQGrxI531CAJcYovDeE&sensor=false"></script>
-    <r:require module="start" />
+    <r:external dir="css" file="front.css" />
 </head>
 <body>
-    <div id="map-container">
-        <div id="map">
-
-        </div>
-        <div class="intro">
-            <div class="close">x</div>
-            Browse gear lists that other hikers have created. Click
-            on a pin and see what they have in their arsenal.
-        </div>
-    </div>
-    <div id="gear-list-display">
-        <g:render template="/layouts/logo" />
-        <svg xmlns='http://www.w3.org/2000/svg'
-             version='1.1'>
-            <circle id='close-button' r='30px'
-                    cx='30px'
-                    cy='30px' />
-        </svg>
-        <div class="close-img"></div>
-        <div class="gearlist"></div>
-    </div>
-
-    <!-- backbone template for gearlist: see gearlist js files -->
-    <script type="text/template" id="gear_list_template">
-        <!-- make these boxes and cells -->
-        <a href="{{url}}">
-            <div class='list-icon'>
-                <div class='{{hikeType}} hike-symbol'></div>
-            </div>
-            <div class='gear-list-item'>
-
-                    <!-- this really should be the title -->
-                    <div class='list-title'>{{user.username}}</div>
-                    <div class='list-description'>{{listDescription}}</div>
-
-                    <!-- reformat the date so that it is human readable -->
-                    <div class='list-date'>{{moment(dateCreated).format('MMMM D, YYYY')}}</div>
-                    <div class='icon-{{season}}'></div>
-                    <div class='icon-{{hikeType}}'></div>
-
-            </div>
-        </a>
-    </script>
+    <g:link class="create-list-button-front" controller="login" action="auth" params="[targetUri: g.createLink(controller:'gearList',action:'initialize'), anonymousAllowed:true]"><div class="text">create a gear list</div></g:link>
+    <section>
+        <h1><div class='Day Hike hike-symbol'></div>Day Hike Lists</h1>
+        <ul>
+            <g:each in="${lists.get(HikeType.DAY)}" var="list">
+                <li>
+                    <g:link controller="gearList" action="show" id="${list.id}">
+                        <div class="title">${list.title}: ${weights.get(list.id)}</div>
+                    </g:link>
+                    <div class="description">${list.listDescription}</div>
+                    <div class="trail-info">Hiked in <span><g:message code="season.${list.season.toString().toLowerCase()}" /></span> at <span>${list.trail.name}</span></div>
+                    <div class="list-info">List created on <g:formatDate date="${list.dateCreated}" format="yyyy-MM-dd" /> by ${list.user.computeDisplayableUsername()}</div>
+                </li>
+            </g:each>
+        </ul>
+    </section>
+    <section>
+        <h1><div class='Backpacking Hike hike-symbol'></div>Backpacking Lists</h1>
+        <ul>
+            <g:each in="${lists.get(HikeType.BACKPACKING)}" var="list">
+                <li>
+                    <g:link controller="gearList" action="show" id="${list.id}">
+                        <div class="title">${list.title}: ${weights.get(list.id)}</div>
+                    </g:link>
+                    <div class="description">${list.listDescription}</div>
+                    <div class="trail-info">Hiked in <span><g:message code="season.${list.season.toString().toLowerCase()}" /></span> at <span>${list.trail.name}</span></div>
+                    <div class="list-info">List created on <g:formatDate date="${list.dateCreated}" format="yyyy-MM-dd" /> by ${list.user.computeDisplayableUsername()}</div>
+                </li>
+            </g:each>
+        </ul>
+    </section>
+    <section>
+        <h1><div class='Car Hike hike-symbol'></div>Car Camping Lists</h1>
+        <ul>
+            <g:each in="${lists.get(HikeType.CARCAMPING)}" var="list">
+                <li>
+                    <g:link controller="gearList" action="show" id="${list.id}">
+                        <div class="title">${list.title}</div>
+                    </g:link>
+                    <div class="description">${list.listDescription}</div>
+                    <div class="trail-info">Hiked in <span><g:message code="season.${list.season.toString().toLowerCase()}" /></span> at <span>${list.trail.name}</span></div>
+                    <div class="list-info">List created on <g:formatDate date="${list.dateCreated}" format="yyyy-MM-dd" /> by ${list.user.computeDisplayableUsername()}</div>
+                </li>
+            </g:each>
+        </ul>
+    </section>
 </body>
 </html>

@@ -1,0 +1,29 @@
+.trail-selection.pop-background {
+    display: none;
+}
+
+.trail-object {
+    cursor: hand;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-button: 10px;
+}
+
+.errors input,
+.errors textarea {
+    border-color: red;
+}
+
+.errors label {
+    color: red;
+}
+
+.errors ul {
+    padding:0px;
+    margin:0px;
+}
+
+.errors li {
+    color: red;
+    list-style-type: none;
+}

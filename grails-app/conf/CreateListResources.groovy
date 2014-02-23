@@ -18,6 +18,7 @@ modules = {
 
         resource url: 'js/create-list/models/gear-model.js'
         resource url: 'js/create-list/models/gear-list-gear-model.js'
+        resource url: 'js/create-list/models/create-gear-model.js'
     }
 
     createlistView {
@@ -31,24 +32,22 @@ modules = {
         resource url: 'js/create-list/views/gear-hint-view.js'
         resource url: 'js/create-list/views/gear-type-view.js'
         resource url: 'js/create-list/views/create-review-view.js'
+        resource url: 'js/create-list/views/selected-gear-view.js'
+        resource url: 'js/create-list/views/add-gear-left-panel.js'
     }
     createlist {
         dependsOn 'createlistView'
         dependsOn 'createlistModel'
         dependsOn 'createlistCollection'
         dependsOn 'stylesheets'
+        dependsOn 'createstylesheets'
         dependsOn 'lib'
 
         resource url: '/js/create-list/router.js'
     }
 
-    stylesheets {
-        resource url: '/css/mastergear.css', attrs:[rel: "stylesheet/less", type:'css']
+    createstylesheets {
+        resource url: '/css/gearlist-create.css', attrs:[rel: "stylesheet", type:'css']
+        resource url: '/css/gearlistdisplay.css', attrs:[rel: "stylesheet", type:'css']
     }
-
-    lib {
-        dependsOn 'jquery' //provided by plugin
-        dependsOn 'backbone' //provided by plugin
-    }
-
 }

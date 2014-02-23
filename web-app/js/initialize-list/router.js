@@ -12,16 +12,16 @@ Mastergear.Router = Backbone.Router.extend({
 
         var selectTrailDialog = new Mastergear.Views.SelectTrailDialog({
             el : '.trail-selection',
-            model : trailModel
+            model : possibleTrailModel
         });
 
         var selectTrailButton = new Mastergear.Views.SelectTrailButton({
             el : 'button.select-trail',
-            model : trailModel
+            model : possibleTrailModel
         });
 
         var possibleTrailList = new Mastergear.Views.TrailSelection({
-            el : '.trail-selection .trails',
+            el : '.trails',
             model : possibleTrailModel
         });
 
@@ -40,7 +40,10 @@ Mastergear.Router = Backbone.Router.extend({
             model : trailModel
         });
 
-        possibleTrailModel.fetch({remove : true, add : true, change : true})
+        var getTrail = new Mastergear.Views.TrailQuery({
+            el : '.get-suggestions',
+            model : possibleTrailModel
+        })
     }
 });
 

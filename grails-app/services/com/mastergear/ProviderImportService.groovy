@@ -1,5 +1,8 @@
 package com.mastergear
 
+import com.mastergear.GearGender
+import groovyx.net.http.HTTPBuilder
+
 import java.util.concurrent.Future
 import static groovyx.gpars.GParsPool.withPool;
 
@@ -7,6 +10,7 @@ class ProviderImportService {
 
     def jestElasticSearchService
     def jobSchedulingService;
+    def weightParseService;
 
     private Exception lastException;
 
@@ -27,6 +31,106 @@ class ProviderImportService {
                 }
             }.callAsync();
         }
+    }
+
+    def populateWeight() {
+        final JobSchedulingService jobService = jobSchedulingService;
+        final WeightParseService weightService = weightParseService;
+
+        jobSchedulingService.scheduleJob("PopulateWeight", {
+            int jobId ->
+                double total = Gear.count();
+                double soFar = 0D;
+
+                Gear.withTransaction{
+                    Gear.list().each {
+                        Provider p = Provider.findByGearAndType(it, ProviderType.REI);
+                        def specs = Spec.findAllByProvider(p);
+                        if (specs.size() > 0){
+                            specs.sort {
+                                WeightName.getWeightName(it.name).getSortOrder();
+                            }
+                            if (WeightName.getWeightName(specs.get(0).name).isWeight()){
+                                it.setWeight(weightService.weightParse(specs.get(0).value));
+                                it.save(flush:true);
+                            }
+                        }
+                        soFar++;
+
+                        if (soFar % 1000 == 0){
+                            jobService.updateJobProgress(jobId, (int) ((soFar * 100) / total));
+                        }
+                    }
+                }
+        })
+    }
+
+    def getSpecs() {
+        final JobSchedulingService jobService = jobSchedulingService
+
+        jobSchedulingService.scheduleJob("SpecCrawler", {
+            int jobId ->
+                double soFar = 0D;
+
+                List<Provider> providers = Provider.findAllByType(ProviderType.REI);
+                double total = providers.size();
+
+                Provider.withTransaction{
+                Spec.withTransaction{
+                    providers.each {
+                        Provider provider ->
+                        if (Spec.findAllByProvider(provider).size() == 0){
+                            String url = provider.linkUrl;
+                            if (url) {
+                                def http = new HTTPBuilder(url)
+
+                                def html = http.get([:])
+
+                                html."**".findAll { it.@class.toString().contains("specs")}.each {
+                                    List<String> sizes = new LinkedList<String>();
+                                    it."**".findAll {it.@id.toString().contains("headerScroll")}.each {
+                                        it."**".findAll {it.name().toLowerCase().equals("span")}.each {
+                                            sizes.add(it.text());
+                                        }
+                                    }
+                                    if (sizes.size() == 0) {
+                                        sizes.add("all");
+                                    }
+                                    List<Spec> specs = new LinkedList<Spec>();
+                                    it."**".findAll {it.@class.toString().contains("label")}.each {
+                                        sizes.each {
+                                            size ->
+                                                Spec spec = new Spec();
+                                                spec.sizeOrType = size;
+                                                spec.provider = provider;
+                                                spec.name = it.text();
+                                                specs.add(spec);
+                                        }
+                                    }
+
+                                    it."**".findAll {it.@id.toString().contains("inner_spec_table")}.each{
+                                        it."**".findAll{it.name().equals("TD")}.eachWithIndex {
+                                            obj,i ->
+                                                def value = obj.text();
+                                                if (i < specs.size()){
+                                                    specs.get(i).value = value;
+                                                }
+                                        }
+                                    }
+
+                                    Spec.saveAll(specs);
+                                }
+                            }
+                        }
+
+                        soFar++;
+
+                        if (soFar % 1000 == 0){
+                            jobService.updateJobProgress(jobId, (int) ((soFar * 100) / total));
+                        }
+                    }
+                }}
+        })
     }
 
     def syncWithElasticSearchAsync() {

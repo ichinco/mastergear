@@ -15,15 +15,15 @@ Mastergear.Views.GearList = Backbone.View.extend({
         this.model.bind("trail-selected", this.show);
         this.model.bind("reset", this.render);
         this.close(null);
-        this.$el.parent().find("#close-button").bind("click", this.close);
+        this.$el.parent().find(".close-button").bind("click", this.close);
     },
 
     show : function(evt) {
-        this.$el.parent().show();
+        this.$el.parents("#gear-list-display").show();
     },
 
     close : function(evt) {
-        this.$el.parent().hide();
+        this.$el.parents("#gear-list-display").hide();
     },
 
     render: function() {
@@ -36,6 +36,14 @@ Mastergear.Views.GearList = Backbone.View.extend({
             }
         });
         this.$el.html(finalHtml);
+
+        $('#gear-list-display').mCustomScrollbar({
+            scrollButtons:{
+                enable:true
+            },
+            theme : 'dark-thick'
+        });
+
         return this;
     },
 

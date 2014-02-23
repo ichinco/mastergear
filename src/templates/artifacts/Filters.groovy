@@ -1,11 +1,9 @@
-package mastergear
-
-class DebugFilterFilters {
+@artifact.package@class @artifact.name@ {
 
     def filters = {
         all(controller:'*', action:'*') {
             before = {
-                request
+
             }
             after = { Map model ->
 

@@ -65,9 +65,12 @@ environments {
         grails.resources.debug = true
         grails.resources.processing.enabled = false
         grails.resources.adhoc.excludes = ['**/*.*']
+
+        grails.addlist.checksession = false
     }
     production {
         grails.logging.jul.usebridge = false
+        grails.addlist.checksession = true
         // TODO: grails.serverURL = "http://www.changeme.com"
     }
 }
@@ -99,3 +102,15 @@ grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'com.mastergea
 grails.plugins.springsecurity.authority.className = 'com.mastergear.Role'
 
 elasticsearch.serverpath = "http://qiqgsxgp:nxxu4adr05zwy4q@elm-4941848.us-east-1.bonsai.io:80"
+
+amazon {
+    accessKeyId = "1VH1V4VNZN4YQ7P9AXG2"
+    accessKeySecret = "NGSanoamwXYvnKLvILahvMUv2OyHfQV08R1rD86P"
+    apiVersion = "2011-08-01"
+    service = "AWSECommerceService"
+    associateTag = "trythaton-20"
+    responseGroup = 'Images,ItemAttributes,Offers'
+    maxPage = 400
+    searchUrl = "http://webservices.amazon.com/onca/xml?Service=AWSECommerceService&AssociateTag=${amazon.associateTag}&AWSAccessKeyId=${amazon.accessKeyId}&Operation=ItemSearch&Version=${amazon.apiVersion}&SearchIndex=SportingGoods&ResponseGroup=[responseGroup]&Keywords=[keywords]"
+    signaturePrepend="GET\nwebservices.amazon.com\n/onca/xml\n"
+}

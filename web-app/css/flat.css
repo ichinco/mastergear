@@ -1,14 +1,13 @@
 html, body.flat
 {
-   /*position: fixed;*/
+   position: absolute;
    top:0;
    left:0;
    margin:0;
-   height: 100%;
+   min-height: 100%;
    width: 100%;
    background: #EAEAEA;
    /*background: rgb(255,255,255);*/
-   overflow: hidden;
    /* Old browsers */
 
    /*background: -moz-radial-gradient(*/
@@ -46,8 +45,13 @@ html, body.flat
    /*); *//* IE6-9 fallback on horizontal gradient */
 
     font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
 }
 
+body.front-page
+{
+    overflow: hidden;
+}
 .flat a, body.flat a:active, body.flat a:visited
 {
     color: RGB(95, 150, 20);
@@ -126,11 +130,21 @@ html, body.flat
     background-position: -50px 0;
 }
 
+.flat .nav-container .nav-item .icon.create {
+    background-position: -125px 0;
+}
+
 .flat .logo-container
 {
    position: fixed;
    top: 5px;
    right: 15px;
+}
+
+.flat .login {
+    position: fixed;
+    top: 16px;
+    right: 200px;
 }
 
 .flat .logo-container .logo
@@ -187,6 +201,15 @@ body.flat .main-content {
 
 }
 
+
+.close-button {
+    cursor: hand;
+    cursor: pointer;
+    position: absolute;
+    background-image: url('../images/navicons.png');
+    background-size: cover;
+}
+
 #trails-title {}
 
 #trails-title .trails-title-container {}
@@ -221,4 +244,29 @@ body.flat .main-content {
 .flat .trail-list-container .trail-list .trail-item-container
 {
 
+}
+
+.loading {
+    display: block;
+}
+
+.hike-symbol {
+    background-image: url('../images/hiketypesprite.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.hike-symbol.Backpacking {
+    background-position: 0 0;
+}
+.hike-symbol.Day {
+    background-position: -200px 0;
+}
+.hike-symbol.Car {
+    background-position: -100px 0;
+}
+
+img {
+    border: 0;
 }

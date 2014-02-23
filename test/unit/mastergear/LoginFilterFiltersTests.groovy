@@ -4,8 +4,8 @@ package mastergear
 
 import grails.test.mixin.*
 
-@Mock(DebugFilterFilters)
-class DebugFilterFiltersTests {
+@Mock(LoginFilterFilters)
+class LoginFilterFiltersTests {
 
     void testSomething() {
         fail "Implement me"

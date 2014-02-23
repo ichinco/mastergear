@@ -13,9 +13,33 @@ class GearListController {
 
     def gearListService;
     def userService;
+    def weightPrintService;
 
     def index() {
-        render(view: 'start')
+        def gearLists = GearList.list();
+        def day = gearLists.findAll({
+            it.hikeType.equals(HikeType.DAY)
+        })
+        def backpacking = gearLists.findAll({
+            it.hikeType.equals(HikeType.BACKPACKING)
+        })
+        def carcamping = gearLists.findAll({
+            it.hikeType.equals(HikeType.CARCAMPING)
+        })
+        def gearListMap = new HashMap<HikeType, List<GearList>>();
+        gearListMap.put(HikeType.DAY, day);
+        gearListMap.put(HikeType.BACKPACKING, backpacking);
+        gearListMap.put(HikeType.CARCAMPING, carcamping);
+
+        def weightMap = gearLists.collectEntries {
+            def gearListGearObjects = GearListGear.findAllByList(it);
+            [it.id, weightPrintService.getTotalWeight(gearListGearObjects)];
+        }
+
+        render(view: 'start', model:[
+                lists : gearListMap,
+                weights : weightMap
+        ])
     }
 
     def create() {
@@ -23,7 +47,7 @@ class GearListController {
         GearList list = GearList.get(id);
         GearUser user = list.user
 
-        if (user.username.equals(session.getId())) {
+        if (!grailsApplication.config.grails.addlist.checksession || user.username.equals(session.getId())) {
             render view: "create", model: [list : list, totalWeight: gearListService.getListWeight(list)]
         } else {
             render view: "cookies"
@@ -31,7 +55,7 @@ class GearListController {
     }
 
     def initialize() {
-        render view: "initialize"
+        render view: "initialize", model: [list: new GearList()]
     }
 
     def trailList() {
@@ -68,13 +92,21 @@ class GearListController {
         }
 
         if (trailId){
-            int id = Integer.parseInt(trailId);
-            Trail trail = Trail.get(id);
-            gearList.trail = trail;
+            Trail t = Trail.findByLocation(trailId);
+            if (!t) {
+                t = new Trail();
+                t.latitude = Double.parseDouble(params.latitude);
+                t.longitude = Double.parseDouble(params.longitude);
+                t.name = params.trailName;
+                t.location = params.trail;
+                t.save(flush : true);
+            }
+            gearList.trail = t;
         }
+        gearList.save(flush : true);
 
-        if (!gearList.save(flush : true)){
-            flash.message = "gearlist save error";
+        if (gearList.hasErrors()){
+            return render(view:"initialize", model: [list: gearList])
         }
 
         redirect(action: "create", params: [id : gearList.id])
@@ -84,7 +116,7 @@ class GearListController {
         Integer listId = Integer.parseInt(params.id);
 
         GearList list = GearList.get(listId);
-            def pack = GearListGear.findAllByListAndGearType(list, GearType.PACK);
+        def pack = GearListGear.findAllByListAndGearType(list, GearType.PACK);
         def sleep = GearListGear.findAllByListAndGearType(list, GearType.SLEEP);
         def cooking = GearListGear.findAllByListAndGearType(list, GearType.COOKING);
         def food = GearListGear.findAllByListAndGearType(list, GearType.FOOD);

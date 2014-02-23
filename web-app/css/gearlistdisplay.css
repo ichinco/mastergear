@@ -25,9 +25,9 @@ html
 {
     display: table-cell;
     position: absolute;
-    left: 250px;
+    left: 10px;
 }
-
+#list-item-container,
 #gear-list-display-header .list-info
 {
     width: 80%;
@@ -116,6 +116,7 @@ section.gear-list-category {}
 .gear-list-category .item-container .item-image
 {
     display: table-cell;
+    vertical-align: top;
 }
 
 .gear-list-category .item-container .item-image img
@@ -175,7 +176,7 @@ section.gear-list-category {}
     width: 22px;
     height: 22px;
     margin: 0px 5px 0px 10px;
-    background-image: url('/mastergear/images/provider-logos.png');
+    background-image: url('../images/provider-logos.png');
     vertical-align: middle;
     background-repeat: no-repeat;
 }
@@ -219,6 +220,38 @@ section.gear-list-category {}
     #display: block;
     position: relative;
     top: -80px;
+}
+
+button.opinion,
+button.existing-opinion {
+    display: inline;
+    max-width: 100px;
+    float:none;
+}
+
+.inline-text{
+    display: inline;
+    float: none;
+}
+
+.get-opinion {
+    display: none;
+}
+
+.opinions h2 {
+    margin-bottom: 5px;
+}
+
+.opinions h3 {
+    margin: 2px 0;
+}
+
+.opinions p {
+    margin: 0 0;
+}
+
+.opinions .review {
+    margin: 5px 0;
 }
 
 

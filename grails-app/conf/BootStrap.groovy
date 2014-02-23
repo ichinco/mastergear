@@ -1,6 +1,4 @@
-import com.mastergear.GearList
-import com.mastergear.GearUser
-import com.mastergear.Trail
+import com.mastergear.*
 
 class BootStrap {
 
@@ -10,6 +8,10 @@ class BootStrap {
         Trail.register();
         GearUser.register();
         GearList.register(grailsApplication);
+        Provider.register(grailsApplication);
+        Gear.register(grailsApplication);
+        GearListGear.register(grailsApplication);
+        GearListGearOpinion.register(grailsApplication);
     }
     def destroy = {
     }

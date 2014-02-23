@@ -10,7 +10,7 @@ Mastergear.Views = Mastergear.Views || {};
 
 Mastergear.Views.IntroDialog = Backbone.View.extend({
     events : {
-        'click .close' : 'close'
+        'click .close-button' : 'close'
     },
 
     initialize : function(){
