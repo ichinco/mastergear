@@ -3,9 +3,15 @@ Mastergear.Models = Mastergear.Models || {};
 
 Mastergear.Models.CreateGear = Backbone.Model.extend({
 
+    ///
+    /// gearTypeMap: map of (currentGearType, GearType (collection, file: gear-type-collection)
+    ///
     gearTypeMap : {},
+
     currentGearType : null,
+
     selectedGear : null,
+
     weight: null,
 
     setWeight: function(weight) {

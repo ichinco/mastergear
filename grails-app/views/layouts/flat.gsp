@@ -23,7 +23,7 @@
         Mastergear.Urls = {
             trail : '${createLink(controller:"trails")}',
             search : '${createLink(controller:"gear", action:"search")}',
-            gearListGear : '${createLink(controller:"gearListGear", action:"list")}',
+            gearListGear : '${createLink( controller:"gearListGear", action:"list")}',
             gear: '${createLink(controller:"gear")}',
             gearlist : '${createLink(controller:"gearLists")}',
             gearListGearItem : '${createLink(controller:"gearListGear")}',

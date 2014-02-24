@@ -4,7 +4,6 @@ import com.mastergear.GearType
 import grails.converters.JSON
 
 class GearListGear {
-
     Date dateCreated
     Date lastUpdated
 

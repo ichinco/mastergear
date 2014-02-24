@@ -1,9 +1,14 @@
 package com.mastergear.rest
 
+import com.mastergear.Brand
 import com.mastergear.Gear
+import com.mastergear.GearGender
+import com.mastergear.GearItemType
 import com.mastergear.GearList
 import com.mastergear.GearListGear
 import com.mastergear.GearType
+import com.mastergear.Provider
+import com.mastergear.ProviderType
 import org.springframework.dao.DataIntegrityViolationException
 
 class GearListGearController {
@@ -32,6 +37,7 @@ class GearListGearController {
     def save() {
         def gearListGearInstance = new GearListGear()
         String listId = params.list.id;
+
         if (listId){
             GearList list = GearList.get(Integer.parseInt(listId));
             gearListGearInstance.list = list;
@@ -52,6 +58,64 @@ class GearListGearController {
         gearListGearInstance.quantity = 1;
         gearListGearInstance.notes = params.notes ? params.notes : "";
 
+        def providerId = params.gear.providerId
+        Provider provider = Provider.findByProviderId(providerId)
+        if(provider)
+        {
+            gearListGearInstance.gear = provider.gear
+        }
+        else
+        {
+            def gear = new Gear()
+            String brandName = params.gear.brand;
+            if (brandName) {
+                Brand brand = Brand.findByName(brandName);
+                if (!brand){
+                    brand = new Brand();
+                    brand.setName(brandName);
+                    brand.save(flush: true);
+                }
+                gear.setBrand(brand);
+            }
+
+            String gearItemType = (params.itemType)? params.itemType : "Outdoors Gear";
+            if (gearItemType) {
+                GearItemType item = GearItemType.findByName(gearItemType);
+                if (!item){
+                    item = new GearItemType();
+                    item.setName(gearItemType);
+                    item.save(flush:true);
+                }
+                gear.setItem(item);
+            }
+            gear.setTitle(params.gear.title);
+
+            //gear.weight = Double.parseDouble(params.gear.weight)
+            if(!gear.save(flush:true))
+            {
+                render(view: "create", model: [gear: gear])
+                return
+            }
+
+            gearListGearInstance.gear = gear
+
+            def newProvider = new Provider()
+            newProvider.setCategory(params.gear.category)
+            newProvider.setGender(GearGender.UNISEX)
+            newProvider.setImageUrl(params.imageUrl)
+            newProvider.setProductGroup(params.gear.productGroup)
+            newProvider.setSubCategory(params.gear.subCategory)
+            newProvider.setProviderId(params.gear.providerId)
+
+            // TODO: make the enum select type based on string
+            newProvider.setType(ProviderType.AMAZON)
+            newProvider.gear = gear;
+            newProvider.save(flush:true);
+        }
+
+        gearListGearInstance.gearType = GearType.valueOf(params.gearType.name.toUpperCase())
+
+        /*
         def typeString = params.gearType.name;
         gearListGearInstance.gearType = GearType.valueOf(typeString.toUpperCase());
 
@@ -60,8 +124,7 @@ class GearListGearController {
             Gear gear = Gear.get(Integer.parseInt(gearId));
             gearListGearInstance.gear = gear;
         }
-
-
+        */
         if (!gearListGearInstance.save(flush: true)) {
             render(view: "create", model: [gearListGearInstance: gearListGearInstance])
             return

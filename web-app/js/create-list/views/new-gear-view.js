@@ -1,6 +1,9 @@
 var Mastergear = Mastergear || {};
 Mastergear.Views = Mastergear.Views || {};
 
+/*
+ Model: CreateGear (create-gear-model)
+ */
 Mastergear.Views.AddGearDialog = Backbone.View.extend({
 
     events: {
