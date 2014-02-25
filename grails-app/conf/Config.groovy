@@ -104,8 +104,8 @@ grails.plugins.springsecurity.authority.className = 'com.mastergear.Role'
 elasticsearch.serverpath = "http://qiqgsxgp:nxxu4adr05zwy4q@elm-4941848.us-east-1.bonsai.io:80"
 
 amazon {
-    accessKeyId = "1VH1V4VNZN4YQ7P9AXG2"
-    accessKeySecret = "NGSanoamwXYvnKLvILahvMUv2OyHfQV08R1rD86P"
+    accessKeyId = "AKIAI7Z3DWPPIMVKRFSQ"
+    accessKeySecret = System.getenv("AMAZON_SECRET")
     apiVersion = "2011-08-01"
     service = "AWSECommerceService"
     associateTag = "trythaton-20"
