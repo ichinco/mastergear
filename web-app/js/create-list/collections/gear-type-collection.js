@@ -22,6 +22,7 @@ Mastergear.Collection.GearType = Backbone.Collection.extend({
         attr.weight = weight;
         gearListGear.set(attr);
         gearListGear.save({}, {async : false});
+
         this.add(gearListGear);
         this.trigger('new-gear-dialog-close');
     },
@@ -34,7 +35,7 @@ Mastergear.Collection.GearType = Backbone.Collection.extend({
 
     fetch: function(options) {
         options || (options = {});
-        var data = (options.data || {});
+
         options.data = {listId: this.listId, gearType: this.gearType};
 
         return Backbone.Collection.prototype.fetch.call(this, options);

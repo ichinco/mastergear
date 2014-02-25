@@ -115,16 +115,6 @@ class GearListGearController {
 
         gearListGearInstance.gearType = GearType.valueOf(params.gearType.name.toUpperCase())
 
-        /*
-        def typeString = params.gearType.name;
-        gearListGearInstance.gearType = GearType.valueOf(typeString.toUpperCase());
-
-        String gearId = params.gear.id;
-        if (gearId) {
-            Gear gear = Gear.get(Integer.parseInt(gearId));
-            gearListGearInstance.gear = gear;
-        }
-        */
         if (!gearListGearInstance.save(flush: true)) {
             render(view: "create", model: [gearListGearInstance: gearListGearInstance])
             return
