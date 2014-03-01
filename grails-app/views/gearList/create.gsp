@@ -6,7 +6,7 @@
 --%>
 
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%@ page import="com.mastergear.jobs.GearType; com.mastergear.jobs.GearType; com.mastergear.GearType; com.mastergear.Provider; com.mastergear.ProviderType; com.mastergear.GearGender; com.mastergear.HikeType; com.mastergear.Season" contentType="text/html;charset=UTF-8" %>
+<%@ page import="com.mastergear.GearType; com.mastergear.Provider; com.mastergear.ProviderType; com.mastergear.GearGender; com.mastergear.HikeType; com.mastergear.Season" contentType="text/html;charset=UTF-8" %>
 
 <%
     List<String> geartypeValues = GearType.values().collect {
@@ -89,17 +89,19 @@
         <a name="{{id}}" class="reference" ></a>
         <div class="item-image">
             <div class="image-wrapper">
-                {{gear.providers[0].imageUrl}}
+                {! if ( gear.providers && gear.providers.length > 0 ){!}
+                    {{gear.providers[0].imageUrl}}
+                {! } !}
             </div>
         </div>
         <!-- item information -->
         <div class="item-info">
             <h3 class="item-title">
-                {{gear.brand}} {{gear.title}} {{gear.itemType}}
+                {{gear.title}} {{gear.itemType}}
             </h3>
             <div class="item-provider">
                 buy from:
-                {! for (var i = 0; i < gear.providers.length; i++) { !}
+                {! for (var i = 0; gear.providers && i < gear.providers.length; i++) { !}
                     {! var provider = gear.providers[0]; !}
                     {{provider.iconUrl}}
                 {! } !}

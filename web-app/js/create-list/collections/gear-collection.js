@@ -2,7 +2,6 @@ var Mastergear = Mastergear || {};
 Mastergear.Collection = Mastergear.Collection || {};
 
 Mastergear.Collection.GearList = Backbone.Collection.extend({
-
     itemType : null,
 
     setItemType : function(itemType) {

@@ -6,7 +6,6 @@ Mastergear.Router = Backbone.Router.extend({
     },
 
     buildAddView : function(cssClass, reviewView, createGearModel) {
-
         var packModel = new Mastergear.Collection.GearType({
             listId : Mastergear.listId,
             gearType : cssClass
@@ -71,7 +70,6 @@ Mastergear.Router = Backbone.Router.extend({
         });
 
         this.buildAddView('pack',createReviewView, createGearModel);
-
         this.buildAddView('sleep',createReviewView, createGearModel);
         this.buildAddView('cooking',createReviewView, createGearModel);
         this.buildAddView('food',createReviewView, createGearModel);
