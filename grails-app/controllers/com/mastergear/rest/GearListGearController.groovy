@@ -103,6 +103,7 @@ class GearListGearController {
             newProvider.setCategory(params.gear.category)
             newProvider.setGender(GearGender.UNISEX)
             newProvider.setImageUrl(params.imageUrl)
+            newProvider.setImageId(params.gear.providerId)
             newProvider.setProductGroup(params.gear.productGroup)
             newProvider.setSubCategory(params.gear.subCategory)
             newProvider.setProviderId(params.gear.providerId)
